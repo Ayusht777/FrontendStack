@@ -1,0 +1,25 @@
+:root {
+    --text-color: #E1E4E8;
+    --logo: #DAED6F;
+    --border: #404040;
+}
+
+section {
+    scrollbar-width: thin;
+    scrollbar-color: var(--logo) var(--border);
+}
+
+
+
+code {
+    counter-reset: line;
+}
+
+code>[data-line]::before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 1rem;
+    text-align: right;
+    color: var(--text-color);
+}
