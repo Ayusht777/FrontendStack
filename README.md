@@ -1,8 +1,12 @@
-# React + Vite
+pnpm run dev
+///to install any lib use command pnpm i libary name
+pnpm install unified remark-parse remark-rehype rehype-stringify @shikijs/rehype //codeblock
+pnpm i react-router-dom
+pnpm i react-icons
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+// imp
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+use @ to import any file 
+
+horny her shit
