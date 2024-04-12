@@ -29,7 +29,7 @@ const CodeBlock = (props) => {
 
   return (
     <section
-      className="box bg-Bg w-4/5 h-[80vh]  rounded-xl overflow-y-scroll p-4 scroll-thin"
+      className="box bg-Bg w-full h-[80vh]  overflow-y-scroll p-4 scroll-thin"
       dangerouslySetInnerHTML={{ __html: processedCode }}
     ></section>
   );

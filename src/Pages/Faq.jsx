@@ -1,5 +1,6 @@
-import Navbar from '@/Components/Shared/Navbar'
-const Home = () => {
+import Navbar from "@/Components/Shared/Navbar";
+
+const Faq = () => {
   return (
     <div className="w-full bg-Bg h-screen flex justify-center items-start ">
       <Navbar></Navbar>
@@ -7,4 +8,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Faq;
