@@ -6,6 +6,7 @@ const Home = lazy(() => import("@/Pages/Home"));
 const Gallery = lazy(() => import("@/Pages/Gallery"));
 const About = lazy(() => import("@/Pages/About"));
 const Faq = lazy(() => import("@/Pages/Faq"));
+const NotFound404 = lazy(() => import("@/Pages/NotFound404"));
 
 const AppRoutes = () => {
   return (
@@ -40,6 +41,14 @@ const AppRoutes = () => {
           element={
             <Suspense fallback={<div>Loading FAQ...</div>}>
               <Faq />
+            </Suspense>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Suspense fallback={<div>Loading FAQ...</div>}>
+             <NotFound404/>
             </Suspense>
           }
         />

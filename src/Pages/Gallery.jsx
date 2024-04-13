@@ -1,11 +1,11 @@
-import Navbar from '@/Components/Shared/Navbar'
+import Navbar from "@/Components/Shared/Navbar";
 
 const Gallery = () => {
   return (
-    <div className="w-full bg-Bg h-screen flex justify-center items-start ">
+    <div className="w-full bg-Bg h-dvh flex justify-center items-start ">
       <Navbar></Navbar>
     </div>
-  )
-}
+  );
+};
 
-export default Gallery
+export default Gallery;
