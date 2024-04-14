@@ -1,9 +1,10 @@
 import AppRoutes from "@/Routes/AppRoutes";
-
+import ComponentRenderPage from '@/Pages/ComponentRenderPage'
 function App() {
   return (
     <>
-      <AppRoutes></AppRoutes>
+      {/* <AppRoutes></AppRoutes> */}
+      <ComponentRenderPage></ComponentRenderPage>
     </>
   );
 }

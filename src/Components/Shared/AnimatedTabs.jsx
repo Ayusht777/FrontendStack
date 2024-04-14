@@ -1,11 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-const AnimatedTabs = () => {
-  const allTabs = [
-    { id: "Preview", name: "PREVIEW" },
-    { id: "code", name: "CODE" },
-  ];
-
+const AnimatedTabs = ({ Tabs, onActiveTabIndexChange }) => {
   const tabsRef = useRef([]);
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
@@ -16,23 +11,24 @@ const AnimatedTabs = () => {
 
     const setTabPosition = () => {
       const currentTab = tabsRef.current[activeTabIndex];
-      console.log(tabsRef.current[activeTabIndex].clientWidth);
       setTabUnderlineLeft(currentTab?.offsetLeft ?? 0);
       setTabUnderlineWidth(currentTab?.clientWidth ?? 0);
+      onActiveTabIndexChange(activeTabIndex);
+      console.log(activeTabIndex)
     };
 
     setTabPosition();
   }, [activeTabIndex]);
 
   return (
-    <div className="flex-row relative mx-auto flex w-full justify-center h-12 rounded-t-xl  bg-Border px-2 backdrop-blur-sm">
+    <div className=" flex-row relative mx-auto flex w-full justify-center h-12 rounded-t-xl  bg-Border px-2 backdrop-blur-sm">
       <span
         className="absolute bottom-0 top-0 -z-10 flex overflow-hidden rounded-xl py-[.30rem] transition-all duration-300"
         style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
       >
         <span className="h-full w-full rounded-xl bg-Bg" />
       </span>
-      {allTabs.map((tab, index) => {
+      {Tabs.map((tab, index) => {
         const isActive = activeTabIndex === index;
 
         return (
