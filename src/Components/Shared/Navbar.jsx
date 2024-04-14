@@ -1,4 +1,4 @@
-import BrandLogo from "@/Assets/BrandLogo";
+import BrandLogo from "@/Assets/BrandLogo.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
