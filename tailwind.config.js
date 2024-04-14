@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         Bg: "#111213",
-        Logo: "#DAED6F",
+        Logo: "#D7F400",
         Nav: "#1A1C1D",
         Border :"#404040",
         

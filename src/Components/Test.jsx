@@ -1,8 +1,6 @@
-import BrandLogo from "@/Assets/BrandLogo";
+import BrandLogo from "@/Assets/BrandLogo.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
-const Navbar = () => {
+const Test = () => {
   const [isActive, setIsActive] = useState(false);
 
   const routeItems = [
@@ -14,17 +12,17 @@ const Navbar = () => {
     {
       routeId: 1,
       routeName: "Gallery",
-      routePath: "/gallery",
+      routePath: "/",
     },
     {
       routeId: 2,
       routeName: "About",
-      routePath: "/about",
+      routePath: "/",
     },
     {
       routeId: 3,
       routeName: "FAQ",
-      routePath: "/faq",
+      routePath: "/",
     },
   ];
 
@@ -39,7 +37,8 @@ const Navbar = () => {
         <ul className="sm:flex w-full justify-end gap-x-12 hidden overflow-hidden">
           {routeItems.map((item) => (
             <li key={item.routeId} className="cursor-pointer text-white">
-              <Link to={item.routePath}>{item.routeName}</Link>
+              {/* <Link to={item.routePath}>{item.routeName}</Link> */}
+              <a href={item.routePath}>{item.routeName}</a>
             </li>
           ))}
         </ul>
@@ -59,6 +58,7 @@ const Navbar = () => {
           ></span>
         </button>
       </nav>
+      {/* Add transition classes to the div */}
       {isActive && (
         <div className="md:hidden absolute w-full top-14 bg-Nav rounded-lg border-2 border-Border flex items-center flex-col justify-center py-4 ">
           <ul className="flex w-full justify-center items-center space-y-6 flex-col">
@@ -67,7 +67,8 @@ const Navbar = () => {
                 key={item.routeId}
                 className={"font-medium text-3xl  text-white cursor-pointer"}
               >
-                <Link to={item.routePath}>{item.routeName}</Link>
+                {/* <Link to={item.routePath}>{item.routeName}</Link> */}
+                <a href={item.routePath}>{item.routeName}</a>
               </li>
             ))}
           </ul>
@@ -76,5 +77,4 @@ const Navbar = () => {
     </header>
   );
 };
-
-export default Navbar;
+export default Test;
