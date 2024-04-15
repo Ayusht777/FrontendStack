@@ -62,7 +62,7 @@ function Carousel() {
         ))}
       </div>
       <IoIosArrowForward
-        className={`absolute top-[50%] -right-9 translate-y-[100%]  text-5xl text-Logo hidden ${
+        className={`absolute top-[50%] -right-7 translate-y-[100%]  text-5xl text-Logo hidden ${
           left ? "md:hidden" : "md:block"
         }`}
         onClick={() => {
