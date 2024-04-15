@@ -1,34 +1,25 @@
 :root {
-    --text-color: #E1E4E8;
-    --logo: #D7F400;
-    --Nav: #1A1C1D;
+  --text-color: #e1e4e8;
+  --logo: #d7f400;
+  --Nav: #1a1c1d;
 }
 
-section {
-    scrollbar-width: thin;
-    scroll-behavior: smooth;
-    scrollbar-color: var(--logo) var(--Nav);
-    scrollbar-gutter: stable;
-
-
-}
 code {
-    counter-reset: line;
+  counter-reset: line;
 }
 
-code>[data-line]::before {
-    counter-increment: line;
-    content: counter(line);
-    display: inline-block;
-    width: 1rem;
-    margin-right: .5rem;
-    text-align: right;
-    color: var(--text-color);
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 0.5rem;
+  text-align: right;
+  color: var(--text-color);
 }
 
 @media (max-width: 640px) {
-    section{
-        scrollbar-width: none;
-    }
+  section {
+    scrollbar-width: none;
   }
-  
+}

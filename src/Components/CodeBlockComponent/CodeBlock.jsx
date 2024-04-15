@@ -6,11 +6,11 @@ import rehypeStringify from "rehype-stringify";
 import rehypePrettyCode from "rehype-pretty-code";
 import "./style.css";
 
-const CodeBlock = ({  CodeSnippets ,onActiveTabIndexChange}) => {
+const CodeBlock = ({ CodeSnippets, onActiveTabIndexChange }) => {
   const [processedCode, setProcessedCode] = useState(null);
 
   useEffect(() => {
-    if ( CodeSnippets.length !== 0) {
+    if (CodeSnippets.length !== 0) {
       const CreateCodeBlock = async () => {
         const processed = await unified()
           .use(remarkParse)
@@ -21,17 +21,17 @@ const CodeBlock = ({  CodeSnippets ,onActiveTabIndexChange}) => {
             keepBackground: false,
           })
           .use(rehypeStringify)
-          .process( CodeSnippets);
+          .process(CodeSnippets);
 
         setProcessedCode(processed.toString());
       };
       CreateCodeBlock();
     }
-  }, [ CodeSnippets]);
+  }, [CodeSnippets]);
 
   return (
     <section
-      className="w-auto max-h-[560px]   overflow-auto md:p-4 p-2 scroll-thin bg-gradient-to-tr from-Nav to-Nav/10 "
+      className="w-auto max-h-[560px]   overflow-scroll cust-scrollbar scroll-smooth md:p-4 p-2 scroll-thin bg-gradient-to-tr from-Nav to-Nav/10 "
       dangerouslySetInnerHTML={{ __html: processedCode }}
     ></section>
   );
