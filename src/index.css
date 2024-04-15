@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 /* @font-face {
     font-family: 'Mona Sans';
     src:
@@ -16,6 +16,18 @@ html {
 } */
 
 html {
-    font-family: 'Inter', sans-serif;
-    /* Set Inter as the default font for the entire document */
+  font-family: "Inter", sans-serif;
+  /* Set Inter as the default font for the entire document */
+}
+.cust-scrollbar::-webkit-scrollbar-thumb {
+  background: #404040;
+  height: 8px;
+  width: 8px;
+  border-radius: 3px;
+}
+.cust-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  border-radius: 3px;
+  background-color: #1b1b1b;
 }
