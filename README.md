@@ -1,3 +1,4 @@
+npm install -g pnpm //if pnpm not installed
 pnpm run dev
 ///to install any lib use command pnpm i libary name
 pnpm install unified remark-parse remark-rehype rehype-stringify @shikijs/rehype //codeblock

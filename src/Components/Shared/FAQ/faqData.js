@@ -1,4 +1,4 @@
-const faqData = [
+export const faqData = [
   {
     question: "What is the purpose of this challenge?",
     answer:
@@ -26,5 +26,3 @@ const faqData = [
       "This challenge aims to enhance our skills in React.js by creating 30 different components for coding practice and displaying them on a website",
   },
 ];
-
-export default faqData;
