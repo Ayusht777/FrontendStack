@@ -4,15 +4,15 @@ import { useState } from "react";
 import { FaGithub } from "react-icons/fa6";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Heading from "@/Components/Shared/Heading";
-function Carousel() {
+const Carousel = () => {
   const [left, setLeft] = useState(false);
   const ref = useRef();
 
   return (
-    <section id="#our-team" className="w-4/5 text-white relative">
-      <Heading title={"Our Team"} />
+    <section id="#our-team" className="w-4/5 text-white relative space-y-16">
+      <Heading title={"Our Team"} type="sub" />
       <IoIosArrowBack
-        className={`absolute top-[50%] -left-9 translate-y-[100%]  text-5xl text-Logo hidden md:block  ${
+        className={`absolute top-[38%] -left-9 translate-y-[100%]  text-5xl text-Logo hidden md:block  ${
           left ? "md:block" : "md:hidden"
         }`}
         onClick={() => {
@@ -49,7 +49,7 @@ function Carousel() {
               className="w-full aspect-square rounded-xl  relative z-10 bg-transparent"
             />
             <div className="flex justify-between items-center pt-4 ">
-              <h3 className="text-xl font-semibold">{item.name}</h3>
+              <h3 className="text-xl font-semibold">{item?.name}</h3>
               <a
                 href={item.githubLink}
                 target="_blank"
@@ -62,7 +62,7 @@ function Carousel() {
         ))}
       </div>
       <IoIosArrowForward
-        className={`absolute top-[50%] -right-7 translate-y-[100%]  text-5xl text-Logo hidden ${
+        className={`absolute top-[38%] -right-7 translate-y-[100%]  text-5xl text-Logo hidden ${
           left ? "md:hidden" : "md:block"
         }`}
         onClick={() => {
@@ -72,6 +72,6 @@ function Carousel() {
       />
     </section>
   );
-}
+};
 
 export default Carousel;
