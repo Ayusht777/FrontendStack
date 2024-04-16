@@ -4,8 +4,10 @@ pnpm run dev
 pnpm install unified remark-parse remark-rehype rehype-stringify @shikijs/rehype //codeblock
 pnpm i react-router-dom
 pnpm i react-icons
-pnpm i html-react-parser
+
 
 // imp
 
-use @ to import any file
+use @ to import any file 
+
+horny her shit
