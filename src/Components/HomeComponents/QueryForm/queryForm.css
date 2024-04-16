@@ -1,0 +1,7 @@
+.input-field:-webkit-autofill,
+.input-field:-webkit-autofill:hover,
+.input-field:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px #111213 inset;
+  transition: background-color 5000s ease-in-out 0s; /* This value is very important as it removes the white background after selecting autocomplete option */
+}

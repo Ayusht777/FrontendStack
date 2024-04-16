@@ -11,7 +11,7 @@ const FaqItem = ({ question, answer }) => {
 
   return (
     <div
-      className={`w-full md:p-4 p-2 rounded-lg border-Border border-2 transition-all ease-in-out duration-300  space-y-2 ${
+      className={`w-full md:p-4 p-2 rounded-lg bg-inherit border-Border border-2 transition-all ease-in-out duration-300  space-y-2 ${
         isOpen ? "bg-Nav " : "bg-background "
       }`}
     >
@@ -26,7 +26,7 @@ const FaqItem = ({ question, answer }) => {
           onClick={toggleAnswer}
         >
           {" "}
-          <HiMiniXMark></HiMiniXMark>
+          <HiMiniXMark/>
         </button>
       </div>
       <p
