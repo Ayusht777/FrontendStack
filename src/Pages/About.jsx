@@ -5,7 +5,7 @@ import Heading from "@/Components/Shared/Heading";
 import Navbar from "@/Components/Shared/Navbar";
 const About = () => {
   return (
-    <div className="w-full bg-Bg  flex flex-col justify-start items-center min-h-screen space-y-12">
+    <div className="w-full bg-Bg  flex flex-col justify-start items-center min-h-screen space-y-32">
       <Navbar></Navbar>
       <section className="text-center text-white space-y-8">
         <Heading title={"About Us"} />
