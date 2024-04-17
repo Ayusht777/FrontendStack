@@ -1,7 +1,7 @@
 import Heading from "@/Components/Shared/Heading";
 import { challenge } from "@/Components/Shared/FAQ/Challenge.Data";
 import { useState } from "react";
-import { IoIosArrowUp } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import HTMLReactParser from "html-react-parser";
 import { HiLink } from "react-icons/hi2";
 const Challenges = ({ question, answer, link }) => {
@@ -13,7 +13,7 @@ const Challenges = ({ question, answer, link }) => {
           <div className="h-2 w-2 md:h-3 md:w-3 rounded-[100%] bg-white"></div>{" "}
           {question}
         </h1>
-        <IoIosArrowUp
+        <IoIosArrowDown
           className={`text-Logo text-xl md:text-2xl transition-all cursor-pointer ${
             showAns && "rotate-180"
           }`}
