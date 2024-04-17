@@ -1,0 +1,133 @@
+:root {
+  --Logo: #D7F400;
+  --Border: #404040;
+}
+
+.loading .layer1 {
+  -webkit-animation: 4s linear infinite;
+  animation: 4s linear infinite;
+  -webkit-animation-name: cycle1;
+  animation-name: cycle1;
+}
+
+.loading .layer2 {
+  -webkit-animation: 4s linear infinite;
+  animation: 4s linear infinite;
+  -webkit-animation-name: cycle2;
+  animation-name: cycle2;
+}
+
+.loading .layer3 {
+  -webkit-animation: 4s linear infinite;
+  animation: 4s linear infinite;
+  -webkit-animation-name: cycle3;
+  animation-name: cycle3;
+}
+
+
+@-webkit-keyframes cycle1 {
+
+  0%,
+  65% {
+    fill: var(--Logo);
+    
+  }
+
+  75%,
+  82% {
+    fill: var(--Border);
+  }
+
+  92%,
+  100% {
+    fill: var(--Logo);
+  }
+}
+
+@keyframes cycle1 {
+
+  0%,
+  65% {
+    fill: var(--Logo);
+  }
+
+  75%,
+  82% {
+    fill: var(--Border);
+  }
+
+  92%,
+  100% {
+    fill: var(--Logo);
+  }
+}
+
+@-webkit-keyframes cycle2 {
+
+  0%,
+  40% {
+    fill: var(--Logo);
+  }
+
+  50%,
+  86% {
+    fill: var(--Border);
+  }
+
+  96%,
+  100% {
+    fill: var(--Logo);
+  }
+}
+
+@keyframes cycle2 {
+
+  0%,
+  40% {
+    fill: var(--Logo);
+  }
+
+  50%,
+  86% {
+    fill: var(--Border);
+  }
+
+  96%,
+  100% {
+    fill: var(--Logo);
+  }
+}
+
+@-webkit-keyframes cycle3 {
+
+  0%,
+  15% {
+    fill: var(--Logo);
+  }
+
+  25%,
+  90% {
+    fill: var(--Border);
+  }
+
+  100% {
+    fill: var(--Logo);
+  }
+}
+
+@keyframes cycle3 {
+
+  0%,
+  15% {
+    fill: var(--Logo);
+  }
+
+  25%,
+  90% {
+    fill: var(--Border);
+  }
+
+  100% {
+    fill: var(--Logo);
+  }
+}

@@ -4,11 +4,17 @@
   --Nav: #1a1c1d;
 }
 
+section {
+  scrollbar-width: none;
+  
+}
+
+
 code {
   counter-reset: line;
 }
 
-code > [data-line]::before {
+code>[data-line]::before {
   counter-increment: line;
   content: counter(line);
   display: inline-block;
@@ -16,10 +22,4 @@ code > [data-line]::before {
   margin-right: 0.5rem;
   text-align: right;
   color: var(--text-color);
-}
-
-@media (max-width: 640px) {
-  section {
-    scrollbar-width: none;
-  }
 }

@@ -11,6 +11,9 @@ dependencies:
   html-react-parser:
     specifier: ^5.1.10
     version: 5.1.10(@types/react@18.2.67)(react@18.2.0)
+  lucide-react:
+    specifier: ^0.368.0
+    version: 0.368.0(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -2464,6 +2467,14 @@ packages:
     dependencies:
       yallist: 3.1.1
     dev: true
+
+  /lucide-react@0.368.0(react@18.2.0):
+    resolution: {integrity: sha512-soryVrCjheZs8rbXKdINw9B8iPi5OajBJZMJ1HORig89ljcOcEokKKAgGbg3QWxSXel7JwHOfDFUdDHAKyUAMw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /mdast-util-from-markdown@2.0.0:
     resolution: {integrity: sha512-n7MTOr/z+8NAX/wmhhDji8O3bRvPTV/U0oTCaZJkjhPSKTPhS3xufVhKGF8s1pJ7Ox4QgoIU7KHseh09S+9rTA==}

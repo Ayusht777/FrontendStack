@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
-
-// Lazy loading components
+import Loader from "@/Utils/Loader/Loader"
 const Home = lazy(() => import("@/Pages/Home"));
 const Gallery = lazy(() => import("@/Pages/Gallery"));
 const About = lazy(() => import("@/Pages/About"));
@@ -15,7 +14,7 @@ const AppRoutes = () => {
         <Route
           path="/"
           element={
-            <Suspense fallback={<div>Loading Home...</div>}>
+            <Suspense fallback={<Loader/>}>
               <Home />
             </Suspense>
           }
@@ -23,7 +22,7 @@ const AppRoutes = () => {
         <Route
           path="/about"
           element={
-            <Suspense fallback={<div>Loading About...</div>}>
+            <Suspense fallback={<Loader/>}>
               <About />
             </Suspense>
           }
@@ -31,7 +30,7 @@ const AppRoutes = () => {
         <Route
           path="/gallery"
           element={
-            <Suspense fallback={<div>Loading Gallery...</div>}>
+            <Suspense fallback={<Loader/>}>
               <Gallery />
             </Suspense>
           }
@@ -39,7 +38,7 @@ const AppRoutes = () => {
         <Route
           path="/faq"
           element={
-            <Suspense fallback={<div>Loading FAQ...</div>}>
+            <Suspense fallback={<Loader/>}>
               <Faq />
             </Suspense>
           }
@@ -47,7 +46,7 @@ const AppRoutes = () => {
         <Route
           path="*"
           element={
-            <Suspense fallback={<div>Loading FAQ...</div>}>
+            <Suspense fallback={<Loader/>}>
              <NotFound404/>
             </Suspense>
           }
