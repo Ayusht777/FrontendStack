@@ -1,7 +1,7 @@
 const Heading = ({ title, type = "main", className = "" }) => {
   const head = {
     main: "md:text-5xl text-3xl font-extrabold",
-    sub: "md:text-5xl text-3xl font-extrabold",
+    sub: "md:text-5xl text-3xl  font-bold",
   };
   return (
     <h1
