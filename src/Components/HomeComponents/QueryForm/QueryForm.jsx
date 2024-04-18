@@ -49,18 +49,22 @@ const QueryForm = () => {
         />
 
           </div>
-
+        <div className='select-container'>
           <select
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className="input-field rounded-lg p-4 bg-Bg border-Border border-2 text-white placeholder-white flex grow outline-none focus:bg-Bg"
+            className="select-element w-full rounded-lg p-4 bg-Bg border-Border border-2 text-white placeholder-white flex grow outline-none focus:bg-Bg "
             required
+            
           >
             <option value="">Choose Your Subject</option>
             <option value="General Inquiry">General Inquiry</option>
             <option value="Feedback">Feedback</option>
           </select>
+        </div>
+
+
 
           <textarea
             name="message"
