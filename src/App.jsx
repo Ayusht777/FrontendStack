@@ -1,12 +1,12 @@
 import AppRoutes from "@/Routes/AppRoutes";
-import ComponentRenderPage from '@/Pages/ComponentRenderPage'
+import PreviewPage  from '@/Pages/PreviewPage'
 
 
 function App() {
   return (
     <>
       {/* <AppRoutes></AppRoutes> */}
-      {/* <ComponentRenderPage></ComponentRenderPage> */}
+      {/* <PreviewPage></PreviewPage> */}
 
 
     </>

@@ -1,87 +1,54 @@
-import { useEffect, useState } from "react";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
-import rehypePrettyCode from "rehype-pretty-code";
+import { useState, useEffect } from "react";
+import SyntaxHighlighter from "@/Components/PreviewPageComponents/SyntaxHighlighter";
+import AnimatedTabs from "@/Components/Shared/AnimatedTabs";
+import CopyToClipBoard from "@/Utils/CopyToClipBoard";
 import "./style.css";
-
-const CodeBlockSkeleton = () => {
+const ComponentPreview = ({ PreviewComponent, isVisible }) => {
+  const RenderedComponent = PreviewComponent;
   return (
-    <section className="bg-gradient-to-tr from-Nav to-Nav/10 md:w-4/5 w-full  max-h-[560px] h-[560px]   scroll-smooth md:p-4 p-2  ">
-      <div className="w-full mx-auto animate-pulse space-y-2.5 bg-inherit">
-        <p className="h-2 bg-Border rounded-lg w-2/5"></p>
-        <p className=" w-2/6 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-4/6 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-1/4 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-3/4 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-2/6 h-2  bg-Border rounded-lg "></p>
-        <p className="h-2 bg-Border rounded-lg w-2/5"></p>
-        <p className=" w-1/6 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-4/6 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-1/4 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-3/4 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-2/6 h-2  bg-Border rounded-lg "></p>
-        <p className="h-2 bg-Border rounded-lg w-2/5"></p>
-        <p className=" w-2/6 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-4/6 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-1/4 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-3/4 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-2/6 h-2  bg-Border rounded-lg "></p>
-        <p className="h-2 bg-Border rounded-lg w-2/5"></p>
-        <p className=" w-2/6 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-4/6 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-1/4 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-3/4 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-2/6 h-2  bg-Border rounded-lg "></p>
-        <p className="h-2 bg-Border rounded-lg w-2/5"></p>
-        <p className=" w-2/6 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-4/6 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-1/4 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-3/4 h-2  bg-Border rounded-lg "></p>
-        <p className=" w-4/5 h-2  bg-Border rounded-lg "></p>
-      </div>
+    <section
+      className={`w-auto max-h-[520px] h-[520px] overflow-auto md:p-4 p-2 scroll-thin bg-gradient-to-tr from-Nav to-Nav/10 ${
+        isVisible ? "hidden" : "flex"
+      } justify-center items-start`}
+    >
+      <RenderedComponent />
     </section>
   );
 };
-const CodeBlock = ({ CodeSnippets }) => {
-  const [processedCode, setProcessedCode] = useState(null);
-  const [IsLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    const CreateCodeBlock = async () => {
-      setIsLoading(false);
-      try {
-        const processed = await unified()
-          .use(remarkParse)
-          .use(remarkRehype)
-          .use(rehypePrettyCode, {
-            defaultLang: "jsx",
-            theme: "houston",
-            keepBackground: false,
-          })
-          .use(rehypeStringify)
-          .process(CodeSnippets);
-
-        setProcessedCode(processed.toString());
-      } catch (error) {
-        console.error("Error processing code:", error);
-      } finally {
-        setIsLoading(true);
-      }
-    };
-    CreateCodeBlock();
-  }, [CodeSnippets]);
+const CodeBlock = ({ CodeSnippets, PreviewComponent }) => {
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const handleActiveTabIndexChange = (newIndex) => {
+    setActiveTabIndex(newIndex);
+    console.log(activeTabIndex);
+  };
   return (
     <>
-      {IsLoading ? (
-        <section className="w-auto max-h-[520px] overflow-scroll box-border scroll-smooth md:m-4 m-2 bg-gradient-to-tr from-Nav to-Nav/10 relative">
+      <section className="md:w-4/5 w-full bg-Nav rounded-lg relative my-4">
+        <AnimatedTabs
+          Tabs={[
+            { id: "preview", name: "PREVIEW" },
+            { id: "code", name: "CODE" },
+          ]}
+          onActiveTabIndexChange={handleActiveTabIndexChange}
+        />
 
-          <div  dangerouslySetInnerHTML={{ __html: processedCode }} />
+        <ComponentPreview
+          PreviewComponent={PreviewComponent}
+          isVisible={activeTabIndex === 0 ? false : true}
+        />
 
+        <CopyToClipBoard
+          textToCopy={CodeSnippets}
+          isVisible={activeTabIndex === 1 ? false : true}
+        />
+        <section
+          className={`${
+            activeTabIndex === 1 ? "block" : "hidden"
+          } w-auto max-h-[520px] overflow-scroll box-border scroll-smooth md:m-4 m-2 bg-gradient-to-tr from-Nav to-Nav/10 relative`}
+        >
+          <SyntaxHighlighter CodeSnippets={CodeSnippets} />
         </section>
-      ) : (
-        <CodeBlockSkeleton />
-      )}
+      </section>
     </>
   );
 };
