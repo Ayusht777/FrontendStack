@@ -1,30 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-/* @font-face {
-    font-family: 'Mona Sans';
-    src:
-        url('./Fonts/Mona-Sans.woff2') format('woff2 supports variations'),
-        url('./Fonts/Mona-Sans.woff2') format('woff2-variations');
-    font-weight: 200 900;
-    font-stretch: 75% 125%;
-}
-
-html {
-    font-family: 'Mona Sans';
-} */
 
 html {
   font-family: "Inter", sans-serif;
-  /* Set Inter as the default font for the entire document */
 }
+
 .cust-scrollbar::-webkit-scrollbar-thumb {
   background: #404040;
   height: 8px;
   width: 8px;
   border-radius: 3px;
 }
+
 .cust-scrollbar::-webkit-scrollbar {
   height: 8px;
   width: 8px;
