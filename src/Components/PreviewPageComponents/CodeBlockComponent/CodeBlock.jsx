@@ -46,7 +46,7 @@ const CodeBlock = ({ CodeSnippets, PreviewComponent }) => {
             activeTabIndex === 1 ? "block" : "hidden"
           } w-auto max-h-[520px] overflow-scroll box-border scroll-smooth md:m-4 m-2 bg-gradient-to-tr from-Nav to-Nav/10 relative`}
         >
-          <SyntaxHighlighter CodeSnippets={CodeSnippets} />
+          <SyntaxHighlighter CodeSnippets={CodeSnippets} Language={"jsx"}/>
         </section>
       </section>
     </>

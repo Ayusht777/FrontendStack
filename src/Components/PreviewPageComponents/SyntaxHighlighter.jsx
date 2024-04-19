@@ -6,7 +6,7 @@ import rehypeStringify from "rehype-stringify";
 import rehypePrettyCode from "rehype-pretty-code";
 
 const CodeBlockSkeleton = ({ skeletonHeight = 0 }) => {
-  const CalculateItemLength = Math.round(skeletonHeight / 24 / 10)
+  const calculateItemLength = Math.round(skeletonHeight / 24 / 10);
   // Calculate the number of rows to display in the skeleton based on the height of the code block
   const skeletonItemWidths = [
     "w-2/5",
@@ -17,12 +17,12 @@ const CodeBlockSkeleton = ({ skeletonHeight = 0 }) => {
     "w-4/5",
   ];
   const repeatedSkeletonItems = Array.from(
-    { length: CalculateItemLength },
+    { length: calculateItemLength },
     () => skeletonItemWidths
   ).flat();
 
   return (
-    <section className="bg-gradient-to-tr from-Nav to-Nav/10 md:w-4/5 w-full  scroll-smooth md:p-4 p-2">
+    <section className="bg-gradient-to-tr from-Nav to-Nav/10 md:w-4/5 w-full scroll-smooth md:p-4 p-2">
       <div className="w-full mx-auto animate-pulse space-y-2.5 bg-inherit">
         {repeatedSkeletonItems.map((item, index) => (
           <p key={index} className={`h-2 bg-Border rounded-lg ${item}`}></p>
@@ -32,7 +32,7 @@ const CodeBlockSkeleton = ({ skeletonHeight = 0 }) => {
   );
 };
 
-const SyntaxHighlighter = ({ CodeSnippets }) => {
+const SyntaxHighlighter = ({ CodeSnippets, Language, LineNumbers = true }) => {
   const [processedCode, setProcessedCode] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const codeDivRef = useRef(null);
@@ -45,12 +45,23 @@ const SyntaxHighlighter = ({ CodeSnippets }) => {
           .use(remarkParse)
           .use(remarkRehype)
           .use(rehypePrettyCode, {
-            defaultLang: "jsx",
+            defaultLang: Language,
             theme: "houston",
             keepBackground: false,
           })
           .use(rehypeStringify)
           .process(CodeSnippets);
+
+        if (LineNumbers) {
+          const codeElement = codeDivRef.current?.querySelector("code");
+          if (codeElement) {
+            codeElement.classList.add("line-numbers");
+          } else {
+            console.warn(
+              "Line number styling requires a `code` tag in processed code"
+            );
+          }
+        }
 
         setProcessedCode(processed.toString());
       } catch (error) {
@@ -59,14 +70,13 @@ const SyntaxHighlighter = ({ CodeSnippets }) => {
         setIsLoading(false);
         if (processedCode && codeDivRef.current) {
           const height = codeDivRef.current.clientHeight;
-          console.log("Height of the div:", height, height / 24 / 6);
           setCodeDivHeight(height);
         }
       }
     };
 
     processCodeBlock();
-  }, [CodeSnippets, processedCode]);
+  }, [CodeSnippets, processedCode, Language, LineNumbers]);
 
   return isLoading ? (
     <CodeBlockSkeleton skeletonHeight={codeDivHeight} />
