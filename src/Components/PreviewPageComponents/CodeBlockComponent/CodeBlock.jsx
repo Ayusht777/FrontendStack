@@ -37,16 +37,13 @@ const CodeBlock = ({ CodeSnippets, PreviewComponent }) => {
           isVisible={activeTabIndex === 0 ? false : true}
         />
 
-        <CopyToClipBoard
-          textToCopy={CodeSnippets}
-          isVisible={activeTabIndex === 1 ? false : true}
-        />
+        {activeTabIndex === 1 && <CopyToClipBoard textToCopy={CodeSnippets} />}
         <section
           className={`${
             activeTabIndex === 1 ? "block" : "hidden"
           } w-auto max-h-[520px] overflow-scroll box-border scroll-smooth md:m-4 m-2 bg-gradient-to-tr from-Nav to-Nav/10 relative`}
         >
-          <SyntaxHighlighter CodeSnippets={CodeSnippets} Language={"jsx"}/>
+          <SyntaxHighlighter CodeSnippets={CodeSnippets} Language={"jsx"} />
         </section>
       </section>
     </>
