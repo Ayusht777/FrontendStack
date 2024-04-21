@@ -5,7 +5,7 @@ const Heading = ({ title, type = "main", className = "" }) => {
   };
   return (
     <h1
-      className={`text-center bg-gradient-to-r from-white to-white/70 text-transparent bg-clip-text tracking-tighter !leading-[5rem] ${head[type]} ${className}`}
+      className={`text-center bg-gradient-to-b from-white to-white/70 text-transparent bg-clip-text tracking-tighter !leading-[5.5rem] ${head[type]} ${className}`}
       aria-label={title}
     >
       {title}
