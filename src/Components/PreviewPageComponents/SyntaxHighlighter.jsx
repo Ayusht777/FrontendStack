@@ -52,17 +52,6 @@ const SyntaxHighlighter = ({ CodeSnippets, Language, LineNumbers = true }) => {
           .use(rehypeStringify)
           .process(CodeSnippets);
 
-        if (LineNumbers) {
-          const codeElement = codeDivRef.current?.querySelector("code");
-          if (codeElement) {
-            codeElement.classList.add("line-numbers");
-          } else {
-            console.warn(
-              "Line number styling requires a `code` tag in processed code"
-            );
-          }
-        }
-
         setProcessedCode(processed.toString());
       } catch (error) {
         console.error("Error processing code:", error);
@@ -71,7 +60,19 @@ const SyntaxHighlighter = ({ CodeSnippets, Language, LineNumbers = true }) => {
         if (processedCode && codeDivRef.current) {
           const height = codeDivRef.current.clientHeight;
           setCodeDivHeight(height);
+          if (LineNumbers) {
+            const codeElement = codeDivRef.current?.querySelector("code");
+            if (codeElement) {
+              codeElement.classList.add("line-numbers");
+            } else {
+              console.warn(
+                "Line number styling requires a `code` tag in processed code"
+              );
+            }
+          }
         }
+
+        
       }
     };
 

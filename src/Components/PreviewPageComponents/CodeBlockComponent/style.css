@@ -10,11 +10,11 @@ section {
 }
 
 
-code {
+.line-numbers {
   counter-reset: line;
 }
 
-code>[data-line]::before {
+.line-numbers>[data-line]::before {
   counter-increment: line;
   content: counter(line);
   display: inline-block;
