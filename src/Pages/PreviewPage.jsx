@@ -1,11 +1,12 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-
 import DropdownMenu from "@/Components/PreviewPageComponents/DropdownMenuComponent/DropdownMenu";
 import { componentsData } from "@/Data/Data";
 import HeroSection from "@/Components/PreviewPageComponents/HeroSection";
 import Test from "@/Components/Test";
 import CodeBlock from "@/Components/PreviewPageComponents/CodeBlockComponent/CodeBlock";
+import StepsSection from "@/Components/PreviewPageComponents/StepsComponent/StepsSection";
+import ReferenceSection from '@/Components/PreviewPageComponents/ReferenceSection'
 const PreviewPage = () => {
   return (
     <div className="w-full h-full flex justify-center items-center flex-col bg-Bg  md:px-0 px-4">
@@ -22,6 +23,8 @@ const PreviewPage = () => {
         CodeSnippets={componentsData[0].code}
         PreviewComponent={componentsData[0].renderedComponent}
       />
+      <StepsSection />
+      <ReferenceSection/>
     </div>
   );
 };
