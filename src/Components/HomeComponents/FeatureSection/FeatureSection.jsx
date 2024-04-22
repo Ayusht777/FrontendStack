@@ -16,14 +16,14 @@ const FeatureSection = () => {
             </div>
             <div className="lg:ml-8 basis-8/12 ">
               <h3 className="text-lg font-semibold text-left text-white">Key Components To Build a Website</h3>
-              <p className="text-gray-300 text-left py-4">Designing a website is a meticulous task that involves selecting and implementing components thoughtfully, accompanied by a thorough interview process. The user experience and responsive navigation are key factors in ensuring a functional and visually appealing site. </p>
+              <p className="text-gray-300 text-justify py-4">Designing a website is a meticulous task that involves selecting and implementing components thoughtfully, accompanied by a thorough interview process. The user experience and responsive navigation are key factors in ensuring a functional and visually appealing site. </p>
             </div>
           </div>
 
           <div className="flex items-center justify-center  flex-wrap-reverse bg-Nav lg:justify-between">
           <div className=" basis-8/12 lg:mr-8 m-6">
               <h3 className="text-lg font-semibold text-left text-white">Crafted Using Stable Tech stack</h3>
-              <p className="text-gray-300 text-left py-4">Designing a website is a meticulous task that involves selecting and implementing components thoughtfully, accompanied by a thorough interview process. The user experience and responsive navigation are key factors in ensuring a functional and visually appealing site. </p>
+              <p className="text-gray-300 text-justify py-4">Designing a website is a meticulous task that involves selecting and implementing components thoughtfully, accompanied by a thorough interview process. The user experience and responsive navigation are key factors in ensuring a functional and visually appealing site. </p>
             </div>
             <div className="bg-black p-4 rounded-lg sm:h-44 sm:w-60 h:36 w-52 flex items-center justify-center m-4">
               <FaReact className='text-Logo text-9xl '/>
@@ -36,7 +36,7 @@ const FeatureSection = () => {
             </div>
             <div className="lg:ml-8 basis-8/12">
               <h3 className="text-lg font-semibold text-left text-white">Live Preview and Code </h3>
-              <p className="text-gray-300 text-left py-4">Designing a website is a meticulous task that involves selecting and implementing components thoughtfully, accompanied by a thorough interview process. The user experience and responsive navigation are key factors in ensuring a functional and visually appealing site.  </p>
+              <p className="text-gray-300 text-justify py-4">Designing a website is a meticulous task that involves selecting and implementing components thoughtfully, accompanied by a thorough interview process. The user experience and responsive navigation are key factors in ensuring a functional and visually appealing site.  </p>
             </div>
           </div>
         
