@@ -1,30 +1,27 @@
-import { ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
-import DropdownMenu from "@/Components/PreviewPageComponents/DropdownMenuComponent/DropdownMenu";
 import { componentsData } from "@/Data/Data";
 import HeroSection from "@/Components/PreviewPageComponents/HeroSection";
 import Test from "@/Components/Test";
 import CodeBlock from "@/Components/PreviewPageComponents/CodeBlockComponent/CodeBlock";
 import StepsSection from "@/Components/PreviewPageComponents/StepsComponent/StepsSection";
-import ReferenceSection from '@/Components/PreviewPageComponents/ReferenceSection'
+import ReferenceSection from "@/Components/PreviewPageComponents/ReferenceSection";
+import ToolbarSection from "@/Components/PreviewPageComponents/ToolbarSection";
+import { useParams } from "react-router-dom";
 const PreviewPage = () => {
+  const p = useParams();
+  console.log(p)
+  
   return (
     <div className="w-full h-full flex justify-center items-center flex-col bg-Bg  md:px-0 px-4">
       <Test />
-      <HeroSection />
-      <div className="md:w-4/5 w-full flex justify-between items-start my-4">
-        {/* <button className="size-7 bg-Nav rounded-md text-Logo "><Link to="/gallery"><ArrowLeft strokeWidth="2" className="mx-auto "/></Link></button> */}
-        <button className="md:size-9 size-7 bg-Nav rounded-md text-Logo">
-          <ArrowLeft strokeWidth="2" className="mx-auto " />
-        </button>
-        <DropdownMenu></DropdownMenu>
-      </div>
+      <HeroSection Title={"Explore the Live Preview and Visualize the Code"}/>
+      <ToolbarSection />
       <CodeBlock
         CodeSnippets={componentsData[0].code}
         PreviewComponent={componentsData[0].renderedComponent}
       />
+
       <StepsSection />
-      <ReferenceSection/>
+      <ReferenceSection />
     </div>
   );
 };
