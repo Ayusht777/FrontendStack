@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import Loader from "@/Utils/Loader/Loader"
+import Loader from "@/Utils/Loader/Loader";
 const Home = lazy(() => import("@/Pages/Home"));
 const Gallery = lazy(() => import("@/Pages/Gallery"));
 const About = lazy(() => import("@/Pages/About"));
 const Faq = lazy(() => import("@/Pages/Faq"));
+const PreviewPage = lazy(() => import("@/Pages/PreviewPage"));
 const NotFound404 = lazy(() => import("@/Pages/NotFound404"));
 
 const AppRoutes = () => {
@@ -14,7 +15,7 @@ const AppRoutes = () => {
         <Route
           path="/"
           element={
-            <Suspense fallback={<Loader/>}>
+            <Suspense fallback={<Loader />}>
               <Home />
             </Suspense>
           }
@@ -22,7 +23,7 @@ const AppRoutes = () => {
         <Route
           path="/about"
           element={
-            <Suspense fallback={<Loader/>}>
+            <Suspense fallback={<Loader />}>
               <About />
             </Suspense>
           }
@@ -30,15 +31,23 @@ const AppRoutes = () => {
         <Route
           path="/gallery"
           element={
-            <Suspense fallback={<Loader/>}>
+            <Suspense fallback={<Loader />}>
               <Gallery />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/gallery/PreviewPage/:ComponentName"
+          element={
+            <Suspense fallback={<Loader />}>
+              <PreviewPage />
             </Suspense>
           }
         />
         <Route
           path="/faq"
           element={
-            <Suspense fallback={<Loader/>}>
+            <Suspense fallback={<Loader />}>
               <Faq />
             </Suspense>
           }
@@ -46,8 +55,8 @@ const AppRoutes = () => {
         <Route
           path="*"
           element={
-            <Suspense fallback={<Loader/>}>
-             <NotFound404/>
+            <Suspense fallback={<Loader />}>
+              <NotFound404 />
             </Suspense>
           }
         />
