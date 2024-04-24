@@ -55,7 +55,7 @@ const Carousel = ({ className }) => {
             {data.map((item, index) => (
               <div
                 className={`h-3 w-3  rounded-full cursor-pointer transition ease-out  ${
-                  Index == index ? "bg-Logo w-11" : " bg-Border"
+                  Index == index ? "!w-11 bg-Logo" : " bg-Border"
                 }`}
                 onClick={() => {
                   setIndex(index);
