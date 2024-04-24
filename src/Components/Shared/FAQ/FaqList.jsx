@@ -26,7 +26,7 @@ const FaqItem = ({ question, answer }) => {
           onClick={toggleAnswer}
         >
           {" "}
-          <HiMiniXMark/>
+          <HiMiniXMark />
         </button>
       </div>
       <p
@@ -51,7 +51,7 @@ const FaqList = () => {
           <FaqItem key={index} question={item.question} answer={item.answer} />
         ))}
       </div>
-      <Button label="Load More..." bgColor="Nav" width="w-52" />
+      <Button>Load more ...</Button>
     </section>
   );
 };
