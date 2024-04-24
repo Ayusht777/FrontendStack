@@ -16,7 +16,11 @@ const ComponentPreview = ({ PreviewComponent, isVisible }) => {
   );
 };
 const CodeBlock = ({ CodeSnippets, PreviewComponent }) => {
-  const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const TabData = [
+    { id: "preview", name: "PREVIEW" },
+    { id: "code", name: "CODE" },
+  ]
+  const [activeTabIndex, setActiveTabIndex] = useState(TabData[0].id);
   const handleActiveTabIndexChange = (newIndex) => {
     setActiveTabIndex(newIndex);
     console.log(activeTabIndex);
@@ -25,22 +29,19 @@ const CodeBlock = ({ CodeSnippets, PreviewComponent }) => {
     <>
       <section className="md:w-4/5 w-full bg-Nav rounded-lg relative my-4">
         <AnimatedTabs
-          Tabs={[
-            { id: "preview", name: "PREVIEW" },
-            { id: "code", name: "CODE" },
-          ]}
+          Tabs={TabData}
           onActiveTabIndexChange={handleActiveTabIndexChange}
         />
 
         <ComponentPreview
           PreviewComponent={PreviewComponent}
-          isVisible={activeTabIndex === 0 ? false : true}
+          isVisible={activeTabIndex === "preview" ? false : true}
         />
 
-        {activeTabIndex === 1 && <CopyToClipBoard textToCopy={CodeSnippets} />}
+        {activeTabIndex === "code" && <CopyToClipBoard textToCopy={CodeSnippets} />}
         <section
           className={`${
-            activeTabIndex === 1 ? "block" : "hidden"
+            activeTabIndex === "code" ? "block" : "hidden"
           } w-auto max-h-[520px] overflow-scroll box-border scroll-smooth md:m-4 m-2 bg-gradient-to-tr from-Nav to-Nav/10 relative`}
         >
           <SyntaxHighlighter CodeSnippets={CodeSnippets} Language={"jsx"} />
