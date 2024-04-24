@@ -63,61 +63,61 @@
         "id": 11,
         "imageUrl": "(link unavailable)",
         "ComponentName": "Stepper",
-        "type": "intermediate"
+        "type": "medium"
     },
     {
         "id": 12,
         "imageUrl": "(link unavailable)",
         "ComponentName": "Carousel",
-        "type": "intermediate"
+        "type": "medium"
     },
     {
         "id": 13,
         "imageUrl": "(link unavailable)",
         "ComponentName": "Pagination",
-        "type": "intermediate"
+        "type": "medium"
     },
     {
         "id": 14,
         "imageUrl": "(link unavailable)",
         "ComponentName": "Progress Bar",
-        "type": "intermediate"
+        "type": "medium"
     },
     {
         "id": 15,
         "imageUrl": "(link unavailable)",
         "ComponentName": "Alerts",
-        "type": "intermediate"
+        "type": "medium"
     },
     {
         "id": 16,
         "imageUrl": "(link unavailable)",
         "ComponentName": "Tooltips",
-        "type": "intermediate"
+        "type": "medium"
     },
     {
         "id": 17,
         "imageUrl": "(link unavailable)",
         "ComponentName": "Popovers",
-        "type": "intermediate"
+        "type": "medium"
     },
     {
         "id": 18,
         "imageUrl": "(link unavailable)",
         "ComponentName": "Notifications",
-        "type": "intermediate"
+        "type": "medium"
     },
     {
         "id": 19,
         "imageUrl": "(link unavailable)",
         "ComponentName": "Collapse",
-        "type": "intermediate"
+        "type": "medium"
     },
     {
         "id": 20,
         "imageUrl": "(link unavailable)",
         "ComponentName": "Offcanvas",
-        "type": "intermediate"
+        "type": "medium"
     },
     {
         "id": 21,
