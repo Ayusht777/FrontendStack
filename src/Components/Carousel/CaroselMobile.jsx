@@ -5,8 +5,7 @@ import { FaGithub } from "react-icons/fa6";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Heading from "@/Components/Shared/Heading";
 const Carousel = ({ className }) => {
-  const [left, setLeft] = useState(false);
-  const ref = useRef();
+  const [Index, setIndex] = useState(0);
 
   return (
     <section
@@ -15,26 +14,16 @@ const Carousel = ({ className }) => {
     >
       <Heading title={"Our Team"} type="sub" />
       <IoIosArrowBack
-        className={`absolute top-[38%] -left-9 translate-y-[100%]  text-5xl text-Logo hidden md:block  ${
-          left ? "md:block" : "md:hidden"
+        className={`absolute top-[38%] -left-9 translate-y-[100%]  text-4xl text-Logo ${
+          Index == 0 && "hidden"
         }`}
         onClick={() => {
-          setLeft(!left);
-          ref.current.scrollLeft = 0;
+          setIndex(Index - 1 < 0 ? data.length - 1 : Index - 1);
         }}
       />
-      <div
-        className="w-[99%] cust-scrollbar pb-7 flex-wrap items-center justify-center md:justify-start md:flex-nowrap md:overflow-x-scroll flex gap-4 snap-x scroll-smooth "
-        ref={ref}
-        onScroll={() => {
-          setLeft(ref.current.scrollLeft === 0 ? false : true);
-        }}
-      >
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className="w-[80%]  sm:basis-[45%] md:basis-[32.2%] shrink-0 p-4 relative rounded-xl bg-[#252525] snap-center "
-          >
+      {data && (
+        <div className="space-y-7">
+          <div className="bg-[#252525] rounded-xl aspect-square p-4 relative transition-all cursor-pointer">
             <div className=" animate-pulse absolute top-4 left-4 right-4 bottom-[4.5rem] rounded-xl flex justify-center items-center  bg-gray-700">
               <svg
                 className="w-10 h-10 text-gray-600-translate-x-[50%] -translate-y-[50%]"
@@ -47,14 +36,14 @@ const Carousel = ({ className }) => {
               </svg>
             </div>
             <img
-              src={item.avatar}
-              alt={item.alt}
+              src={data[Index].avatar}
+              alt={data[Index].alt}
               className="w-full aspect-square rounded-xl  relative z-10 bg-transparent"
             />
             <div className="flex justify-between items-center pt-4 ">
-              <h3 className="text-xl font-semibold">{item?.name}</h3>
+              <h3 className="text-xl font-semibold">{data[Index].name}</h3>
               <a
-                href={item.githubLink}
+                href={data[Index].githubLink}
                 target="_blank"
                 className="rounded-xl p-2 bg-Border overflow-hidden"
               >
@@ -62,15 +51,28 @@ const Carousel = ({ className }) => {
               </a>
             </div>
           </div>
-        ))}
-      </div>
+          <div className="flex gap-2 items-center justify-center">
+            {data.map((item, index) => (
+              <div
+                className={`h-3 w-3  rounded-full cursor-pointer transition ease-out  ${
+                  Index == index ? "bg-Logo w-11" : " bg-Border"
+                }`}
+                onClick={() => {
+                  setIndex(index);
+                }}
+                key={index}
+              ></div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <IoIosArrowForward
-        className={`absolute top-[38%] -right-7 translate-y-[100%]  text-5xl text-Logo hidden ${
-          left ? "md:hidden" : "md:block"
+        className={`absolute top-[38%] -right-9 translate-y-[100%]  text-4xl text-Logo  ${
+          Index === data.length - 1 && "hidden"
         }`}
         onClick={() => {
-          setLeft(!left);
-          ref.current.scrollLeft = 419;
+          setIndex((Index + 1) % data.length);
         }}
       />
     </section>

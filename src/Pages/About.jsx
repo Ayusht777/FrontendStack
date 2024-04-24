@@ -3,6 +3,7 @@ import FaqChalllenge from "@/Components/Shared/FAQ/FaqChalllenge";
 import Footer from "@/Components/Shared/Footer";
 import Heading from "@/Components/Shared/Heading";
 import Navbar from "@/Components/Shared/Navbar";
+import CarouselMobile from "@/Components/Carousel/CaroselMobile";
 const About = () => {
   return (
     <div className="w-full bg-Bg  flex flex-col justify-start items-center min-h-screen space-y-32">
@@ -29,7 +30,8 @@ const About = () => {
           our readiness for future interviews.
         </p>
       </div>
-      <Carousel />
+      <Carousel className={"hidden md:block"} />
+      <CarouselMobile className={"block md:hidden"} />
       <FaqChalllenge />
       <Footer />
     </div>
