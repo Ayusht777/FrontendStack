@@ -5,7 +5,7 @@ import PreviewPage  from '@/Pages/PreviewPage'
 function App() {
   return (
     <>
-      {/* <AppRoutes></AppRoutes> */}
+      <AppRoutes></AppRoutes>
       {/* <PreviewPage></PreviewPage> */}
 
 

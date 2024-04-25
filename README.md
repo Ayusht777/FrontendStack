@@ -11,3 +11,5 @@ pnpm i react-icons
 use @ to import any file 
 
 horny her shit
+
+weed
