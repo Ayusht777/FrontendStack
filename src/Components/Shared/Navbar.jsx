@@ -29,7 +29,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-4/5 bg-Nav mt-8 rounded-lg border-2 border-Border md:px-8 flex items-center justify-center relative">
+    <header className="max-w-[1200px] w-full bg-Nav mt-8 rounded-lg border-2 border-Border md:px-8 flex items-center justify-center relative">
       <nav className="flex h-10 w-full items-center justify-between gap-x-2 px-4">
         <img
           src={BrandLogo}
