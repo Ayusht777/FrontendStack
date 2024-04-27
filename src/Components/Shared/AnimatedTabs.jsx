@@ -20,7 +20,7 @@ const AnimatedTabs = ({ Tabs, onActiveTabIndexChange }) => {
   }, [activeTabIndex]);
 
   return (
-    <div className=" flex-row relative mx-auto flex w-full  h-12 bg-Border  backdrop-blur-sm rounded-xl justify-evenly px-1">
+    <div className=" relative mx-auto flex h-12 w-full max-w-[1200px]  flex-row justify-evenly  rounded-xl bg-Border px-1 backdrop-blur-sm">
       <span
         className="absolute bottom-0 top-0 -z-10 flex overflow-hidden rounded-xl py-[.30rem] transition-all duration-300"
         style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
@@ -36,7 +36,7 @@ const AnimatedTabs = ({ Tabs, onActiveTabIndexChange }) => {
             ref={(el) => (tabsRef.current[index] = el)}
             className={`${
               isActive ? "text-Logo" : " text-white"
-            } my-auto cursor-pointer select-none rounded-full  text-center font-semibold px-2 w-full`}
+            } my-auto w-full cursor-pointer select-none  rounded-full px-2 text-center font-semibold`}
             onClick={() => setActiveTabIndex(index)}
           >
             {tab.name}
