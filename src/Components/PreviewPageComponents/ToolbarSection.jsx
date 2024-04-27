@@ -1,11 +1,16 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import DropdownMenu from "@/Components/PreviewPageComponents/DropdownMenuComponent/DropdownMenu";
-const ToolbarSection = () => {
+
+const ToolbarSection = ({ getSelectedAuthor }) => {
   return (
-    <section className="md:w-4/5 w-full flex justify-between items-start my-4">
-      <button className="size-7 bg-Nav rounded-md text-Logo "><Link to="/gallery"><ArrowLeft strokeWidth="2" className="mx-auto "/></Link></button>
-      <DropdownMenu></DropdownMenu>
+    <section className="my-4 flex w-full max-w-[1200px] items-start justify-between">
+      <button className="size-7 rounded-md bg-Nav text-Logo ">
+        <Link to="/gallery">
+          <ArrowLeft strokeWidth="2" className="mx-auto " />
+        </Link>
+      </button>
+      <DropdownMenu getSelectedAuthor={getSelectedAuthor} />
     </section>
   );
 };
