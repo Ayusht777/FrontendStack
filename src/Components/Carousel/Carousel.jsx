@@ -4,12 +4,15 @@ import { useState } from "react";
 import { FaGithub } from "react-icons/fa6";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Heading from "@/Components/Shared/Heading";
-const Carousel = () => {
+const Carousel = ({ className }) => {
   const [left, setLeft] = useState(false);
   const ref = useRef();
 
   return (
-    <section id="#our-team" className="w-4/5 text-white relative space-y-16">
+    <section
+      id="#our-team"
+      className={`w-4/5 text-white relative space-y-16 ${className}`}
+    >
       <Heading title={"Our Team"} type="sub" />
       <IoIosArrowBack
         className={`absolute top-[38%] -left-9 translate-y-[100%]  text-5xl text-Logo hidden md:block  ${
