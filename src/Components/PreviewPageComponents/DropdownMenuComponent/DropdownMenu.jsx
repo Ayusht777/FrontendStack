@@ -1,80 +1,83 @@
-import { useState ,useEffect} from "react";
+import { useState } from "react";
 import { ChevronsUpDown, Check } from "lucide-react";
 import "./style.css";
-const UserOptions = [
+const UserList = [
+  {
+    Name: "Aarsh Bharti",
+    Id: 1,
+    imageUrl:
+      "https://media.licdn.com/dms/image/D4E35AQHDvHDMH_XrWw/profile-framedphoto-shrink_400_400/0/1698328411525?e=1714831200&v=beta&t=jvY5IvVmYhlQI1jAdHEGC9b8Z8cY7acZXEmlIxNTc6o",
+  },
   {
     Name: "Ayush Talesara",
-    Id: 1,
-    imageUrl: "https://media.licdn.com/dms/image/C4D03AQGf3yQOLuXGOA/profile-displayphoto-shrink_400_400/0/1664266450993?e=1718841600&v=beta&t=fgJQ0W7wKhtyDkbEP_bjugujRryNo5ct3oNQKfl3OXc",
+    Id: 2,
+    imageUrl:
+      "https://media.licdn.com/dms/image/C4D03AQGf3yQOLuXGOA/profile-displayphoto-shrink_400_400/0/1664266450993?e=1718841600&v=beta&t=fgJQ0W7wKhtyDkbEP_bjugujRryNo5ct3oNQKfl3OXc",
   },
   {
     Name: "Divyanshu Sahu",
-    Id: 2,
-    imageUrl: "https://media.licdn.com/dms/image/D4D35AQERfja46Bzkbg/profile-framedphoto-shrink_400_400/0/1700986736889?e=1713981600&v=beta&t=jVI3isJvzMpwtNIzcmZ6uEB4GFY4OTR-f5KNmuqcKHM",
+    Id: 3,
+    imageUrl:
+      "https://media.licdn.com/dms/image/D4D03AQF9QpoeSq_kZw/profile-displayphoto-shrink_400_400/0/1700986735638?e=1719446400&v=beta&t=RNbSZTCNWqTwAV7jUUIDPcfUfvd3ZVeg6OZSnywexmk",
   },
   {
     Name: "Harshit Sharma",
-    Id: 3,
-    imageUrl: "https://media.licdn.com/dms/image/D4D03AQH0SDadpiwdGA/profile-displayphoto-shrink_400_400/0/1677944831336?e=1718841600&v=beta&t=Uq3x_jrerRIOPERwz77lJzJHwekYTs6942t_6I-TQeE",
-  },
-  {
-    Name: "Aarsh Bharti",
     Id: 4,
-    imageUrl: "https://media.licdn.com/dms/image/D4E35AQHDvHDMH_XrWw/profile-framedphoto-shrink_400_400/0/1698328411525?e=1713981600&v=beta&t=8_fMm8ISmPKbsbVSzeryEGGusRQ0JtKEnlUUnry3nG8",
+    imageUrl:
+      "https://media.licdn.com/dms/image/D4D03AQH0SDadpiwdGA/profile-displayphoto-shrink_400_400/0/1677944831336?e=1718841600&v=beta&t=Uq3x_jrerRIOPERwz77lJzJHwekYTs6942t_6I-TQeE",
   },
 ];
 
-const DropdownMenu = () => {
-  const [selectedUser, setSelectedUser] = useState(UserOptions[0]);
+const DropdownMenu = ({ getSelectedAuthor }) => {
+  const getRandomIndex = Math.floor(Math.random() * UserList.length);
+
+  const [selectedUser, setSelectedUser] = useState(UserList[getRandomIndex]);
+  getSelectedAuthor(selectedUser.Name);
   const [isOpen, setIsOpen] = useState(false);
   const handleUserClick = (userId) => {
-    const selectedOption = UserOptions.find((option) => option. Id === userId);
+    const selectedOption = UserList.find((option) => option.Id === userId);
     setSelectedUser(selectedOption);
     setIsOpen(false);
   };
 
   return (
-    <div className=" md:w-52 w-44">
+    <div className=" w-44 md:w-52">
       <button
-        className="w-full md:h-9 h-7 bg-Nav flex justify-between items-center px-2 py-1.5 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-Logo"
+        className="flex h-7 w-full items-center justify-between rounded-md bg-Nav px-2 py-1.5 shadow-sm focus:outline-none focus:ring-2 focus:ring-Logo md:h-9"
         onClick={() => setIsOpen(true)}
       >
         <span className="flex items-center gap-x-2">
           <img
             src={selectedUser.imageUrl}
             alt={selectedUser.Name}
-            className="md:size-6 size-5 rounded-full"
+            className="size-5 rounded-full md:size-6"
           />
-          <p className="text-white truncate tracking-tight text-ellipsis">
+          <p className="truncate text-ellipsis tracking-tight text-white">
             {selectedUser.Name}
           </p>
         </span>
-        <ChevronsUpDown className="text-Logo size-5" />
+        <ChevronsUpDown className="size-5 text-Logo" />
       </button>
       {isOpen && (
-        <ul
-          className="scroll-thin w-full max-h-[108px] h-auto overflow-y-scroll mt-2 rounded-md"
-        >
-          {UserOptions.map((option) => (
+        <ul className="scroll-thin mt-2 h-auto max-h-[108px] w-full overflow-y-scroll rounded-md">
+          {UserList.map((option) => (
             <li
               key={option.Id}
-              className="w-full flex items-center px-2 py-1.5 bg-Border hover:bg-Nav cursor-pointer relative"
+              className="relative flex w-full cursor-pointer items-center bg-Border px-2 py-1.5 hover:bg-Nav"
               onClick={() => handleUserClick(option.Id)}
             >
               <div className="flex items-center justify-start gap-x-2">
                 <img
                   src={option.imageUrl}
                   alt={option.Name}
-                  className="md:size-6 size-5 rounded-full"
+                  className="size-5 rounded-full md:size-6"
                 />
-                <p className="text-white truncate text-ellipsis">
+                <p className="truncate text-ellipsis text-white">
                   {option.Name}
                 </p>
               </div>
               {selectedUser.Id === option.Id && (
-                <Check
-                  className="absolute right-2 text-Logo size-5"
-                />
+                <Check className="absolute right-2 size-5 text-Logo" />
               )}
             </li>
           ))}
