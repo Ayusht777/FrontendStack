@@ -1,5 +1,5 @@
 import Heading from "@/Components/Shared/Heading";
-import StepsComponent from "@/Components/PreviewPageComponents/StepsComponent/StepsComponent";
+import Steps from "@/Components/PreviewPageComponents/StepsComponent/StepsComponent";
 const stepsData = [
   {
     id: 1,
@@ -8,6 +8,7 @@ const stepsData = [
       {
         command: `https://dribbble.com/following`,
         isOptional: false,
+        isLink: true,
       },
     ],
   },
@@ -15,10 +16,10 @@ const stepsData = [
 
 const ReferenceSection = () => {
   return (
-    <section className="md:w-4/5 w-full md:my-32 my-12">
-      <Heading title="Resources used in this component" type="sub" />
+    <section className="w-full max-w-[1200px] pb-8 md:pb-16 md:pt-20">
+      <Heading title={"Resources used in this component"} />
       {stepsData.map((step) => (
-        <StepsComponent key={step.id} Data={step} />
+        <Steps key={step.id} commands={step?.commands} title={step?.title} />
       ))}
     </section>
   );
