@@ -18,7 +18,7 @@ const PreviewPage = () => {
   console.log(filteredVariation);
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center bg-Bg px-4 md:px-6 lg:px-0">
+    <div className="flex h-full w-full flex-col items-center justify-center bg-Bg px-4 md:px-6 xl:px-0">
       <Navbar />
       <HeroSection Title={"Explore the Live Preview and Visualize the Code"} />
       <ToolbarSection getSelectedAuthor={setSelectedAuthor} />
