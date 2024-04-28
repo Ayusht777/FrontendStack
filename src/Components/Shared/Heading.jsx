@@ -1,17 +1,10 @@
-const Heading = ({ title, type = "main", className = "" }) => {
-  const head = {
-    main: "md:text-5xl text-4xl font-extrabold",
-    sub: "md:text-4xl text-3xl  font-bold ",
-  };
+const Heading = ({ title }) => {
   return (
-    <h1
-      className={`text-center bg-gradient-to-b from-white  to-white/70 text-transparent bg-clip-text tracking-tighter leading-[5.5rem] ${
-        type && head[type]
-      } ${className}`}
-      aria-label={title}
-    >
-      {title}
-    </h1>
+    <section className=" my-4  flex  w-full justify-center">
+      <span className=" my-4 max-w-5xl  bg-gradient-to-r from-white to-white/70 bg-clip-text text-center text-[1.625rem] font-bold tracking-tighter text-transparent md:my-6 md:text-4xl">
+        {title}
+      </span>
+    </section>
   );
 };
 
