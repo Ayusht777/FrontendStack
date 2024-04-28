@@ -1,4 +1,4 @@
-import StepsComponent from "@/Components/PreviewPageComponents/StepsComponent/StepsComponent";
+import Steps from "@/Components/PreviewPageComponents/StepsComponent/StepsComponent";
 import Heading from "@/Components/Shared/Heading";
 
 const stepsData = [
@@ -57,20 +57,24 @@ const stepsData = [
       {
         command: "Copy the above component code to your project.",
         isOptional: false,
+        isLink: false,
       },
       {
         command:
           "Create a Component.jsx file in the src/components/ directory.",
         isOptional: false,
+        isLink: false,
       },
       {
         command:
           "Import Component.jsx from the src/components/ directory to App.jsx",
         isOptional: false,
+        isLink: false,
       },
       {
         command: "Render the <Component /> within the App.jsx file.",
         isOptional: false,
+        isLink: false,
       },
     ],
   },
@@ -78,10 +82,10 @@ const stepsData = [
 
 const StepsSection = () => {
   return (
-    <section className="md:w-4/5 w-full md:my-20 my-12">
-      <Heading title="Run This Code Locally" type="sub" />
+    <section className="w-full max-w-[1200px] pb-8 md:pb-16 md:pt-20 ">
+      <Heading title={"Run This Code Locally"} />
       {stepsData.map((step) => (
-        <StepsComponent key={step.id} Data={step} />
+        <Steps key={step.id} title={step.title} commands={step?.commands} />
       ))}
     </section>
   );
