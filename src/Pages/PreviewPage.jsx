@@ -1,5 +1,5 @@
 import { componentsData } from "@/Data/Data";
-import HeroSection from "@/Components/PreviewPageComponents/HeroSection";
+import HeroSection from "@/Components/Shared/HeroSection";
 import Navbar from "@/Components/Shared/Navbar";
 import CodeBlock from "@/Components/PreviewPageComponents/CodeBlockComponent/CodeBlock";
 import StepsSection from "@/Components/PreviewPageComponents/StepsComponent/StepsSection";
@@ -20,7 +20,7 @@ const PreviewPage = () => {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center bg-Bg px-4 md:px-6 xl:px-0">
       <Navbar />
-      <HeroSection Title={"Explore the Live Preview and Visualize the Code"} />
+      <HeroSection  heading={"Explore the Live Preview and Visualize the Code"} />
       <ToolbarSection getSelectedAuthor={setSelectedAuthor} />
       <CodeBlock
         CodeSnippets={filteredVariation?.code}

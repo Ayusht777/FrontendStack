@@ -3,19 +3,19 @@ import { Code } from "lucide-react";
 
 const GalleryGrids = ({ Data }) => {
   return (
-    <section className=" max-w-[1200px] w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 place-content-center ">
+    <section className="mt-6 grid w-full max-w-[1200px] grid-cols-1 place-content-center gap-5 md:grid-cols-2 lg:grid-cols-3">
       {Data.map((item) => (
-        <div key={item.id} className=" aspect-square bg-Nav rounded-xl pb-2">
-          <div className=" aspect-square bg-Bg rounded-xl mx-4 mt-4  hover:mx-2 hover:mt-2 transition-all ease-in-out duration-500">
+        <div key={item.id} className=" aspect-square rounded-xl bg-Nav pb-2">
+          <div className=" mx-4 mt-4 aspect-square rounded-xl bg-Bg  transition-all duration-500 ease-in-out hover:mx-2 hover:mt-2">
             <img
-              className="w-full h-full  rounded-xl"
+              className="h-full w-full  rounded-xl"
               src={item.imageUrl}
               alt={item.name}
             />
           </div>
-          <div className="flex items-center justify-between   mx-4 mt-2 ">
+          <div className="mx-4 mt-2 flex   items-center justify-between ">
             <h1 className=" font-semibold text-white">{item.ComponentName}</h1>
-            <button className=" bg-Border p-1 rounded-md text-Logo ">
+            <button className=" rounded-md bg-Border p-1 text-Logo ">
               <Link to={`/gallery/PreviewPage/${item.ComponentName}`}>
                 <Code strokeWidth="3" />
               </Link>

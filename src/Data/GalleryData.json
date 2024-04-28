@@ -163,20 +163,20 @@
     },
     {
         "id": 28,
-        "imageUrl": "(link unavailable)",
+        "imageUrl": "https://cdn.dribbble.com/userupload/11124311/file/original-e92f2b5b14045947c7a347ca0f7502e6.png?resize=1504x1208",
         "ComponentName": "Chart",
         "type": "professional"
     },
     {
         "id": 29,
-        "imageUrl": "(link unavailable)",
+        "imageUrl": "https://cdn.dribbble.com/users/9650276/screenshots/18862954/media/dcca29384fec0850c3f1a4acd0a3bff0.png",
         "ComponentName": "Map",
         "type": "professional"
     },
     {
         "id": 30,
-        "imageUrl": "(link unavailable)",
-        "ComponentName": "Gauge",
+        "imageUrl": "https://cdn.dribbble.com/userupload/8435092/file/original-046e32d11a02dea173e6293b99a9c66f.png?resize=752x",
+        "ComponentName": "DashBoard",
         "type": "professional"
     }
 ]

@@ -4,6 +4,7 @@ import FaqList from "@/Components/Shared/FAQ/FaqList";
 import QueryForm from "@/Components/HomeComponents/QueryForm/QueryForm";
 import FeatureSection from "@/Components/HomeComponents/FeatureSection/FeatureSection";
 import HeroSection from "@/Components/Shared/HeroSection";
+import FeaturedCreationsSection from "@/Components/HomeComponents/FeaturedCreationsSection";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         subheading={"Dive Deep Exploring Core UI Components"}
         callToAction={true}
       />
+      <FeaturedCreationsSection />
       <FeatureSection />
       <FaqList></FaqList>
       <QueryForm></QueryForm>

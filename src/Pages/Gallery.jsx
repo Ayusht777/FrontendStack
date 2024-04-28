@@ -1,5 +1,6 @@
 import Navbar from "@/Components/Shared/Navbar";
-import HeroSection from "@/Components/PreviewPageComponents/HeroSection";
+import HeroSection from "@/Components/Shared/HeroSection";
+
 
 import AnimatedTabs from "@/Components/Shared/AnimatedTabs";
 
@@ -18,9 +19,9 @@ const Gallery = () => {
     <div className="flex h-full w-full flex-col items-center justify-start  bg-Bg px-4 xl:px-0">
       <Navbar></Navbar>
       <HeroSection
-        Title={"Explore our gallery of finely crafted components!"}
+        heading={"Explore our gallery of finely crafted components!"}
       />
-      <section className="my-8 w-full">
+      <section className="mb-6 w-full">
         <AnimatedTabs
           Tabs={[
             { id: "all", name: "ALL" },
