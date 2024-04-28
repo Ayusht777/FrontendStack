@@ -3,65 +3,69 @@ import CopyToClipBoard from "@/Utils/CopyToClipBoard";
 import SyntaxHighlighter from "@/Components/PreviewPageComponents/SyntaxHighlighter";
 import { useState } from "react";
 
-const CommandStep = ({ command, isOptional }) => (
-  <li className="relative flex items-start px-2 py-1.5">
-    {isOptional ? (
-      <span className="pr-1 text-[#B392F0]"> $ </span>
-    ) : (
-      <span className="my-auto mr-2 block size-2 rounded-full bg-blue-400"></span>
-    )}
-    {isOptional ? (
-      <span className=" lg:basis basis-5/6 overflow-auto">
+const Command = ({ command, isOptional, isLink }) => (
+  <li className="relative flex items-start px-2 py-1.5 ">
+    <span
+      className={`lg:basis flex justify-start overflow-auto before:pr-1.5 ${
+        isOptional
+          ? " before:text-purple-500 before:content-['$']"
+          : " font-medium text-blue-400 before:text-blue-400 before:content-['•']"
+      }`}
+    >
+      {isOptional ? (
         <SyntaxHighlighter
-          CodeSnippets={`    ` + command}
+          CodeSnippets={`    ${command}`}
           Language="shell"
           LineNumbers={false}
         />
-      </span>
-    ) : (
-      <span className="basis-5/6 overflow-auto text-blue-400">{command}</span>
-    )}
+      ) : (
+        command
+      )}
+    </span>
+
     {isOptional ? (
       <CopyToClipBoard textToCopy={command} placement={false} />
     ) : (
-      <a href={command} target="_blank" rel="noopener noreferrer">
-        <Link className="absolute right-3 z-20 size-4 text-Logo" />
-      </a>
+      isLink && (
+        <a href={command} target="_blank" rel="noopener noreferrer">
+          <Link className="absolute right-3 z-20 size-4 text-Logo" />
+        </a>
+      )
     )}
   </li>
 );
 
-const StepsComponent = ({ Data }) => {
-  const [isCommandSectionOpen, setIsCommandSectionOpen] = useState(false);
+const Steps = ({ title, commands }) => {
+  const [IsOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="my-4 flex h-auto w-full max-w-[1200px] flex-col items-center justify-center divide-y divide-Bg rounded-lg  bg-Nav md:my-6">
+    <section className="my-4 flex h-auto w-full max-w-[1200px] flex-col items-center justify-center divide-y divide-Bg rounded-lg bg-Nav md:my-6">
       <button
-        className="flex w-full items-center justify-between rounded-t-lg px-2 py-1.5"
-        onClick={() => setIsCommandSectionOpen(!isCommandSectionOpen)}
+        className="flex w-full items-center justify-between rounded-t-lg px-2 py-3"
+        onClick={() => setIsOpen(!IsOpen)}
       >
-        <p className=" w-full text-start text-sm font-semibold tracking-tight text-white md:text-base md:tracking-normal">
-          {Data.title}
+        <p className="w-full text-start text-sm font-semibold tracking-tight text-white md:text-base md:tracking-normal">
+          {title}
         </p>
         <ChevronDown
-          className={`text-Logo ${
-            isCommandSectionOpen ? "rotate-180" : ""
-          } transform duration-300 ease-in-out`}
+          className={`text-Logo ${IsOpen ? "rotate-180" : ""} transform duration-300 ease-in-out`}
         />
       </button>
-      {isCommandSectionOpen && (
-        <ul className={`block w-full`}>
-          {Data.commands.map((item, index) => (
-            <CommandStep
-              key={index}
-              command={item.command}
-              isOptional={item.isOptional}
-            />
-          ))}
-        </ul>
-      )}
+
+      <ol
+        className={`${IsOpen ? "block" : " hidden"} w-full divide-y divide-Bg `}
+      >
+        {commands?.map((command, index) => (
+          <Command
+            key={index}
+            command={command?.command}
+            isOptional={command?.isOptional}
+            isLink={command?.isLink}
+          />
+        ))}
+      </ol>
     </section>
   );
 };
 
-export default StepsComponent;
+export default Steps;
