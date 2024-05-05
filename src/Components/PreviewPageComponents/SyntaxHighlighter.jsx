@@ -82,7 +82,7 @@ const SyntaxHighlighter = ({ CodeSnippets, Language, LineNumbers = true }) => {
   return isLoading ? (
     <CodeBlockSkeleton skeletonHeight={codeDivHeight} />
   ) : (
-    <div ref={codeDivRef} dangerouslySetInnerHTML={{ __html: processedCode }} />
+    <div  ref={codeDivRef} dangerouslySetInnerHTML={{ __html: processedCode }} />
   );
 };
 

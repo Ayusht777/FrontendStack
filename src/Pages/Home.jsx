@@ -2,7 +2,7 @@ import Navbar from "@/Components/Shared/Navbar";
 import Footer from "@/Components/Shared/Footer";
 import FaqList from "@/Components/Shared/FAQ/FaqList";
 import QueryForm from "@/Components/HomeComponents/QueryForm/QueryForm";
-import FeatureSection from "@/Components/HomeComponents/FeatureSection/FeatureSection";
+import FeatureContainer from "@/Components/HomeComponents/FeatureSection/FeatureContainer";
 import HeroSection from "@/Components/Shared/HeroSection";
 import FeaturedCreationsSection from "@/Components/HomeComponents/FeaturedCreationsSection";
 
@@ -16,7 +16,7 @@ const Home = () => {
         callToAction={true}
       />
       <FeaturedCreationsSection />
-      <FeatureSection />
+      <FeatureContainer />
       <FaqList></FaqList>
       <QueryForm></QueryForm>
       <Footer></Footer>
