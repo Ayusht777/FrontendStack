@@ -1,10 +1,10 @@
 import Navbar from "@/Components/Shared/Navbar";
-import FaqList from "@/Components/Shared/FAQ/FaqList";
+import FaqList from "@/Components/Shared/FAQ/FaqSection";
 const Faq = () => {
   return (
-    <div className="w-full bg-Bg h-full flex justify-start items-center flex-col">
+    <div className="flex h-full w-full flex-col items-center justify-start bg-Bg">
       <Navbar></Navbar>
-      <FaqList/>
+      <FaqList />
     </div>
   );
 };
