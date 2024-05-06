@@ -2,6 +2,7 @@ import FeatureGrid from "@/Components/HomeComponents/FeatureSection/FeatureItems
 import FeatureSyntaxHighlighter from "@/Components/HomeComponents/FeatureSection/FeatureItems/FeatureSyntaxHighlighter";
 import FeatureTechStack from "@/Components/HomeComponents/FeatureSection/FeatureItems/FeatureTechStack";
 import FeatureCodeSnippets from "@/Components/HomeComponents/FeatureSection/FeatureItems/FeatureCodeSnippets";
+import Heading from '@/Components/Shared/Heading'
 const FeatureContainer = () => {
   const featuresData = [
     {
@@ -50,6 +51,7 @@ const FeatureContainer = () => {
 
   return (
     <section className="w-full max-w-[1200px] space-y-16">
+      <Heading title={"Features"} />
       {featuresData.map((item, index) => (
         <FeatureGrid
           key={item.tag}
