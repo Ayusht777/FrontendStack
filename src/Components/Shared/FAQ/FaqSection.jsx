@@ -31,7 +31,7 @@ const FaqSection = () => {
     <section className="w-full max-w-[1200px] ">
          <Heading title={"FAQ'S"}/>{
        
-        faqData.map((item)=><FaqItems key={item} question={item.question} answer={item.answer} />)
+        faqData.map((item,index)=><FaqItems key={index} question={item.question} answer={item.answer} />)
     }</section>
   );
 };
