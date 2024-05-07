@@ -1,5 +1,4 @@
 const FeatureTechStack = ({ tag, heading, description, keyPoints, feature,index }) => {
-  console.log(index)
   return (
     <section
       className={` flex gap-y-8 py-4   lg:gap-x-10 flex-col  ${index === 1 ? ` lg:flex-row-reverse` : `lg:flex-row`}`}

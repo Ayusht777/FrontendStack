@@ -8,7 +8,7 @@ const CommandBox = ({ command, borderColor }) => {
         <div className="mx-4 w-full animate-pulse rounded-xl bg-Border py-1"></div>
       </div>
       <div
-        className={` static z-10 box-border flex h-min items-center justify-between rounded-lg bg-Bg px-3 outline outline-2 ${"outline-" + borderColor}  md:h-full  ${borderColor === "Logo" && `shadow-[0px_0px_130px_-8px] shadow-Logo backdrop-blur-sm`} `}
+        className={`static z-10 box-border flex h-min items-center justify-between rounded-lg bg-Bg px-3 outline outline-2 ${borderColor === "Logo" ? ` outline-Logo`:`outline-Border` }  md:h-full  ${borderColor === "Logo" && `shadow-[0px_0px_130px_-8px] shadow-Logo backdrop-blur-sm`}`}
       >
         <span className="text-sm text-Border ">{command}</span>
         <Copy className="size-4  text-Border" />
