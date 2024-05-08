@@ -6,9 +6,9 @@ const ButtonV2 = () => {
       rounded-lg bg-inherit px-5 py-1.5 text-center 
       font-semibold tracking-tight text-white 
       outline outline-1 outline-Border transition-colors 
-      duration-300 ease-in-out hover:bg-Border 
-      focus:outline focus:outline-1 focus:outline-offset-2
-       focus:outline-white`}
+      duration-300 ease-in-out hover:bg-Border focus:outline-white  
+      focus-visible:outline focus-visible:outline-1
+      focus-visible:outline-offset-2`}
     >
       <Github className="mr-1.5 size-4 rounded-full " /> Github
     </button>
