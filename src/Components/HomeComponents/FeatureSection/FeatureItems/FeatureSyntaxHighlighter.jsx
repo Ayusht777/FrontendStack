@@ -81,7 +81,7 @@ const CodeHighlighter = () => {
 };
 
 const FeatureSyntaxHighlighter = () => {
-  return <GridBackground section={<CodeHighlighter />} />;
+  return <GridBackground><CodeHighlighter /></GridBackground>;
 };
 
 export default FeatureSyntaxHighlighter;

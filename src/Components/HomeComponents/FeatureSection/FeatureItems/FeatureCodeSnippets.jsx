@@ -52,7 +52,7 @@ const Steps = () => {
 };
 
 const FeatureCodeSnippets = () => {
-  return <GridBackground section={<Steps />} />;
+  return <GridBackground><Steps/></GridBackground>;
 };
 
 export default FeatureCodeSnippets;

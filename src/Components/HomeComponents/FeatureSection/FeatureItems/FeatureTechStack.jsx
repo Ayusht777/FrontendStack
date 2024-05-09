@@ -554,7 +554,7 @@ const IconsGrid = () => {
 };
 
 const FeatureTechStack = () => {
-  return <GridBackground section={<IconsGrid />} />;
+  return <GridBackground><IconsGrid /></GridBackground>;
 };
 
 export default FeatureTechStack;
