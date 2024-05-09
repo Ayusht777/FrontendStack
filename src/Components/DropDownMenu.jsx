@@ -63,7 +63,8 @@ const DropdownMenu = () => {
   return (
     <>
       <button
-        className="group mb-1 mt-2 flex w-full cursor-pointer items-center justify-between rounded-md bg-inherit px-3 py-1 outline outline-1 outline-Border focus:outline-Logo"
+        className="group mb-1.5  flex w-full cursor-pointer items-center justify-between rounded-md bg-Bg bg-inherit px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
+        
         onClick={() =>
           setMenuState({ ...menuState, isOpen: !menuState.isOpen })
         }
@@ -75,35 +76,34 @@ const DropdownMenu = () => {
           }
         }}
       >
-        <span className="cursor-none">{menuState.selectedValue}</span>
+        <span className="cursor-none ">{menuState.selectedValue}</span>
         <ChevronsUpDown className="size-4 group-focus-within:text-Logo" />
       </button>
-      {menuState.isOpen && (
-        <div
-          className="mb-1 mt-1.5 flex w-full cursor-pointer items-center justify-between rounded-md bg-inherit px-1 py-1 outline outline-1 outline-Border focus:outline-Logo"
-          ref={divRef}
-          tabIndex={1}
-          role="listbox"
-        >
-          <div className="w-full  ">
-            {dropdownOptions.map((option, index) => (
-              <div
-                key={option}
-                className={`rounded-md px-2 py-0.5 ${menuState.selectedIndex !== index ? "hover:bg-Border" : ""} ${menuState.selectedIndex === index ? "bg-Border" : ""}`}
-                onClick={() => {
-                  setMenuState({
-                    selectedValue: option,
-                    selectedIndex: index,
-                    isOpen: false,
-                  });
-                }}
-              >
-                {option}
-              </div>
-            ))}
-          </div>
+
+      <div
+        className={`${menuState.isOpen ? " hidden" : "flex"} mb-1 mt-1.5 w-full cursor-pointer items-center justify-between rounded-md bg-inherit px-1 py-1 outline outline-1 outline-Border focus:outline-Logo `}
+        ref={divRef}
+        tabIndex={1}
+        role="listbox"
+      >
+        <div className="w-full  ">
+          {dropdownOptions.map((option, index) => (
+            <div
+              key={option}
+              className={`rounded-md px-2 py-0.5 ${menuState.selectedIndex !== index ? "hover:bg-Border" : ""} ${menuState.selectedIndex === index ? "bg-Border" : ""}`}
+              onClick={() => {
+                setMenuState({
+                  selectedValue: option,
+                  selectedIndex: index,
+                  isOpen: false,
+                });
+              }}
+            >
+              {option}
+            </div>
+          ))}
         </div>
-      )}
+      </div>
     </>
   );
 };
