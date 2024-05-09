@@ -1,88 +1,41 @@
-import React, { useState } from 'react';
-import "./queryForm.css"
-
+import { useForm } from "react-hook-form";
+import DropDownMenu from "@/Components/DropDownMenu";
 const QueryForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => {
+    console.log("s");
   };
 
   return (
-    <div className="bg-Bg text-white p-8 rounded-lg w-full flex flex-col items-center">
-      <div className='md:w-4/5'>
-        <h1 className="sm:text-4xl text-2xl font-bold mb-6 text-center">Contact Us</h1>
-        <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-          <div className='flex gap-4 flex-wrap'>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your Name"
-            className="input-field rounded-lg p-4 bg-Bg border-Border border-2 text-white placeholder-white grow sm:basis-[8%] outline-none focus:bg-Bg"
-            required
-            minLength={3}
-            pattern="^[A-Za-z\s'-]+$"
-        />
-        <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Your Email"
-            className="input-field rounded-lg p-4 bg-Bg border-Border border-2 text-white placeholder-white grow outline-none focus:bg-Bg"
-            required
-            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-            title="Please enter a valid email address."
-        />
-
-          </div>
-        <div className='select-container'>
-          <select
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            className="select-element w-full rounded-lg p-4 bg-Bg border-Border border-2 text-white placeholder-white flex grow outline-none focus:bg-Bg "
-            required
-            
-          >
-            <option value="">Choose Your Subject</option>
-            <option value="General Inquiry">General Inquiry</option>
-            <option value="Feedback">Feedback</option>
-          </select>
-        </div>
-
-
-
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Type Your Message Here..."
-            className="input-field rounded-lg p-4 bg-Bg border-Border border-2 text-white placeholder-white flex grow outline-none focus:bg-Bg"
-            rows="4"
-            required
-          ></textarea>
-          <button type="submit"
-            className="submit-button rounded-lg p-2 bg-Logo border-Border border-2 text-black text-xl font-semibold"
-          >
-            Submit Inquiry
-          </button>
-        </form>
-      </div>
-    </div>
+    <form
+      className=" flex max-w-64 flex-col items-start"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <label>Full Name</label>
+      <input
+        type="text"
+        {...register("FullName")}
+        className="mb-1 mt-2 box-border w-full rounded-md bg-inherit px-3 py-1 outline outline-1  outline-Border focus:outline-Logo"
+        placeholder="Ayush"
+      />
+      <label>Email</label>
+      <input
+        type="email"
+        {...register("Email")}
+        className="mb-1 mt-2 box-border w-full rounded-md bg-inherit px-3 py-1 outline outline-1  outline-Border focus:outline-Logo"
+        placeholder="ayush@mail.com"
+      />
+      <label>Subject</label>
+      <DropDownMenu />
+      <label>Message</label>
+      <textarea
+        {...register("Message")}
+        placeholder="Type your massage here."
+        rows={4}
+        className="mb-1 mt-2 box-border w-full rounded-md  bg-inherit px-3 py-1 outline outline-1 outline-Border focus:outline-Logo"
+      ></textarea>
+      <input type="submit" />
+    </form>
   );
 };
 
