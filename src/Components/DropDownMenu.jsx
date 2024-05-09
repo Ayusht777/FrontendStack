@@ -67,6 +67,13 @@ const DropdownMenu = () => {
         onClick={() =>
           setMenuState({ ...menuState, isOpen: !menuState.isOpen })
         }
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+
+            setMenuState({ ...menuState, isOpen: true });
+          }
+        }}
       >
         <span className="cursor-none">{menuState.selectedValue}</span>
         <ChevronsUpDown className="size-4 group-focus-within:text-Logo" />
