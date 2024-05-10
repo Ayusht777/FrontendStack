@@ -4,7 +4,7 @@ import { ChevronsUpDown } from "lucide-react";
 const DropdownMenu = ({ dropdownOptions = null, onOptionChange }) => {
   const options = useMemo(() => dropdownOptions, [dropdownOptions]);
   const [dropdownState, setDropdownState] = useState({
-    selectedOption: "Select Options",
+    selectedOption: ""  ,
     selectedOptionIndex: 0,
     isOpen: false,
   });
@@ -82,7 +82,7 @@ const DropdownMenu = ({ dropdownOptions = null, onOptionChange }) => {
               : ""
           }`}
         >
-          {dropdownState.selectedOption}
+          {dropdownState.selectedOption || "Select an option"}
         </span>
 
         <ChevronsUpDown className="size-4 group-focus-within:text-Logo" />
