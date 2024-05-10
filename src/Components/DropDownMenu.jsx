@@ -2,99 +2,125 @@ import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { ChevronsUpDown } from "lucide-react";
 
 const DropdownMenu = () => {
-  const dropdownOptions = useMemo(
-    () => ["Option 1", "Option 2", "Option 3", "Option 4"],
+  const options = useMemo(
+    () => [
+      "Option 1",
+      "Option 2",
+      "Option 3",
+      "Option 4",
+      "Option 5",
+      "Option 6",
+      "Option 7",
+      "Option 8",
+    ],
     []
   );
 
-  const [menuState, setMenuState] = useState({
-    selectedValue: "Select Options",
-    selectedIndex: 0,
+  const [dropdownState, setDropdownState] = useState({
+    selectedOption: "Select Options",
+    selectedOptionIndex: 0,
     isOpen: false,
   });
 
-  const divRef = useRef(null);
+  const dropdownRef = useRef(null);
 
-  const handleKeyboardNavigation = useCallback(
+  const handleKeyNavigation = useCallback(
     (event) => {
       const { key } = event;
       if (key === "ArrowUp") {
-        setMenuState((prevState) => ({
+        event.preventDefault();
+        setDropdownState((prevState) => ({
           ...prevState,
-          selectedIndex: Math.max(prevState.selectedIndex - 1, 0),
+          selectedOptionIndex: Math.max(prevState.selectedOptionIndex - 1, 0),
         }));
       } else if (key === "ArrowDown") {
-        setMenuState((prevState) => ({
+        event.preventDefault();
+        setDropdownState((prevState) => ({
           ...prevState,
-          selectedIndex: Math.min(
-            prevState.selectedIndex + 1,
-            dropdownOptions.length - 1
+          selectedOptionIndex: Math.min(
+            prevState.selectedOptionIndex + 1,
+            options.length - 1
           ),
         }));
       } else if (key === "Enter") {
-        event.preventDefault();
-        setMenuState((prevState) => ({
-          selectedValue: dropdownOptions[prevState.selectedIndex],
-          selectedIndex: prevState.selectedIndex,
+        setDropdownState((prevState) => ({
+          selectedOption: options[prevState.selectedOptionIndex],
+          selectedOptionIndex: prevState.selectedOptionIndex,
           isOpen: false,
         }));
       }
     },
-    [dropdownOptions]
+    [options]
   );
-  useEffect(() => {
-    const divRefs = divRef.current;
-    if (divRefs && menuState.isOpen) {
-      divRefs.addEventListener("keydown", handleKeyboardNavigation);
-    }
 
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyNavigation);
     return () => {
-      if (divRefs) {
-        divRefs.removeEventListener("keydown", handleKeyboardNavigation);
+      document.removeEventListener("keydown", handleKeyNavigation);
+    };
+  }, [handleKeyNavigation]);
+
+  useEffect(() => {
+    if (dropdownState.isOpen && dropdownRef.current) {
+      dropdownRef.current.focus();
+    }
+  }, [dropdownState.isOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownState((prevState) => ({ ...prevState, isOpen: false }));
       }
     };
-  }, [menuState.isOpen, dropdownOptions, handleKeyboardNavigation]);
-  useEffect(() => {
-    if (menuState.isOpen && divRef.current) {
-      divRef.current.focus();
-    }
-  }, [menuState.isOpen]);
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
       <button
-        className="group mb-1.5  flex w-full cursor-pointer items-center justify-between rounded-md bg-Bg bg-inherit px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
-        
+        className="group mb-1.5 flex w-full cursor-pointer items-center justify-between rounded-md bg-Bg bg-inherit px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
         onClick={() =>
-          setMenuState({ ...menuState, isOpen: !menuState.isOpen })
+          setDropdownState({ ...dropdownState, isOpen: !dropdownState.isOpen })
         }
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            e.preventDefault();
-
-            setMenuState({ ...menuState, isOpen: true });
-          }
-        }}
       >
-        <span className="cursor-none ">{menuState.selectedValue}</span>
+        <span
+          className={`cursor-none ${
+            !options.includes(dropdownState.selectedOption)
+              ? "text-gray-400"
+              : ""
+          }`}
+        >
+          {dropdownState.selectedOption}
+        </span>
+
         <ChevronsUpDown className="size-4 group-focus-within:text-Logo" />
       </button>
 
       <div
-        className={`${menuState.isOpen ? " hidden" : "flex"} mb-1 mt-1.5 w-full cursor-pointer items-center justify-between rounded-md bg-inherit px-1 py-1 outline outline-1 outline-Border focus:outline-Logo `}
-        ref={divRef}
-        tabIndex={1}
+        className={`${
+          dropdownState.isOpen ? "flex" : "hidden"
+        } mb-1 mt-1.5 w-full cursor-pointer items-center justify-between rounded-md bg-inherit px-1 py-1 outline outline-1 outline-Border focus:outline-Logo `}
+        tabIndex={-10}
         role="listbox"
+        ref={dropdownRef}
       >
-        <div className="w-full  ">
-          {dropdownOptions.map((option, index) => (
+        <div className="w-full">
+          {options.map((option, index) => (
             <div
               key={option}
-              className={`rounded-md px-2 py-0.5 ${menuState.selectedIndex !== index ? "hover:bg-Border" : ""} ${menuState.selectedIndex === index ? "bg-Border" : ""}`}
+              className={`rounded-md px-2 py-0.5 ${
+                dropdownState.selectedOptionIndex !== index
+                  ? "hover:bg-Border"
+                  : ""
+              } ${dropdownState.selectedOptionIndex === index ? "bg-Border" : ""}`}
               onClick={() => {
-                setMenuState({
-                  selectedValue: option,
-                  selectedIndex: index,
+                setDropdownState({
+                  selectedOption: option,
+                  selectedOptionIndex: index,
                   isOpen: false,
                 });
               }}
