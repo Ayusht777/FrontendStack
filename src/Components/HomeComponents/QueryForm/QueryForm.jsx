@@ -1,10 +1,26 @@
-import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import Heading from "@/Components/Shared/Heading";
 import DropDownMenu from "@/Components/DropDownMenu";
-import Heading from '@/Components/Shared/Heading'
+import Button from "@/Components/Shared/Button";
+
+const validationSchema = yup.object().shape({
+  fullName: yup.string().required(),
+  email: yup.string().email().required(),
+  subject: yup.string().required(),
+});
+
 const QueryForm = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, control } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
+
+  const [selectedOption, setSelectedOption] = useState(null);
+
   const onSubmit = (data) => {
-    console.log("s");
+    console.log(data);
   };
 
   return (
@@ -20,27 +36,43 @@ const QueryForm = () => {
         <label className="my-2">Full Name</label>
         <input
           type="text"
-          {...register("FullName")}
+          {...register("fullName")}
           className="mb-1.5 box-border w-full rounded-md bg-Bg px-3 py-1 outline outline-1 outline-Border  focus:bg-Nav focus:outline-Logo"
           placeholder="Ayush Talesara"
         />
         <label className="my-2">Email</label>
         <input
           type="email"
-          {...register("Email")}
+          {...register("email")}
           className="mb-1.5 box-border w-full rounded-md bg-Bg px-3 py-1 outline outline-1 outline-Border  focus:bg-Nav focus:outline-Logo"
           placeholder="ayush@mail.com"
         />
         <label className="my-2">Subject</label>
-        <DropDownMenu />
+        <Controller
+          name="subject"
+          control={control}
+          defaultValue={selectedOption}
+          render={({ field }) => (
+            <DropDownMenu
+              dropdownOptions={["option 1", "option 2", "option 3"]}
+              onOptionChange={(value) => {
+                field.onChange(value);
+                setSelectedOption(value);
+              }}
+              selectedOption={field.value}
+            />
+          )}
+        />
+
         <label className="my-2">Message</label>
         <textarea
-          {...register("Message")}
+          {...register("message")}
           placeholder="Type your massage here."
           rows={4}
           className="mb-1.5 box-border w-full rounded-md  bg-Bg px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
         ></textarea>
-        <input type="submit" className="my-2" />
+
+        <Button type="submit" title={"Submit"} />
       </form>
     </div>
   );
