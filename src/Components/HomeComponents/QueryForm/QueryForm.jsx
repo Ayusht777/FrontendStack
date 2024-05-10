@@ -5,15 +5,57 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Heading from "@/Components/Shared/Heading";
 import DropDownMenu from "@/Components/DropDownMenu";
 import Button from "@/Components/Shared/Button";
+import { AlertTriangleIcon } from "lucide-react";
+const FormField = ({ label, register, error, ...rest }) => (
+  <>
+    <label className="my-2">{label}</label>
+    <input
+      {...register}
+      className="mb-1.5 box-border w-full rounded-md bg-Bg px-3 py-1 outline outline-1 outline-Border  focus:bg-Nav focus:outline-Logo"
+      {...rest}
+    />
+    {error && (
+      <span className="mt-0.5 flex items-center gap-x-1 font-medium text-red-500">
+        <AlertTriangleIcon className="size-3.5" strokeWidth={2.6} />
+        {error.message}
+      </span>
+    )}
+  </>
+);
 
 const validationSchema = yup.object().shape({
-  fullName: yup.string().required(),
-  email: yup.string().email().required(),
-  subject: yup.string().required(),
+  fullName: yup
+    .string()
+    .required("Please enter your full name.")
+    .min(3, "Your full name must have at least 3 characters.")
+    .max(50, "Your full name must not have more than 50 characters.")
+    .matches(
+      /^[a-zA-Z]+( [a-zA-Z]+)*$/,
+      "Please use letters only for your full name."
+    ),
+  email: yup
+    .string()
+    .email("Please enter a valid email address.")
+    .required("Please enter your email address.")
+    .matches(
+      /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+      "Please enter a valid email address."
+    ),
+  subject: yup.string().required("Please select a subject."),
+  message: yup
+    .string()
+    .required("Please enter your message.")
+    .min(10, "Your message must have at least 10 characters.")
+    .max(500, "Your message must not have more than 500 characters."),
 });
 
 const QueryForm = () => {
-  const { register, handleSubmit, control } = useForm({
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm({
     resolver: yupResolver(validationSchema),
   });
 
@@ -24,27 +66,27 @@ const QueryForm = () => {
   };
 
   return (
-    <div className="mx-auto max-w-lg py-4 text-white">
+    <>
       <Heading title={"Connect with the Team"} />
-      <p className=" -mt-6 mb-4 pl-4 ">
+      <p className=" -mt-6 mb-8 pl-4 ">
         Do you have any suggestions for this project or have any issues with it?
       </p>
       <form
         className="  mx-auto flex  flex-col items-start px-4"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <label className="my-2">Full Name</label>
-        <input
+        <FormField
+          label="Full Name"
+          register={register("fullName")}
+          error={errors.fullName}
           type="text"
-          {...register("fullName")}
-          className="mb-1.5 box-border w-full rounded-md bg-Bg px-3 py-1 outline outline-1 outline-Border  focus:bg-Nav focus:outline-Logo"
           placeholder="Ayush Talesara"
         />
-        <label className="my-2">Email</label>
-        <input
+        <FormField
+          label="Email"
+          register={register("email")}
+          error={errors.email}
           type="email"
-          {...register("email")}
-          className="mb-1.5 box-border w-full rounded-md bg-Bg px-3 py-1 outline outline-1 outline-Border  focus:bg-Nav focus:outline-Logo"
           placeholder="ayush@mail.com"
         />
         <label className="my-2">Subject</label>
@@ -63,7 +105,12 @@ const QueryForm = () => {
             />
           )}
         />
-
+        {errors.subject && (
+          <span className="mt-0.5 flex items-center gap-x-1 font-medium text-red-500">
+            <AlertTriangleIcon className="size-3.5" strokeWidth={2.6} />
+            {errors.subject.message}
+          </span>
+        )}
         <label className="my-2">Message</label>
         <textarea
           {...register("message")}
@@ -71,10 +118,15 @@ const QueryForm = () => {
           rows={4}
           className="mb-1.5 box-border w-full rounded-md  bg-Bg px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
         ></textarea>
-
+        {errors.message && (
+          <span className="mt-0.5 flex items-center gap-x-1 font-medium text-red-500">
+            <AlertTriangleIcon className="size-3.5" strokeWidth={2.6} />
+            {errors.message.message}
+          </span>
+        )}
         <Button type="submit" title={"Submit"} />
       </form>
-    </div>
+    </>
   );
 };
 
