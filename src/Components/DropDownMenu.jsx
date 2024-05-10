@@ -1,21 +1,8 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { ChevronsUpDown } from "lucide-react";
 
-const DropdownMenu = () => {
-  const options = useMemo(
-    () => [
-      "Option 1",
-      "Option 2",
-      "Option 3",
-      "Option 4",
-      "Option 5",
-      "Option 6",
-      "Option 7",
-      "Option 8",
-    ],
-    []
-  );
-
+const DropdownMenu = ({ dropdownOptions = null, onOptionChange }) => {
+  const options = useMemo(() => dropdownOptions, [dropdownOptions]);
   const [dropdownState, setDropdownState] = useState({
     selectedOption: "Select Options",
     selectedOptionIndex: 0,
@@ -49,8 +36,9 @@ const DropdownMenu = () => {
           isOpen: false,
         }));
       }
+      onOptionChange(dropdownState.selectedOption);
     },
-    [options]
+    [options, dropdownState.selectedOption, onOptionChange]
   );
 
   useEffect(() => {
@@ -78,7 +66,7 @@ const DropdownMenu = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
+ 
   return (
     <>
       <button
