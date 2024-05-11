@@ -7,7 +7,7 @@ import CarouselMobile from "@/Components/Carousel/CaroselMobile";
 const About = () => {
   return (
     <div className="w-full bg-Bg  flex flex-col justify-start items-center min-h-screen space-y-32">
-      <Navbar></Navbar>
+      <Navbar />
       <section className="text-center text-white space-y-5">
         <Heading title={"About Us"} />
         <p className="w-[70%] text-justify text-lg md:text-xl leading-7 md:leading-10 mx-auto font-normal md:font-medium">
