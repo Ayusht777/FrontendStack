@@ -7,23 +7,23 @@ import { HiLink } from "react-icons/hi2";
 const Challenges = ({ question, answer, link }) => {
   const [showAns, setShowAns] = useState(false);
   return (
-    <div className="flex flex-col gap-4 text-base sm:text-lg md:text-xl">
-      <div className="bg-Nav text-white flex justify-between items-center px-4 py-2 rounded-lg">
+    <div className="flex flex-col gap-4 text-base sm:text-lg md:text-xl ">
+      <div className="bg-Nav text-white flex justify-between items-center px-4 py-2 rounded-lg cursor-pointer" onClick={() => {
+            setShowAns(!showAns);
+          }}>
         <h1 className="flex items-center gap-4">
           <div className="h-2 w-2 md:h-3 md:w-3 rounded-[100%] bg-white"></div>{" "}
           {question}
         </h1>
         <IoIosArrowDown
-          className={`text-Logo text-xl md:text-2xl transition-all cursor-pointer ${
+          className={`text-Logo text-xl md:text-2xl transition-all cursor-pointer duration-300 ${
             showAns && "rotate-180"
           }`}
-          onClick={() => {
-            setShowAns(!showAns);
-          }}
+          
         />
       </div>
       <div
-        className={`text-white p-5 bg-Nav rounded-lg flex justify-between items-center ${
+        className={`text-white p-5 bg-Nav rounded-lg flex justify-between items-center transition-all duration-1000 ${
           !showAns && "hidden"
         }`}
       >
