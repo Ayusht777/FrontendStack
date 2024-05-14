@@ -96,11 +96,11 @@ const DropdownMenu = ({ dropdownOptions = null, onOptionChange }) => {
         role="listbox"
         ref={dropdownRef}
       >
-        <div className="w-full">
+        <div className="w-full space-y-1">
           {options.map((option, index) => (
             <div
               key={option}
-              className={`rounded-md px-2 py-0.5 ${
+              className={`rounded-md px-2 py-0.5 m ${
                 dropdownState.selectedOptionIndex !== index
                   ? "hover:bg-Border"
                   : ""
