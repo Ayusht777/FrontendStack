@@ -11,13 +11,13 @@ const FormField = ({ label, register, error, ...rest }) => (
     <label className="my-2">{label}</label>
     <input
       {...register}
-      className="mb-1.5 box-border w-full rounded-md bg-Bg px-3 py-1 outline outline-1 outline-Border  focus:bg-Nav focus:outline-Logo"
+      className={`mb-1.5 box-border w-full rounded-md bg-Bg px-3 py-1 outline outline-1 outline-Border  focus:bg-Nav ${error?.message ? "focus:outline-red-500" : "focus:outline-Logo"}`}
       {...rest}
     />
     {error && (
       <span className="mt-0.5 flex items-center gap-x-1 font-medium text-red-500">
         <AlertTriangleIcon className="size-3.5" strokeWidth={2.6} />
-        {error.message}
+        {error?.message}
       </span>
     )}
   </>
@@ -68,9 +68,7 @@ const QueryForm = () => {
   return (
     <>
       <Heading title={"Connect with the Team"} />
-      <p className=" -mt-6 mb-8 pl-4 ">
-        Do you have any suggestions for this project or have any issues with it?
-      </p>
+      <p className=" -mt-6 mb-8 pl-4 text-center text-lg">Your Thoughts on this project?</p>
       <form
         className="  mx-auto flex  flex-col items-start px-4"
         onSubmit={handleSubmit(onSubmit)}
@@ -116,6 +114,7 @@ const QueryForm = () => {
           {...register("message")}
           placeholder="Type your massage here."
           rows={4}
+          spellCheck={true}
           className="mb-1.5 box-border w-full rounded-md  bg-Bg px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
         ></textarea>
         {errors.message && (
