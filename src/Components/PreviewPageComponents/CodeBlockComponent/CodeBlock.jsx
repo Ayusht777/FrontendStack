@@ -7,7 +7,7 @@ const ComponentPreview = ({ PreviewComponent, isVisible }) => {
   const RenderedComponent = PreviewComponent;
   return (
     <section
-      className={`scroll-thin h-auto max-h-[520px] min-h-56 w-auto overflow-auto rounded-lg bg-gradient-to-tr from-Nav to-Nav/10 p-2 md:p-4 ${
+      className={`scroll-thin h-auto max-h-[520px] min-h-72 w-auto overflow-auto rounded-lg bg-gradient-to-tr from-Nav to-Nav/10 p-2 md:p-4 ${
         isVisible ? "hidden" : "flex"
       } items-center justify-center`}
     >
@@ -45,7 +45,7 @@ const CodeBlock = ({ CodeSnippets, PreviewComponent }) => {
         <section
           className={`${
             activeTabIndex === "code" ? "block" : "hidden"
-          } relative m-2   box-border max-h-[520px] w-auto overflow-scroll scroll-smooth bg-gradient-to-tr from-Nav to-Nav/10 md:m-4`}
+          } relative m-2   box-border max-h-[520px]  w-auto overflow-scroll scroll-smooth bg-gradient-to-tr from-Nav to-Nav/10 md:m-4`}
         >
           <SyntaxHighlighter CodeSnippets={CodeSnippets} Language={"jsx"} />
         </section>
