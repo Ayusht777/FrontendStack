@@ -1,5 +1,18 @@
 import Button from "@/ChallangeComponents/Ayush/Button";
-
+export const authors = [
+  {
+    author: "Ayush Talesara",
+    img: `https://avatars.githubusercontent.com/u/106388215?v=4`,
+  },
+  {
+    author: "Divyanshu Sahu",
+    img: `https://avatars.githubusercontent.com/u/107391324?v=4`,
+  },
+  {
+    author: "Harshit Sharma",
+    img: `https://avatars.githubusercontent.com/u/106171546?v=4`,
+  },
+];
 export const componentsData = [
   {
     id: 1,
