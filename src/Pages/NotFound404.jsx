@@ -4,27 +4,27 @@ import { Link } from "react-router-dom";
 const NotFound404 = () => {
   return (
     <div
-      className=" bg-Bg h-dvh flex justify-center items-center "
+      className=" flex h-dvh items-center justify-center bg-Bg "
       aria-label="Page Not Found "
     >
-      <div className=" w-4/5  flex justify-center items-center flex-col">
-        <div className="flex justify-center items-center box-border ">
-          <h1 className=" text-white md:text-[14rem]  text-9xl">4</h1>
-          <span className=" text-Logo  relative flex justify-center items-center flex-col ">
-            <h1 className=" text-Logo md:text-[14rem]  text-9xl">0</h1>
-            <HiEye className=" absolute md:text-5xl text-3xl" />
+      <div className=" flex  w-4/5 flex-col items-center justify-center">
+        <div className="box-border flex items-center justify-center ">
+          <h1 className=" text-9xl text-white  md:text-[14rem]">4</h1>
+          <span className=" relative  flex flex-col items-center justify-center text-Logo ">
+            <h1 className=" text-9xl text-Logo  md:text-[14rem]">0</h1>
+            <HiEye className=" absolute text-3xl md:text-5xl" />
           </span>
-          <h1 className=" text-white md:text-[14rem]  text-9xl">4</h1>
+          <h1 className=" text-9xl text-white  md:text-[14rem]">4</h1>
         </div>
-        <div className="flex flex-col leading-10 text-center md:-mt-4 ">
-          <h2 className=" md:text-5xl text-2xl text-white ">SORRY,THERE'S</h2>
-          <h3 className=" md:text-[2.95rem] text-[1.45rem] text-Logo ">
+        <div className="flex flex-col text-center leading-10 md:-mt-4 ">
+          <h2 className=" text-2xl text-white md:text-5xl ">SORRY,THERE'S</h2>
+          <h3 className=" text-[1.45rem] text-Logo md:text-[2.95rem] ">
             NOTHING HERE
           </h3>
         </div>
-        <div className="md:mt-8 mt-4">
+        <div className="mt-4 md:mt-8">
           <Link to="/">
-            <Button label="GO TO HOME" width="w-32" bgColor="Logo" />
+            <Button title="GO TO HOME" />
           </Link>
         </div>
       </div>
