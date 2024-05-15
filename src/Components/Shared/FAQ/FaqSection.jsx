@@ -38,6 +38,7 @@ const FaqSection = () => {
         title={"View More"}
         background_color={"Border"}
         text_color={"white"}
+        path={"/faq"}
       />
     </section>
   );
