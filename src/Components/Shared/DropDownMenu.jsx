@@ -1,4 +1,11 @@
-import { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import {
+  useState,
+  useEffect,
+  useMemo,
+  useRef,
+  useCallback,
+  useLayoutEffect,
+} from "react";
 import { ChevronsUpDown } from "lucide-react";
 
 const DropdownMenu = ({
@@ -11,17 +18,20 @@ const DropdownMenu = ({
     if (form) {
       return dropdownOptions;
     } else {
-      return dropdownOptions.map((option) => option.author);
+      return dropdownOptions.map((option) => ({
+        author: option.author,
+        id: option.id,
+        img: option.img,
+      }));
     }
   }, [dropdownOptions, form]);
-
- 
-
+  const findindex = options.findIndex(
+    (option) => option.author === selectedAuthorName
+  );
   const [dropdownState, setDropdownState] = useState({
     selectedOption: form ? "" : selectedAuthorName,
-    selectedOptionIndex: form
-      ? 0
-      : options.findIndex((option) => option === selectedAuthorName) ,
+    selectedOptionIndex: form ? 0 : findindex,
+    finalIndex: form ? 0 : findindex,
     isOpen: false,
   });
 
@@ -29,8 +39,8 @@ const DropdownMenu = ({
 
   const handleKeyNavigation = useCallback(
     (event) => {
-      const { key } = event;
       if (dropdownState.isOpen) {
+        const { key } = event;
         if (key === "ArrowUp") {
           event.preventDefault();
           setDropdownState((prevState) => ({
@@ -48,8 +58,11 @@ const DropdownMenu = ({
           }));
         } else if (key === "Enter") {
           setDropdownState((prevState) => ({
-            selectedOption: options[prevState.selectedOptionIndex],
+            selectedOption: form
+              ? options[prevState.selectedOptionIndex]
+              : dropdownOptions[prevState.selectedOptionIndex].author,
             selectedOptionIndex: prevState.selectedOptionIndex,
+            finalIndex: prevState.selectedOptionIndex,
             isOpen: false,
           }));
         } else if (key === "Escape") {
@@ -66,6 +79,8 @@ const DropdownMenu = ({
       dropdownState.selectedOption,
       dropdownState.isOpen,
       onOptionChange,
+      dropdownOptions,
+      form,
     ]
   );
 
@@ -76,7 +91,7 @@ const DropdownMenu = ({
     };
   }, [handleKeyNavigation]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (dropdownState.isOpen && dropdownRef.current) {
       dropdownRef.current.focus();
     }
@@ -97,10 +112,10 @@ const DropdownMenu = ({
 
   return (
     <div
-      className={`w-full  ${!form ? "absolute right-0  z-50 max-w-56 bg-Bg" : ""} `}
+      className={`w-full  ${!form ? "absolute right-0  z-50 max-w-48 bg-Bg md:max-w-56" : "mb-1.5"} `}
     >
       <button
-        className="group mb-1.5 flex w-full cursor-pointer items-center justify-between rounded-md bg-Bg bg-inherit px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
+        className="group  flex w-full cursor-pointer items-center justify-between rounded-md bg-Bg bg-inherit px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
         onClick={() =>
           setDropdownState({ ...dropdownState, isOpen: !dropdownState.isOpen })
         }
@@ -115,7 +130,7 @@ const DropdownMenu = ({
           {!form ? (
             <div className="flex items-center text-white">
               <img
-                src={dropdownOptions[dropdownState.selectedOptionIndex].img}
+                src={dropdownOptions[dropdownState?.finalIndex]?.img}
                 alt={dropdownOptions[dropdownState.selectedOptionIndex].author}
                 className="mr-2 size-5 rounded-full"
               />
@@ -140,7 +155,7 @@ const DropdownMenu = ({
         <div className="w-full space-y-1">
           {options.map((option, index) => (
             <div
-              key={option}
+              key={index}
               className={`m rounded-md px-2 py-0.5 ${form ? "" : "flex items-center gap-x-1"}  ${
                 dropdownState.selectedOptionIndex !== index
                   ? "hover:bg-Border"
@@ -154,14 +169,18 @@ const DropdownMenu = ({
                 });
               }}
             >
-              {!form && (
-                <img
-                  src={dropdownOptions[index].img}
-                  alt={option}
-                  className=" size-5 rounded-full"
-                />
+              {!form ? (
+                <>
+                  <img
+                    src={dropdownOptions[index].img}
+                    alt={dropdownOptions[index].id}
+                    className=" size-5 rounded-full"
+                  />
+                  {option.author}
+                </>
+              ) : (
+                { option }
               )}
-              {option}
             </div>
           ))}
         </div>
