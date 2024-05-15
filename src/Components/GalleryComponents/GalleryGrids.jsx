@@ -4,7 +4,7 @@ import { Code } from "lucide-react";
 const GalleryGrids = ({ Data }) => {
   return (
     <section className="mt-6 grid w-full max-w-[1200px] grid-cols-1 place-content-center gap-5 md:grid-cols-2 lg:grid-cols-3">
-      {Data.map((item) => (
+      {Data?.map((item) => (
         <div key={item.id} className=" aspect-square rounded-xl bg-Nav pb-2">
           <div className=" mx-4 mt-4 aspect-square rounded-xl bg-Bg  transition-all duration-500 ease-in-out hover:mx-2 hover:mt-2">
             <img
