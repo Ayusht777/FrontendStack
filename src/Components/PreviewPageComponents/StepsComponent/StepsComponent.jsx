@@ -35,8 +35,8 @@ const Command = ({ command, isOptional, isLink }) => (
   </li>
 );
 
-const Steps = ({ title, commands }) => {
-  const [IsOpen, setIsOpen] = useState(false);
+const Steps = ({ title, commands ,open}) => {
+  const [IsOpen, setIsOpen] = useState(open);
 
   return (
     <section className="my-4 flex h-auto w-full max-w-[1200px] flex-col items-center justify-center divide-y divide-Bg rounded-lg bg-Nav md:my-6">

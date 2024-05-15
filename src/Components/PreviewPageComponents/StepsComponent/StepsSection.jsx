@@ -15,6 +15,7 @@ const stepsData = [
       { command: "pnpm run dev", isOptional: true },
       { command: "http://localhost:5173/", isOptional: true },
     ],
+    open: false,
   },
   {
     id: 2,
@@ -49,6 +50,7 @@ const stepsData = [
       },
       { command: "pnpm install lucide-react", isOptional: true },
     ],
+    open: true,
   },
   {
     id: 3,
@@ -77,6 +79,7 @@ const stepsData = [
         isLink: false,
       },
     ],
+    open: false,
   },
 ];
 
@@ -85,7 +88,7 @@ const StepsSection = () => {
     <section className="w-full max-w-[1200px] pb-8 md:pb-16 md:pt-20 ">
       <Heading title={"Run This Code Locally"} />
       {stepsData.map((step) => (
-        <Steps key={step.id} title={step.title} commands={step?.commands} />
+        <Steps key={step.id} title={step.title} commands={step?.commands} open={step.open} />
       ))}
     </section>
   );
