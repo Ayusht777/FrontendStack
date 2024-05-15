@@ -18,7 +18,7 @@ const Home = () => {
       <FeaturedCreationsSection />
       <FeatureContainer />
       <FaqList></FaqList>
-      < QueryFormSection></ QueryFormSection>
+      <QueryFormSection></ QueryFormSection>
       <Footer></Footer>
     </div>
   );
