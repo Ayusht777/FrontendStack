@@ -112,6 +112,7 @@ const QueryForm = () => {
                 setSelectedOption(value);
               }}
               selectedOption={field.value}
+              form={true}
             />
           )}
         />
