@@ -2,15 +2,26 @@ import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { ChevronsUpDown } from "lucide-react";
 
 const DropdownMenu = ({
-  dropdownOptions = null,
+  dropdownOptions = [],
   onOptionChange,
   form = true,
-  selectedOptionImage,
+  selectedAuthorName = null,
 }) => {
-  const options = useMemo(() => dropdownOptions, [dropdownOptions]);
+  const options = useMemo(() => {
+    if (form) {
+      return dropdownOptions;
+    } else {
+      return dropdownOptions.map((option) => option.author);
+    }
+  }, [dropdownOptions, form]);
+
+ 
+
   const [dropdownState, setDropdownState] = useState({
-    selectedOption: "",
-    selectedOptionIndex: 0,
+    selectedOption: form ? "" : selectedAuthorName,
+    selectedOptionIndex: form
+      ? 0
+      : options.findIndex((option) => option === selectedAuthorName) ,
     isOpen: false,
   });
 
@@ -104,8 +115,8 @@ const DropdownMenu = ({
           {!form ? (
             <div className="flex items-center text-white">
               <img
-                src={selectedOptionImage[dropdownState.selectedOptionIndex]}
-                alt={dropdownOptions.selectedOption}
+                src={dropdownOptions[dropdownState.selectedOptionIndex].img}
+                alt={dropdownOptions[dropdownState.selectedOptionIndex].author}
                 className="mr-2 size-5 rounded-full"
               />
               {dropdownState.selectedOption || options[0]}
@@ -145,7 +156,7 @@ const DropdownMenu = ({
             >
               {!form && (
                 <img
-                  src={selectedOptionImage[index]}
+                  src={dropdownOptions[index].img}
                   alt={option}
                   className=" size-5 rounded-full"
                 />
