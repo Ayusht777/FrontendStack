@@ -11,7 +11,7 @@ import { ChevronsUpDown } from "lucide-react";
 const DropdownMenu = ({
   dropdownOptions = [],
   onOptionChange,
-  form = true,
+  form = false,
   selectedAuthorName = null,
 }) => {
   const options = useMemo(() => {
@@ -25,7 +25,8 @@ const DropdownMenu = ({
       }));
     }
   }, [dropdownOptions, form]);
-  const findindex = options.findIndex(
+  console.log(options) 
+   const findindex = options.findIndex(
     (option) => option.author === selectedAuthorName
   );
   const [dropdownState, setDropdownState] = useState({
@@ -34,7 +35,7 @@ const DropdownMenu = ({
     finalIndex: form ? 0 : findindex,
     isOpen: false,
   });
-
+console.log(dropdownState);
   const dropdownRef = useRef(null);
 
   const handleKeyNavigation = useCallback(
@@ -112,7 +113,7 @@ const DropdownMenu = ({
 
   return (
     <div
-      className={`w-full  ${!form ? "absolute right-0  z-50 max-w-48 bg-Bg md:max-w-56" : "mb-1.5"} `}
+      className={`w-full  ${form ? "mb-1.5" : "absolute right-0  z-50 max-w-48 bg-Bg md:max-w-56"} `}
     >
       <button
         className="group  flex w-full cursor-pointer items-center justify-between rounded-md bg-Bg bg-inherit px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
@@ -172,14 +173,15 @@ const DropdownMenu = ({
               {!form ? (
                 <>
                   <img
-                    src={dropdownOptions[index].img}
-                    alt={dropdownOptions[index].id}
+                    src={dropdownOptions[index]?.img}
+                    alt={dropdownOptions[index]?.id}
                     className=" size-5 rounded-full"
                   />
-                  {option.author}
+                  {option?.author}
+                  {console.log("ff")}
                 </>
               ) : (
-                { option }
+                <span>{option}</span>
               )}
             </div>
           ))}
