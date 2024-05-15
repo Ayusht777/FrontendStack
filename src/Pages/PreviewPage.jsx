@@ -33,7 +33,7 @@ const PreviewPage = () => {
       <ToolbarSection
         dropdownOptions={authors}
         selectedAuthorName={selectedAuthorName}
-        onOptionChange={setelectedAuthorName}
+        onOptionChange={setselectedAuthorName}
       />
       <CodeBlock
         CodeSnippets={filteredVariation?.code}
