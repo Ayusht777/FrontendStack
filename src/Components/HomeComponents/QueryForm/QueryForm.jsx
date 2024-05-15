@@ -3,9 +3,19 @@ import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Heading from "@/Components/Shared/Heading";
-import DropDownMenu from "@/Components/DropDownMenu";
-import Button from "@/Components/Shared/Button";
+import DropDownMenu from "@/Components/Shared/DropDownMenu";
+
 import { AlertTriangleIcon } from "lucide-react";
+const SubmitButton = () => {
+  return (
+    <button
+      type="submit"
+      className={`my-2 min-w-16 rounded-lg   bg-Logo px-5 py-1.5 text-center font-semibold  tracking-tight text-Bg transition-colors duration-300 ease-in-out hover:bg-Logo/90 focus:outline-Logo focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}
+    >
+      Submit
+    </button>
+  );
+};
 const FormField = ({ label, register, error, ...rest }) => (
   <>
     <label className="my-2">{label}</label>
@@ -68,7 +78,9 @@ const QueryForm = () => {
   return (
     <>
       <Heading title={"Connect with the Team"} />
-      <p className=" -mt-6 mb-8 pl-4 text-center text-lg">Your Thoughts on this project?</p>
+      <p className=" -mt-6 mb-8 pl-4 text-center text-lg">
+        Your Thoughts on this project?
+      </p>
       <form
         className="  mx-auto flex  flex-col items-start px-4"
         onSubmit={handleSubmit(onSubmit)}
@@ -123,7 +135,7 @@ const QueryForm = () => {
             {errors.message.message}
           </span>
         )}
-        <Button type="submit" title={"Submit"} />
+        <SubmitButton />
       </form>
     </>
   );
