@@ -24,7 +24,7 @@ const NotFound404 = () => {
         </div>
         <div className="mt-4 md:mt-8">
           <Link to="/">
-            <Button title="GO TO HOME" />
+            <Button title="GO TO HOME" path={false}/>
           </Link>
         </div>
       </div>
