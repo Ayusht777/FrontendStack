@@ -11,6 +11,7 @@ const stepsData = [
         isLink: true,
       },
     ],
+    open :true
   },
 ];
 
@@ -19,7 +20,7 @@ const ReferenceSection = () => {
     <section className="w-full max-w-[1200px] pb-8 md:pb-16 md:pt-20">
       <Heading title={"Resources used in this component"} />
       {stepsData.map((step) => (
-        <Steps key={step.id} commands={step?.commands} title={step?.title} />
+        <Steps key={step.id} commands={step?.commands} title={step?.title} open={step.open} />
       ))}
     </section>
   );
