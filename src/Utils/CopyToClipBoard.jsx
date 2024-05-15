@@ -20,7 +20,7 @@ const CopyToClipBoard = ({ textToCopy, placement = true }) => {
       className={`absolute
         ${
           placement
-            ? "z-20 right-2 mt-2 md:hover:bg-Border lg:size-8 size-7 rounded-md"
+            ? " z-0 right-2 mt-2 md:hover:bg-Border lg:size-8 size-7 rounded-md"
             : "right-2"
         }
         transition-colors ease-in duration-300`}
