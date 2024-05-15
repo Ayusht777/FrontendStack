@@ -19,31 +19,43 @@ const DropdownMenu = ({
   const handleKeyNavigation = useCallback(
     (event) => {
       const { key } = event;
-      if (key === "ArrowUp") {
-        event.preventDefault();
-        setDropdownState((prevState) => ({
-          ...prevState,
-          selectedOptionIndex: Math.max(prevState.selectedOptionIndex - 1, 0),
-        }));
-      } else if (key === "ArrowDown") {
-        event.preventDefault();
-        setDropdownState((prevState) => ({
-          ...prevState,
-          selectedOptionIndex: Math.min(
-            prevState.selectedOptionIndex + 1,
-            options.length - 1
-          ),
-        }));
-      } else if (key === "Enter") {
-        setDropdownState((prevState) => ({
-          selectedOption: options[prevState.selectedOptionIndex],
-          selectedOptionIndex: prevState.selectedOptionIndex,
-          isOpen: false,
-        }));
+      if (dropdownState.isOpen) {
+        if (key === "ArrowUp") {
+          event.preventDefault();
+          setDropdownState((prevState) => ({
+            ...prevState,
+            selectedOptionIndex: Math.max(prevState.selectedOptionIndex - 1, 0),
+          }));
+        } else if (key === "ArrowDown") {
+          event.preventDefault();
+          setDropdownState((prevState) => ({
+            ...prevState,
+            selectedOptionIndex: Math.min(
+              prevState.selectedOptionIndex + 1,
+              options.length - 1
+            ),
+          }));
+        } else if (key === "Enter") {
+          setDropdownState((prevState) => ({
+            selectedOption: options[prevState.selectedOptionIndex],
+            selectedOptionIndex: prevState.selectedOptionIndex,
+            isOpen: false,
+          }));
+        } else if (key === "Escape") {
+          setDropdownState((prevState) => ({
+            ...prevState,
+            isOpen: false,
+          }));
+        }
+        onOptionChange(dropdownState.selectedOption);
       }
-      onOptionChange(dropdownState.selectedOption);
     },
-    [options, dropdownState.selectedOption, onOptionChange]
+    [
+      options,
+      dropdownState.selectedOption,
+      dropdownState.isOpen,
+      onOptionChange,
+    ]
   );
 
   useEffect(() => {
