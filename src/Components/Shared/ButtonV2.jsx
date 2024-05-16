@@ -6,7 +6,7 @@ const ButtonV2 = () => {
         href="https://github.com/Ayusht777/FrontendStack"
         target="_blank"
         className={` box-border  flex  min-w-16 items-center  justify-between 
-      rounded-lg bg-inherit px-5 py-1.5 text-center 
+      rounded-lg bg-Nav px-5 py-1.5 text-center 
       font-semibold tracking-tight text-white 
       outline outline-1 outline-Border transition-colors 
       duration-300 ease-in-out hover:bg-Border focus:outline-white  
