@@ -7,7 +7,7 @@ const HeroSection = ({ heading, subheading = false, callToAction = false }) => {
         {heading}
       </span>
       {subheading && (
-        <p className="my-4  max-w-4xl text-center text-lg font-light tracking-tight text-white underline decoration-Border underline-offset-4 md:text-2xl">
+        <p className="my-4  max-w-4xl text-center text-lg font-light tracking-tight text-white/90 underline decoration-Border underline-offset-4 md:text-2xl">
           {subheading}
         </p>
       )}
