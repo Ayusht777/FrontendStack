@@ -25,8 +25,7 @@ const DropdownMenu = ({
       }));
     }
   }, [dropdownOptions, form]);
-  console.log(options) 
-   const findindex = options.findIndex(
+  const findindex = options.findIndex(
     (option) => option.author === selectedAuthorName
   );
   const [dropdownState, setDropdownState] = useState({
@@ -35,7 +34,7 @@ const DropdownMenu = ({
     finalIndex: form ? 0 : findindex,
     isOpen: false,
   });
-console.log(dropdownState);
+
   const dropdownRef = useRef(null);
 
   const handleKeyNavigation = useCallback(
@@ -72,7 +71,9 @@ console.log(dropdownState);
             isOpen: false,
           }));
         }
-        onOptionChange(dropdownState.selectedOption);
+        onOptionChange(
+          dropdownState.selectedOption
+        );
       }
     },
     [
@@ -110,7 +111,7 @@ console.log(dropdownState);
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
+ 
   return (
     <div
       className={`w-full  ${form ? "mb-1.5" : "absolute right-0  z-50 max-w-48 bg-Bg md:max-w-56"} `}
@@ -164,10 +165,14 @@ console.log(dropdownState);
               } ${dropdownState.selectedOptionIndex === index ? "bg-Border" : ""}`}
               onClick={() => {
                 setDropdownState({
-                  selectedOption: option,
+                  selectedOption: form ? option : options[index].author,
                   selectedOptionIndex: index,
                   isOpen: false,
+                  finalIndex: !form && index,
                 });
+                onOptionChange(
+                  options[index].author
+                );
               }}
             >
               {!form ? (
@@ -178,7 +183,6 @@ console.log(dropdownState);
                     className=" size-5 rounded-full"
                   />
                   {option?.author}
-                  {console.log("ff")}
                 </>
               ) : (
                 <span>{option}</span>

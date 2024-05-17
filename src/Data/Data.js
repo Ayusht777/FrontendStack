@@ -1,4 +1,7 @@
-import Button from "@/ChallangeComponents/Ayush/Button";
+import  ButtonWrapperAyush  from "@/ChallangeComponents/Ayush Talesara/Button";
+import  ButtonWrapperDivyanshu from "@/ChallangeComponents/Divyanshu Sahu/Button";
+import  ButtonWrapperHarshit  from "@/ChallangeComponents/Harshit/Button";
+
 export const authors = [
   {
     id:0,
@@ -36,7 +39,7 @@ export const componentsData = [
     };
     export default Button;
       `,
-        renderedComponent: Button,
+        renderedComponent:ButtonWrapperAyush,
       },
       {
         author: "Divyanshu Sahu",
@@ -53,7 +56,7 @@ export const componentsData = [
 
     export default Button;
       `,
-        renderedComponent: Button,
+        renderedComponent: ButtonWrapperDivyanshu,
       },
       {
         author: "Harshit Sharma",
@@ -70,25 +73,9 @@ export const componentsData = [
 
     export default Button;
       `,
-        renderedComponent: Button,
+        renderedComponent: ButtonWrapperHarshit,
       },
-      {
-        author: "Aarsh Bharti",
-        codeLanguage: "Jsx",
-        dateCreated: "2024-04-25",
-        code: `
-    const Button = () => {
-      return (
-        <button className="w-56 h-9 bg-yellow-500 text-white">
-          Click me
-        </button>
-      );
-    };
-
-    export default Button;
-      `,
-        renderedComponent: Button,
-      },
+      
     ],
   },
 ];

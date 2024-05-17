@@ -7,7 +7,7 @@ const ComponentPreview = ({ PreviewComponent, isVisible }) => {
   const RenderedComponent = PreviewComponent;
   return (
     <section
-      className={`scroll-thin h-auto max-h-[520px] min-h-72 w-auto overflow-auto rounded-lg bg-gradient-to-tr from-Nav to-Nav/10 p-2 md:p-4 ${
+      className={`scroll-thin h-full min-h-[350px]  w-auto overflow-auto rounded-lg bg-gradient-to-tr from-Nav to-Nav/10 p-2 md:p-4 ${
         isVisible ? "hidden" : "flex"
       } items-center justify-center`}
     >

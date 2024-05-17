@@ -12,6 +12,7 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
     "@shikijs/rehype": "^1.5.2",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.2.0",
     "html-react-parser": "^5.1.10",
     "lucide-react": "^0.368.0",
@@ -25,6 +26,7 @@
     "rehype-stringify": "^10.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",
+    "tailwind-merge": "^2.3.0",
     "unified": "^11.0.4",
     "yup": "^1.4.0"
   },
