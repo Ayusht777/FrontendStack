@@ -1,15 +1,15 @@
-import  ButtonWrapperAyush  from "@/ChallangeComponents/Ayush Talesara/Button";
-import  ButtonWrapperDivyanshu from "@/ChallangeComponents/Divyanshu Sahu/Button";
-import  ButtonWrapperHarshit  from "@/ChallangeComponents/Harshit/Button";
+import ButtonWrapperAyush from "@/ChallangeComponents/Ayush Talesara/Button";
+import ButtonWrapperDivyanshu from "@/ChallangeComponents/Divyanshu Sahu/Button";
+import ButtonWrapperHarshit from "@/ChallangeComponents/Harshit/Button";
 
 export const authors = [
   {
-    id:0,
+    id: 0,
     author: "Ayush Talesara",
     img: `https://avatars.githubusercontent.com/u/106388215?v=4`,
   },
   {
-    id:1,
+    id: 1,
     author: "Divyanshu Sahu",
     img: `https://avatars.githubusercontent.com/u/107391324?v=4`,
   },
@@ -30,32 +30,76 @@ export const componentsData = [
         codeLanguage: "Jsx",
         dateCreated: "2024-04-25",
         code: `
-    const Button = () => {
+    import { cn } from "@/Utils/twMerge";
+    const ButtonWrapperAyush = () => {
       return (
-        <button className="w-56 h-9 bg-blue-500 text-white">
-          Click me
+        <div className="flex h-full w-full items-center justify-center ">
+          <Button BgColor="bg-gray-100" hoverColor={"hover:bg-gray-100/90"}>
+            Button
+          </Button>
+        </div>
+      );
+    };
+    const Button = ({
+      BgColor = "bg-gray-100",
+      hoverColor = "hover:bg-gray-100/90",
+      children,
+    }) => {
+      return (
+        <button
+          type="button"
+          className={cn(
+        \`rounded-md px-6 py-2 transition-colors ease-in-out focus:outline focus:outline-1 focus:outline-black \`, 
+        \`\${BgColor}\`\, 
+        \`\${hoverColor}\`\,
+          )}
+        >
+          {children}
         </button>
       );
     };
-    export default Button;
+
+    export default ButtonWrapperAyush;
+
       `,
-        renderedComponent:ButtonWrapperAyush,
+        renderedComponent: ButtonWrapperAyush,
       },
       {
         author: "Divyanshu Sahu",
         codeLanguage: "Jsx",
         dateCreated: "2024-04-25",
         code: `
-    const Button = () => {
-      return (
-        <button className="w-56 h-9 bg-green-500 text-white">
-          Click me
-        </button>
-      );
-    };
+      import { cn } from "@/Utils/twMerge";
+      const ButtonWrapperDivyanshu = () => {
+        return (
+          <div className="flex h-full w-full items-center justify-center ">
+            <Button BgColor="bg-red-500" hoverColor={"hover:bg-red-500/90"}>
+              Button
+            </Button>
+          </div>
+        );
+      };
+      const Button = ({
+        BgColor = "bg-gray-100",
+        hoverColor = "hover:bg-gray-100/90",
+        children,
+      }) => {
+        return (
+          <button
+            type="button"
+            className={cn(
+              \` rounded-md px-6 py-2 transition-colors ease-in-out focus:outline  focus:outline-1 focus:outline-black \`,
+              \`\${BgColor}\`\,
+              \`\${hoverColor}\`\,
+           )}
+          >
+            {children}
+          </button>
+        );
+      };
 
-    export default Button;
-      `,
+      export default ButtonWrapperDivyanshu;
+`,
         renderedComponent: ButtonWrapperDivyanshu,
       },
       {
@@ -63,19 +107,40 @@ export const componentsData = [
         codeLanguage: "Jsx",
         dateCreated: "2024-04-25",
         code: `
-    const Button = () => {
-      return (
-        <button className="w-56 h-9 bg-red-500 text-white">
-          Click me
-        </button>
-      );
-    };
+      import { cn } from "@/Utils/twMerge";
+      const ButtonWrapperHarshit = () => {
+        return (
+          <div className="flex h-full w-full items-center justify-center ">
+            <Button BgColor="bg-blue-500" hoverColor={"hover:bg-blue-500/90"}>
+              Button
+            </Button>
+          </div>
+        );
+      };
+      const Button = ({
+        BgColor = "bg-gray-100",
+        hoverColor = "hover:bg-gray-100/90",
+        children,
+      }) => {
+        return (
+          <button
+            type="button"
+            className={cn(
+              \`\ rounded-md px-6 py-2 transition-colors ease-in-out focus:outline  focus:outline-1 focus:outline-black \`\,
+              \`\${BgColor}\`\,
+              \`\${hoverColor}\`\,
+            )}
+          >
+            {children}
+          </button>
+        );
+      };
 
-    export default Button;
+      export default ButtonWrapperHarshit;
+
       `,
         renderedComponent: ButtonWrapperHarshit,
       },
-      
     ],
   },
 ];
