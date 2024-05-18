@@ -63,6 +63,27 @@ export const componentsData = [
 
       `,
         renderedComponent: ButtonWrapperAyush,
+        attributes: [
+          {
+            attribute: "Children",
+            type: "ReactNode",
+            description:
+              "You Can put String for title and svg + string for icon version",
+            defaultValue: "-",
+          },
+          {
+            attribute: "BgColor",
+            type: "String",
+            description: "Set the Background Color of the Button",
+            defaultValue: "bg-gray-100",
+          },
+          {
+            attribute: "hoverColor",
+            type: "String",
+            description: "Set the Hover State Color of the Button",
+            defaultValue: "hover:bg-gray-100/90",
+          },
+        ],
       },
       {
         author: "Divyanshu Sahu",
@@ -101,6 +122,27 @@ export const componentsData = [
       export default ButtonWrapperDivyanshu;
 `,
         renderedComponent: ButtonWrapperDivyanshu,
+        attributes: [
+          {
+            attribute: "Children",
+            type: "ReactNode",
+            description:
+              "You Can put String for title and svg + string for icon version",
+            defaultValue: "-",
+          },
+          {
+            attribute: "BgColor",
+            type: "String",
+            description: "Set the Background Color of the Button",
+            defaultValue: "bg-gray-100",
+          },
+          {
+            attribute: "hoverColor",
+            type: "String",
+            description: "Set the Hover State Color of the Button",
+            defaultValue: "hover:bg-gray-100/90",
+          },
+        ],
       },
       {
         author: "Harshit Sharma",
@@ -140,6 +182,27 @@ export const componentsData = [
 
       `,
         renderedComponent: ButtonWrapperHarshit,
+        attributes: [
+          {
+            attribute: "Children",
+            type: "ReactNode",
+            description:
+              "You Can put String for title and svg + string for icon version",
+            defaultValue: "-",
+          },
+          {
+            attribute: "BgColor",
+            type: "String",
+            description: "Set the Background Color of the Button",
+            defaultValue: "bg-gray-100",
+          },
+          {
+            attribute: "hoverColor",
+            type: "String",
+            description: "Set the Hover State Color of the Button",
+            defaultValue: "hover:bg-gray-100/90",
+          },
+        ],
       },
     ],
   },
