@@ -7,6 +7,7 @@ import CodeBlock from "@/Components/PreviewPageComponents/CodeBlockComponent/Cod
 import StepsSection from "@/Components/PreviewPageComponents/StepsComponent/StepsSection";
 import ReferenceSection from "@/Components/PreviewPageComponents/ReferenceSection";
 import AttributeSection from "@/Components/PreviewPageComponents/AttributeSection";
+import GridBackgroundV2 from "@/Components/Shared/GridBackgroundV2";
 import { componentsData, authors } from "@/Data/Data";
 
 const PreviewPage = () => {
@@ -27,24 +28,28 @@ const PreviewPage = () => {
   }
  console.log(selectedAuthorName)
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center bg-Bg px-4 md:px-6 xl:px-0">
-      <Navbar />
-      <HeroSection
-        heading={"Explore the Live Preview and Visualize the Code"}
-      />
-      <ToolbarSection
-        dropdownOptions={authors}
-        selectedAuthorName={selectedAuthorName}
-        onOptionChange={setselectedAuthorName}
-      />
-      <CodeBlock
-        CodeSnippets={filteredVariation?.code}
-        PreviewComponent={filteredVariation?.renderedComponent}
-      />
-      <StepsSection />
-      <ReferenceSection />
-      <AttributeSection />
-    </div>
+    <GridBackgroundV2
+      TwClass={`[mask-image:radial-gradient(ellipse_60%_18%_at_50%_0%,#000_70%,transparent_100%)] md:[mask-image:radial-gradient(ellipse_60%_24%_at_50%_0%,#000_70%,transparent_100%)]`}
+    >
+      <div className=" relative z-20 flex h-full w-full flex-col items-center justify-center px-4 md:px-6 xl:px-0">
+        <Navbar />
+        <HeroSection
+          heading={"Explore the Live Preview and Visualize the Code"}
+        />
+        <ToolbarSection
+          dropdownOptions={authors}
+          selectedAuthorName={selectedAuthorName}
+          onOptionChange={setselectedAuthorName}
+        />
+        <CodeBlock
+          CodeSnippets={filteredVariation?.code}
+          PreviewComponent={filteredVariation?.renderedComponent}
+        />
+        <StepsSection />
+        <ReferenceSection />
+        <AttributeSection attributes={filteredVariation?.attributes} />
+      </div>
+    </GridBackgroundV2>
   );
 };
 
