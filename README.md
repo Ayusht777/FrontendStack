@@ -9,5 +9,3 @@ pnpm i react-icons
 // imp
 
 use @ to import any file 
-
-horny her shit
