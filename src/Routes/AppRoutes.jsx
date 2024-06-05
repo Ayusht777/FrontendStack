@@ -53,19 +53,20 @@ const AppRoutes = () => {
             </Suspense>
           }
         />
-        <Route
-          path="/ComponentNotFound404"
-          element={
-            <Suspense fallback={<Loader />}>
-              <ComponentNotFound404 />
-            </Suspense>
-          }
-        />
+
         <Route
           path="*"
           element={
             <Suspense fallback={<Loader />}>
               <NotFound404 />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/ComponentNotFound404"
+          element={
+            <Suspense fallback={<Loader />}>
+              <ComponentNotFound404 />
             </Suspense>
           }
         />
