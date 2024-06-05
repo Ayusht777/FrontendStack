@@ -7,6 +7,7 @@ const About = lazy(() => import("@/Pages/About"));
 const Faq = lazy(() => import("@/Pages/Faq"));
 const PreviewPage = lazy(() => import("@/Pages/PreviewPage"));
 const NotFound404 = lazy(() => import("@/Pages/NotFound404"));
+const ComponentNotFound404 = lazy(() => import("@/Pages/ComponentNotFound404"));
 
 const AppRoutes = () => {
   return (
@@ -49,6 +50,14 @@ const AppRoutes = () => {
           element={
             <Suspense fallback={<Loader />}>
               <Faq />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/ComponentNotFound404"
+          element={
+            <Suspense fallback={<Loader />}>
+              <ComponentNotFound404 />
             </Suspense>
           }
         />
