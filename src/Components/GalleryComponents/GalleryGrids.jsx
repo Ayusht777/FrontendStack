@@ -16,7 +16,7 @@ const GalleryGrids = ({ Data }) => {
           <div className="mx-4 mt-2 flex   items-center justify-between ">
             <h1 className=" font-semibold text-white">{item.ComponentName}</h1>
             <button className=" rounded-md bg-Border p-1 text-Logo ">
-              <Link to={`/gallery/PreviewPage/${item.ComponentName}`}>
+              <Link to={Data.isUploaded ? `/gallery/PreviewPage/${item.ComponentName}` : "/ComponentNotFound404"}>
                 <Code strokeWidth="3" />
               </Link>
             </button>
