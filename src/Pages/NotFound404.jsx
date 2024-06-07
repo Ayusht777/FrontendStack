@@ -1,10 +1,13 @@
 import { HiEye } from "react-icons/hi2";
 import Button from "@/Components/Shared/Button";
 import { Link } from "react-router-dom";
+import GridBackgroundV2 from "@/Components/Shared/GridBackgroundV2";
+
 const NotFound404 = () => {
   return (
-    <div
-      className=" flex h-dvh items-center justify-center bg-Bg "
+  <GridBackgroundV2 TwClass="[mask-image:radial-gradient(ellipse_60%_70%_at_50%_0%,#000_70%,transparent_100%)] zmd:[mask-image:radial-gradient(ellipse_60%_70%_at_50%_0%,#000_70%,transparent_100%)]">
+     <div
+      className=" flex h-dvh items-center justify-center relative z-20"
       aria-label="Page Not Found "
     >
       <div className=" flex  w-4/5 flex-col items-center justify-center">
@@ -29,6 +32,7 @@ const NotFound404 = () => {
         </div>
       </div>
     </div>
+  </GridBackgroundV2>
   );
 };
 
