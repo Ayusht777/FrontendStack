@@ -1,36 +1,45 @@
 import BrandLogo from "@/Assets/BrandLogo.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
+const routeItems = [
+  {
+    routeId: 0,
+    routeName: "Home",
+    routePath: "/",
+  },
+  {
+    routeId: 1,
+    routeName: "Gallery",
+    routePath: "/gallery",
+  },
+  {
+    routeId: 2,
+    routeName: "About",
+    routePath: "/about",
+  },
+  {
+    routeId: 3,
+    routeName: "FAQ",
+    routePath: "/faq",
+  },
+];
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  const routeItems = [
-    {
-      routeId: 0,
-      routeName: "Home",
-      routePath: "/",
-    },
-    {
-      routeId: 1,
-      routeName: "Gallery",
-      routePath: "/gallery",
-    },
-    {
-      routeId: 2,
-      routeName: "About",
-      routePath: "/about",
-    },
-    {
-      routeId: 3,
-      routeName: "FAQ",
-      routePath: "/faq",
-    },
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header
-      className="relative mt-8 flex w-full max-w-[1200px] items-center justify-center rounded-lg border-2 border-Border bg-Nav md:px-8"
+      className={`fixed top-0 z-50 mt-8 flex w-full max-w-[1200px] items-center justify-center rounded-lg border-2 border-Border bg-Nav ${scrollPosition > 85 ? "bg-Nav/60 shadow-[0_8px_30px_rgb(215,244,0,0.15)] backdrop-blur-sm" : ""} transition-all  duration-300 ease-in-out md:px-8`}
       aria-label="Main Navigation"
     >
       <nav className="flex h-10 w-full items-center justify-between gap-x-2 px-4">
@@ -77,7 +86,7 @@ const Navbar = () => {
           ></span>
         </button>
       </nav>
-      {isActive && (
+      {isActive ? (
         <div
           className="absolute top-14 flex w-full flex-col items-center justify-center rounded-lg border-2 border-Border bg-Nav py-6 md:hidden "
           aria-label="Mobile Navigation Menu"
@@ -101,7 +110,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-      )}
+      ) : null}
     </header>
   );
 };
