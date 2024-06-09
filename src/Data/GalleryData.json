@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "imageUrl": "https://cdn.dribbble.com/users/1651276/screenshots/15828769/media/e1193d6b7fa59dc00eaae37fcc8af317.png?resize=1000x750&vertical=center",
+        "imageUrl": "https://i.postimg.cc/HWP1B8S1/Button.png",
         "ComponentName": "Button",
         "type": "basic",
         "isUploaded": true
@@ -15,7 +15,7 @@
     },
     {
         "id": 3,
-        "imageUrl": "https://lh3.googleusercontent.com/kXJgwc3Xv0zxP0cRFpz1-VeDsJShkOm8cQ6Xjz3gXAjCWAv2CUH7ho3cT7z0GeE-mtbJP5nNq0T1uzNXzbkOYdtbglHyLwDJ91zdpg=w1064-v0",
+        "imageUrl": "https://i.postimg.cc/Nft4WBdG/Dialog.png",
         "ComponentName": "Dialog",
         "type": "basic",
         "isUploaded": false
@@ -36,35 +36,35 @@
     },
     {
         "id": 6,
-        "imageUrl": "https://assets-global.website-files.com/64d1f4894b9a964bb3b26df9/64e74ef90093d41b9d0e05ae_Dropdown_1.svg",
+        "imageUrl": "https://i.postimg.cc/mknT18X8/Accordion.png",
         "ComponentName": "Accordion",
         "type": "basic",
         "isUploaded": false
     },
     {
         "id": 7,
-        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQti3m7NEGGW_loaeOHhccnBmR35EgDIabckT7fwCVpaA&s",
+        "imageUrl": "https://i.postimg.cc/SR6wkV0n/Tabs.png",
         "ComponentName": "Tabs",
         "type": "basic",
         "isUploaded": false
     },
     {
         "id": 8,
-        "imageUrl": "https://cdn.dribbble.com/users/883236/screenshots/16131405/media/3e518ae73b2037eb181fa60059dc53cc.png?resize=1000x750&vertical=center",
+        "imageUrl": "https://i.postimg.cc/XYkdd5W9/TextArea.png",
         "ComponentName": "Text Area",
         "type": "basic",
         "isUploaded": false
     },
     {
         "id": 9,
-        "imageUrl": "https://miro.medium.com/v2/resize:fit:1000/1*G65yV3PgN6ztxgpEQQ3JTA.png",
+        "imageUrl": "https://i.postimg.cc/8zSnTLwv/Table-nextui.png",
         "ComponentName": "Table",
         "type": "basic",
         "isUploaded": false
     },
     {
         "id": 10,
-        "imageUrl": "(link unavailable)",
+        "imageUrl": "https://i.postimg.cc/yYvLcWHg/Pagination.png",
         "ComponentName": "Pagination",
         "type": "basic",
         "isUploaded": false
@@ -146,7 +146,6 @@
         "type": "medium",
         "isUploaded": false
     },
-
     {
         "id": 22,
         "imageUrl": "(link unavailable)",
@@ -161,24 +160,24 @@
         "type": "professional",
         "isUploaded": false
     },
-        {
+    {
         "id": 24,
+        "imageUrl": "https://i.postimg.cc/sXmMp7F9/Drag-and-Drop-File-Upload-1.png",
+        "ComponentName": "Drag-and-Drop File Upload",
+        "type": "professional",
+        "isUploaded": false
+    },
+    {
+        "id": 25,
         "imageUrl": "https://i.postimg.cc/rpssMS1b/Command.png",
         "ComponentName": "Commands",
         "type": "professional",
         "isUploaded": false
     },
     {
-        "id": 25,
+        "id": 26,
         "imageUrl": "https://i.postimg.cc/59hv4N2g/Context-Menu.png",
         "ComponentName": "Context Menu",
-        "type": "professional",
-        "isUploaded": false
-    },
-    {
-        "id": 26,
-        "imageUrl": "https://i.postimg.cc/sXmMp7F9/Drag-and-Drop-File-Upload-1.png",
-        "ComponentName": "Drag-and-Drop File Upload",
         "type": "professional",
         "isUploaded": false
     }
