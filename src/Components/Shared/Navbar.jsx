@@ -25,23 +25,28 @@ const routeItems = [
 ];
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  // const [scrollPosition, setScrollPosition] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollPosition(window.scrollY);
+  //   };
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <header
-      className={`fixed top-0 z-50 mt-8 flex w-full max-w-[1200px] items-center justify-center rounded-lg border-2 border-Border bg-Nav ${scrollPosition > 85 ? "bg-Nav/60 shadow-[0_8px_30px_rgb(215,244,0,0.15)] backdrop-blur-sm" : ""} transition-all  duration-300 ease-in-out md:px-8`}
+      className="relative mt-8 flex w-full max-w-[1200px] items-center justify-center rounded-lg border-2 border-Border bg-Nav md:px-8"
       aria-label="Main Navigation"
     >
+      {/* $
+      {scrollPosition > 85
+        ? "bg-Nav/60 shadow-[0_8px_30px_rgb(215,244,0,0.15)] backdrop-blur-sm"
+        : ""}
+      transition-all duration-300 ease-in-out */}
       <nav className="flex h-10 w-full items-center justify-between gap-x-2 px-4">
         <img
           src={BrandLogo}
