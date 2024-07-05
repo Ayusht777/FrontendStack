@@ -106,7 +106,7 @@ const QueryForm = () => {
           defaultValue={selectedOption}
           render={({ field }) => (
             <DropDownMenu
-              dropdownOptions={["option 1", "option 2", "option 3"]}
+              dropdownOptions={["Report a Bug", "Issue with a Component", "Suggestion for Improvement", "General Inquiry"]}
               onOptionChange={(value) => {
                 field.onChange(value);
                 setSelectedOption(value);
