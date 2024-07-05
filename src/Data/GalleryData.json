@@ -1,182 +1,184 @@
 [
     {
         "id": 1,
-        "imageUrl": "https://cdn.dribbble.com/users/1651276/screenshots/15828769/media/e1193d6b7fa59dc00eaae37fcc8af317.png?resize=1000x750&vertical=center",
+        "imageUrl": "https://i.postimg.cc/HWP1B8S1/Button.png",
         "ComponentName": "Button",
-        "type": "basic"
+        "type": "basic",
+        "isUploaded": true
     },
     {
         "id": 2,
-        "imageUrl": "https://cdn.dribbble.com/users/883236/screenshots/10249085/media/53cb37686e8970fa930aa4f32faa2a39.png",
-        "ComponentName": "Label",
-        "type": "basic"
+        "imageUrl": "https://i.postimg.cc/GpGQFgCr/Frame-6-2.png",
+        "ComponentName": "Input",
+        "type": "basic",
+        "isUploaded": false
     },
     {
         "id": 3,
-        "imageUrl": "https://lh3.googleusercontent.com/kXJgwc3Xv0zxP0cRFpz1-VeDsJShkOm8cQ6Xjz3gXAjCWAv2CUH7ho3cT7z0GeE-mtbJP5nNq0T1uzNXzbkOYdtbglHyLwDJ91zdpg=w1064-v0",
-        "ComponentName": "Input Field",
-        "type": "basic"
+        "imageUrl": "https://i.postimg.cc/Nft4WBdG/Dialog.png",
+        "ComponentName": "Dialog",
+        "type": "basic",
+        "isUploaded": false
     },
     {
         "id": 4,
-        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxgDpje9AllsR87PZRdI1gjn6aN2MSILLrQ3lS9aEPEg&s",
-        "ComponentName": "Checkbox",
-        "type": "basic"
+        "imageUrl": "https://i.postimg.cc/zXF0Mcbf/Frame-6-1.png",
+        "ComponentName": "Card",
+        "type": "basic",
+        "isUploaded": false
     },
     {
         "id": 5,
         "imageUrl": "https://d3h2k7ug3o5pb3.cloudfront.net/image/2020-11-17/58548640-28b8-11eb-afbb-c1d948b04cbe.jpg",
-        "ComponentName": "Radio Button",
-        "type": "basic"
+        "ComponentName": "Toggle",
+        "type": "basic",
+        "isUploaded": false
     },
     {
         "id": 6,
-        "imageUrl": "https://assets-global.website-files.com/64d1f4894b9a964bb3b26df9/64e74ef90093d41b9d0e05ae_Dropdown_1.svg",
-        "ComponentName": "Dropdown",
-        "type": "basic"
+        "imageUrl": "https://i.postimg.cc/mknT18X8/Accordion.png",
+        "ComponentName": "Accordion",
+        "type": "basic",
+        "isUploaded": false
     },
     {
         "id": 7,
-        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQti3m7NEGGW_loaeOHhccnBmR35EgDIabckT7fwCVpaA&s",
-        "ComponentName": "Alert",
-        "type": "basic"
+        "imageUrl": "https://i.postimg.cc/SR6wkV0n/Tabs.png",
+        "ComponentName": "Tabs",
+        "type": "basic",
+        "isUploaded": false
     },
     {
         "id": 8,
-        "imageUrl": "https://cdn.dribbble.com/users/883236/screenshots/16131405/media/3e518ae73b2037eb181fa60059dc53cc.png?resize=1000x750&vertical=center",
-        "ComponentName": "Modal",
-        "type": "basic"
+        "imageUrl": "https://i.postimg.cc/XYkdd5W9/TextArea.png",
+        "ComponentName": "Text Area",
+        "type": "basic",
+        "isUploaded": false
     },
     {
         "id": 9,
-        "imageUrl": "https://miro.medium.com/v2/resize:fit:1000/1*G65yV3PgN6ztxgpEQQ3JTA.png",
-        "ComponentName": "Tabs",
-        "type": "basic"
+        "imageUrl": "https://i.postimg.cc/8zSnTLwv/Table-nextui.png",
+        "ComponentName": "Table",
+        "type": "basic",
+        "isUploaded": false
     },
     {
         "id": 10,
-        "imageUrl": "(link unavailable)",
-        "ComponentName": "Accordion",
-        "type": "basic"
+        "imageUrl": "https://i.postimg.cc/yYvLcWHg/Pagination.png",
+        "ComponentName": "Pagination",
+        "type": "basic",
+        "isUploaded": false
     },
     {
         "id": 11,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Stepper",
-        "type": "medium"
+        "ComponentName": "Stats",
+        "type": "basic",
+        "isUploaded": false
     },
     {
         "id": 12,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Carousel",
-        "type": "medium"
+        "ComponentName": "Side Navbar",
+        "type": "medium",
+        "isUploaded": false
     },
     {
         "id": 13,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Pagination",
-        "type": "medium"
+        "ComponentName": "Carousel",
+        "type": "medium",
+        "isUploaded": false
     },
     {
         "id": 14,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Progress Bar",
-        "type": "medium"
+        "ComponentName": "Pagination",
+        "type": "medium",
+        "isUploaded": false
     },
     {
         "id": 15,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Alerts",
-        "type": "medium"
+        "ComponentName": "Menu Bar",
+        "type": "medium",
+        "isUploaded": false
     },
     {
         "id": 16,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Tooltips",
-        "type": "medium"
+        "ComponentName": "Collapsible List",
+        "type": "medium",
+        "isUploaded": false
     },
     {
         "id": 17,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Popovers",
-        "type": "medium"
+        "ComponentName": "Combo Box",
+        "type": "medium",
+        "isUploaded": false
     },
     {
         "id": 18,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Notifications",
-        "type": "medium"
+        "ComponentName": "Toaster",
+        "type": "medium",
+        "isUploaded": false
     },
     {
         "id": 19,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Collapse",
-        "type": "medium"
+        "ComponentName": "Code Snippet",
+        "type": "medium",
+        "isUploaded": false
     },
     {
         "id": 20,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Offcanvas",
-        "type": "medium"
+        "ComponentName": "Form (Sign Up, Contact Us)",
+        "type": "medium",
+        "isUploaded": false
     },
     {
         "id": 21,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Datepicker",
-        "type": "professional"
+        "ComponentName": "Search Bar",
+        "type": "medium",
+        "isUploaded": false
     },
     {
         "id": 22,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Timepicker",
-        "type": "professional"
+        "ComponentName": "Data Table",
+        "type": "professional",
+        "isUploaded": false
     },
     {
         "id": 23,
         "imageUrl": "(link unavailable)",
-        "ComponentName": "Slider",
-        "type": "professional"
+        "ComponentName": "Multi-Step Form",
+        "type": "professional",
+        "isUploaded": false
     },
     {
         "id": 24,
-        "imageUrl": "(link unavailable)",
-        "ComponentName": "Range Slider",
-        "type": "professional"
+        "imageUrl": "https://i.postimg.cc/sXmMp7F9/Drag-and-Drop-File-Upload-1.png",
+        "ComponentName": "Drag-and-Drop File Upload",
+        "type": "professional",
+        "isUploaded": false
     },
     {
         "id": 25,
-        "imageUrl": "(link unavailable)",
-        "ComponentName": "Color Picker",
-        "type": "professional"
+        "imageUrl": "https://i.postimg.cc/rpssMS1b/Command.png",
+        "ComponentName": "Commands",
+        "type": "professional",
+        "isUploaded": false
     },
     {
         "id": 26,
-        "imageUrl": "(link unavailable)",
-        "ComponentName": "Tree View",
-        "type": "professional"
-    },
-    {
-        "id": 27,
-        "imageUrl": "(link unavailable)",
-        "ComponentName": "Data Table",
-        "type": "professional"
-    },
-    {
-        "id": 28,
-        "imageUrl": "https://cdn.dribbble.com/userupload/11124311/file/original-e92f2b5b14045947c7a347ca0f7502e6.png?resize=1504x1208",
-        "ComponentName": "Chart",
-        "type": "professional"
-    },
-    {
-        "id": 29,
-        "imageUrl": "https://cdn.dribbble.com/users/9650276/screenshots/18862954/media/dcca29384fec0850c3f1a4acd0a3bff0.png",
-        "ComponentName": "Map",
-        "type": "professional"
-    },
-    {
-        "id": 30,
-        "imageUrl": "https://cdn.dribbble.com/userupload/8435092/file/original-046e32d11a02dea173e6293b99a9c66f.png?resize=752x",
-        "ComponentName": "DashBoard",
-        "type": "professional"
+        "imageUrl": "https://i.postimg.cc/59hv4N2g/Context-Menu.png",
+        "ComponentName": "Context Menu",
+        "type": "professional",
+        "isUploaded": false
     }
 ]

@@ -15,6 +15,7 @@ const Home = () => {
           heading={"Exploring Our User Interface Building Blocks"}
           subheading={"Dive Deep Exploring Core UI Components"}
           callToAction={true}
+          path="/Gallery"
         />
         <FeaturedCreationsSection />
         <FeatureContainer />

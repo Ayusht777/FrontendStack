@@ -1,40 +1,23 @@
-import Carousel from "@/Components/Carousel/Carousel";
-import FaqChalllenge from "@/Components/Shared/FAQ/FaqChalllenge";
 import Footer from "@/Components/Shared/Footer";
-import Heading from "@/Components/Shared/Heading";
+import GridBackgroundV2 from "@/Components/Shared/GridBackgroundV2";
 import Navbar from "@/Components/Shared/Navbar";
-import CarouselMobile from "@/Components/Carousel/CaroselMobile";
+import FeatureContainer from "@/Components/AboutUsComponents/FeatureContainer";
+import TeamContainer from '@/Components/AboutUsComponents/TeamContainer'
 const About = () => {
   return (
-    <div className="w-full bg-Bg  flex flex-col justify-start items-center min-h-screen space-y-32">
-      <Navbar />
-      <section className="text-center text-white space-y-5">
-        <Heading title={"About Us"} />
-        <p className="w-[70%] text-justify text-lg md:text-xl leading-7 md:leading-10 mx-auto font-normal md:font-medium">
-          Welcome to our corner of the web! We are a group of passionate
-          developers on a mission to showcase our skills through 30 unique
-          ReactJS components. Our team is dedicated to creating engaging and
-          functional components that elevate user experiences on the web.
-        </p>
-      </section>
-      <div className="text-center text-white space-y-5">
-        <Heading title={"Why we take this challenge?"} type="sub" />
-        <p className=" w-4/5 md:w-[70%] text-justify text-lg md:text-xl leading-7 md:leading-10 mx-auto font-normal md:font-medium">
-          In the past, we have completed three rounds of the
-          #100DaysOfCodeChallenge, which have greatly improved our front-end
-          development skills. Our current objective is to elevate our
-          proficiency even further by mastering the creation of various UI
-          components. These components are crucial in website building and come
-          in various levels of complexity, making them applicable in different
-          scenarios. Our pursuit is aimed at honing our abilities and increasing
-          our readiness for future interviews.
-        </p>
+    <GridBackgroundV2 TwClass="[mask-image:radial-gradient(ellipse_60%_32rem_at_50%_0%,#000_70%,transparent_100%)] md:[mask-image:radial-gradient(ellipse_60%_32rem_at_50%_0%,#000_70%,transparent_100%)]">
+      <div className="relative z-20 flex h-full min-h-dvh w-full flex-col items-center justify-start px-4 md:px-6 xl:px-0">
+        <Navbar />
+        <section className=" my-6 flex  w-full max-w-[1200px] flex-col items-center justify-center py-20">
+          <span className="max-w-5xl   bg-gradient-to-r from-white to-white/70 bg-clip-text text-center text-3xl font-semibold capitalize tracking-tighter text-transparent md:py-1.5 md:text-5xl lg:text-7xl">
+            Meet the Team That Brings Ideas to Life
+          </span>
+        </section>
+        <FeatureContainer />
+        <TeamContainer />
+        <Footer />
       </div>
-      <Carousel className={"hidden md:block"} />
-      <CarouselMobile className={"block md:hidden"} />
-      <FaqChalllenge />
-      <Footer />
-    </div>
+    </GridBackgroundV2>
   );
 };
 

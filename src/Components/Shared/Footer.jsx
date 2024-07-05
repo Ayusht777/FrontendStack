@@ -1,7 +1,7 @@
 import { Plus } from "lucide-react";
 const Footer = () => {
   return (
-    <footer className="w-full max-w-[1200px] ">
+    <footer className="w-full max-w-[1200px] mt-16">
       <div className=" flex flex-col items-center justify-center gap-y-2 rounded-t-lg py-4 border-2 border-Border">
         <h1 className="text-2xl font-semibold text-Logo md:text-3xl lg:text-4xl">
           StackFrontend
