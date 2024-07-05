@@ -41,7 +41,7 @@ const validationSchema = yup.object().shape({
     .max(50, "Your full name must not have more than 50 characters.")
     .matches(
       /^[a-zA-Z]+( [a-zA-Z]+)*$/,
-      "Please use letters only for your full name."
+      "Please use alphabets only for your full name."
     ),
   email: yup
     .string()
