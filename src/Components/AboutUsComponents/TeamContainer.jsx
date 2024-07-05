@@ -3,47 +3,60 @@ import { ExternalLink, Linkedin, Github } from "lucide-react";
 import { useEffect } from "react";
 import { useState } from 'react';
 
-const TeamMemberCard = ({ member, isOverlayOpen, toggleOverlay }) => (
-  <div className="aspect-square rounded-xl bg-Nav pb-2">
-    <div className="mx-4 mt-4 aspect-square rounded-xl bg-Bg transition-all duration-500 ease-in-out relative">
-      <img
-        className="h-full w-full rounded-xl absolute"
-        src={member?.imageUrl}
-        alt={member?.name}
-      />
-      {isOverlayOpen ? (
-        <div className="aspect-square rounded-xl absolute z-40 inset-0 bg-Nav/95 bg-[linear-gradient(to_right,#404040_1px,transparent_1px),linear-gradient(to_bottom,#404040_1px,transparent_1px)] bg-[size:42px_42px] flex items-center justify-center gap-x-2">
-          <a
-            href="#"
-            target="_blank"
-            className="bg-Bg rounded-lg text-blue-500 p-3"
-            aria-label={`LinkedIn profile of ${member?.name}`}
-          >
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            className="bg-Bg rounded-lg text-gray-400 p-3"
-            aria-label={`GitHub profile of ${member?.name}`}
-          >
-            <Github className="w-6 h-6" />
-          </a>
-        </div>
-      ) : null}
-    </div>
-    <div className="mx-4 mt-2 flex items-center justify-between">
-      <h1 className="font-semibold text-white">{member?.name}</h1>
-      <button
-        className="rounded-md bg-Border p-1 text-Logo"
-        onClick={() => toggleOverlay(member?.id)}
-        aria-label={`Social Media Links of ${member?.name}`}
-      >
-        <ExternalLink strokeWidth="3" />
-      </button>
-    </div>
-  </div>
+const SkeletonLoader = () => (
+  <div className="w-full h-full rounded-xl bg-Border animate-pulse absolute"></div>
 );
+
+
+const TeamMemberCard = ({ member, isOverlayOpen, toggleOverlay }) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  return (
+    <div className="aspect-square rounded-xl bg-Nav pb-2">
+      <div className="mx-4 mt-4 aspect-square rounded-xl bg-Bg transition-all duration-500 ease-in-out relative">
+        {!isImageLoaded && <SkeletonLoader />  }
+        <img
+          className={`h-full w-full rounded-xl absolute transition-opacity duration-300 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          src={member?.imageUrl}
+          alt={member?.name}
+          onLoad={() => setIsImageLoaded(true)}
+          onError={() => setIsImageLoaded(false)} // Optionally handle error
+        />
+        {isOverlayOpen ? (
+          <div className="aspect-square rounded-xl absolute z-40 inset-0 bg-Nav/95 bg-[linear-gradient(to_right,#404040_1px,transparent_1px),linear-gradient(to_bottom,#404040_1px,transparent_1px)] bg-[size:42px_42px] flex items-center justify-center gap-x-2">
+            <a
+              href={member?.linkedin}
+              target="_blank"
+              className="bg-Bg rounded-lg text-blue-500 p-3"
+              aria-label={`LinkedIn profile of ${member?.name}`}
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href={member?.github}
+              target="_blank"
+              className="bg-Bg rounded-lg text-gray-400 p-3"
+              aria-label={`GitHub profile of ${member?.name}`}
+            >
+              <Github className="w-6 h-6" />
+            </a>
+          </div>
+        ) : null}
+      </div>
+      <div className="mx-4 mt-2 flex items-center justify-between">
+        <h1 className="font-semibold text-white">{member?.name}</h1>
+        <button
+          className="rounded-md bg-Border p-1 text-Logo"
+          onClick={() => toggleOverlay(member?.id)}
+          aria-label={`Social Media Links of ${member?.name}`}
+        >
+          <ExternalLink strokeWidth="3" />
+        </button>
+      </div>
+    </div>
+  )
+
+}
 
 const TeamContainer = () => {
   const teamMembers = [
