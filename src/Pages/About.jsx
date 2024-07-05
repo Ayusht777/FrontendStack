@@ -1,8 +1,8 @@
 import Footer from "@/Components/Shared/Footer";
 import GridBackgroundV2 from "@/Components/Shared/GridBackgroundV2";
 import Navbar from "@/Components/Shared/Navbar";
-import HeroSection from "@/Components/Shared/HeroSection";
 import FeatureContainer from "@/Components/AboutUsComponents/FeatureContainer";
+import TeamContainer from '@/Components/AboutUsComponents/TeamContainer'
 const About = () => {
   return (
     <GridBackgroundV2 TwClass="[mask-image:radial-gradient(ellipse_60%_32rem_at_50%_0%,#000_70%,transparent_100%)] md:[mask-image:radial-gradient(ellipse_60%_32rem_at_50%_0%,#000_70%,transparent_100%)]">
@@ -14,6 +14,7 @@ const About = () => {
           </span>
         </section>
         <FeatureContainer />
+        <TeamContainer />
         <Footer />
       </div>
     </GridBackgroundV2>
