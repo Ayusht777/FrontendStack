@@ -1,17 +1,26 @@
 import { Link } from "react-router-dom";
 import { Code } from "lucide-react";
+import { useState } from 'react';
+const SkeletonLoader = () => (
+  <div className=" aspect-square rounded-xl bg-Border animate-pulse absolute"></div>
+);
 
 const GalleryGrids = ({ Data }) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
     <section className="mt-6 grid w-full max-w-[1200px] grid-cols-1 place-content-center gap-6 md:grid-cols-2 lg:grid-cols-3">
       {Data?.map((item) => (
         <div key={item.id} className=" aspect-square rounded-xl bg-Nav pb-2 ">
           <div className=" mx-4 mt-4 aspect-square rounded-xl bg-Bg  transition-all duration-500 ease-in-out ">
+            {!isImageLoaded && <SkeletonLoader />}
+
             <img
               className="h-full w-full  rounded-xl"
               src={item.imageUrl}
               alt={item.name}
+              onLoad={() => setIsImageLoaded(true)}
+              onError={() => setIsImageLoaded(false)}
             />
           </div>
           <div className="mx-4 mt-2 flex   items-center justify-between ">
