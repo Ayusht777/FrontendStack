@@ -69,7 +69,7 @@ const TeamContainer = () => {
     {
       id: 2,
       name: "Divyanshu Sahu",
-      imageUrl: "https://i.postimg.cc/vZGmM61V/Whats-App-Image-2024-07-05-at-20-46-35-86fe80a3.jpg",
+      imageUrl: "https://i.postimg.cc/Xv6FFgYD/Whats-App-Image-2024-07-05-at-20-46-35-67753e17.jpg",
       linkedin: "https://www.linkedin.com/in/divyanshu-sahu-820467245/",
       github: "https://github.com/sahu-divyanshu"
     },
