@@ -1,7 +1,7 @@
 import Heading from "@/Components/Shared/Heading";
 import { ExternalLink, Linkedin, Github } from "lucide-react";
-import { useEffect } from "react";
-import { useState } from 'react';
+import { useEffect ,useState} from "react";
+
 
 const SkeletonLoader = () => (
   <div className="w-full h-full rounded-xl bg-Border animate-pulse absolute"></div>
@@ -14,7 +14,7 @@ const TeamMemberCard = ({ member, isOverlayOpen, toggleOverlay }) => {
   return (
     <div className="aspect-square rounded-xl bg-Nav pb-2">
       <div className="mx-4 mt-4 aspect-square rounded-xl bg-Bg transition-all duration-500 ease-in-out relative">
-        {!isImageLoaded && <SkeletonLoader />  }
+        {!isImageLoaded && <SkeletonLoader />}
         <img
           className={`h-full w-full rounded-xl absolute transition-opacity duration-300 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
           src={member?.imageUrl}
@@ -69,14 +69,14 @@ const TeamContainer = () => {
     {
       id: 2,
       name: "Divyanshu Sahu",
-      imageUrl: "https://i.postimg.cc/Xvm43XVn/Avatar-2.png",
+      imageUrl: "https://i.postimg.cc/vZGmM61V/Whats-App-Image-2024-07-05-at-20-46-35-86fe80a3.jpg",
       linkedin: "https://www.linkedin.com/in/divyanshu-sahu-820467245/",
       github: "https://github.com/sahu-divyanshu"
     },
     {
       id: 3,
       name: "Harshit Sharma",
-      imageUrl: "https://i.postimg.cc/Xvm43XVn/Avatar-2.png",
+      imageUrl: "https://i.postimg.cc/vBy11ST0/Whats-App-Image-2024-07-06-at-10-56-19-bbcb188d.jpg",
       linkedin: "https://www.linkedin.com/in/harshitsharma4/",
       github: "https://github.com/HarshitSharma4"
     },
