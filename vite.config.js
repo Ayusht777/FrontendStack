@@ -12,6 +12,7 @@ export default defineConfig({
       public: path.resolve(__dirname, "./public/"),
       Pages: path.resolve(__dirname, "./src/Pages/"),
       Assets: path.resolve(__dirname, "./src/Assets/"),
+      Hooks: path.resolve(__dirname, "./src/Hooks/"),
       types: path.resolve(__dirname, "./src/@types/"),
     },
   },
