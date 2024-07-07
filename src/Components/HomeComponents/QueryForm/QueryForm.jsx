@@ -4,12 +4,13 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Heading from "@/Components/Shared/Heading";
 import DropDownMenu from "@/Components/Shared/DropDownMenu";
-
 import { AlertTriangleIcon } from "lucide-react";
+
 const SubmitButton = () => {
   return (
     <button
       type="submit"
+      aria-label="Submit form"
       className={`my-2 min-w-16 rounded-lg   bg-Logo px-5 py-1.5 text-center font-semibold  tracking-tight text-Bg transition-colors duration-300 ease-in-out hover:bg-Logo/90 focus:outline-Logo focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 `}
     >
       Submit
@@ -18,14 +19,15 @@ const SubmitButton = () => {
 };
 const FormField = ({ label, register, error, ...rest }) => (
   <>
-    <label className="my-2">{label}</label>
+    <label aria-label={label} className="my-2">{label}</label>
     <input
       {...register}
       className={`mb-1.5 box-border w-full rounded-md bg-Bg px-3 py-1 outline outline-1 outline-Border  focus:bg-Nav ${error?.message ? "focus:outline-red-500" : "focus:outline-Logo"}`}
       {...rest}
+
     />
     {error && (
-      <span className="mt-0.5 flex items-center gap-x-1 font-medium text-red-500">
+      <span className="mt-0.5 flex items-center gap-x-1 font-medium text-red-500" role="alert">
         <AlertTriangleIcon className="size-3.5" strokeWidth={2.6} />
         {error?.message}
       </span>
@@ -51,7 +53,10 @@ const validationSchema = yup.object().shape({
       /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
       "Please enter a valid email address."
     ),
-  subject: yup.string().required("Please select a subject."),
+  subject: yup.string().oneOf(
+    ["Report a Bug", "Issue with a Component", "Suggestion for Improvement", "General Inquiry"],
+    "Please select a valid subject."
+  ),
   message: yup
     .string()
     .required("Please enter your message.")
@@ -69,12 +74,13 @@ const QueryForm = () => {
     resolver: yupResolver(validationSchema),
   });
 
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState();
 
   const onSubmit = (data) => {
     console.log(data);
   };
 
+  console.log(selectedOption)
   return (
     <>
       <Heading title={"Connect with the Team"} />
@@ -84,6 +90,7 @@ const QueryForm = () => {
       <form
         className="  mx-auto flex  flex-col items-start px-4"
         onSubmit={handleSubmit(onSubmit)}
+        aria-label="Contact form"
       >
         <FormField
           label="Full Name"
@@ -109,15 +116,15 @@ const QueryForm = () => {
               dropdownOptions={["Report a Bug", "Issue with a Component", "Suggestion for Improvement", "General Inquiry"]}
               onOptionChange={(value) => {
                 field.onChange(value);
-                setSelectedOption(value);
+                setSelectedOption(value)
               }}
-              selectedOption={field.value}
+              selectedAuthorName={selectedOption}
               form={true}
             />
           )}
         />
         {errors.subject && (
-          <span className="mt-0.5 flex items-center gap-x-1 font-medium text-red-500">
+          <span className="mt-0.5 flex items-center gap-x-1 font-medium text-red-500" role="alert">
             <AlertTriangleIcon className="size-3.5" strokeWidth={2.6} />
             {errors.subject.message}
           </span>
@@ -128,10 +135,12 @@ const QueryForm = () => {
           placeholder="Type your massage here."
           rows={4}
           spellCheck={true}
+          aria-invalid={errors.message ? "true" : "false"}
+          aria-describedby={errors.message ? "message-error" : undefined}
           className="mb-1.5 box-border w-full rounded-md  bg-Bg px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
         ></textarea>
         {errors.message && (
-          <span className="mt-0.5 flex items-center gap-x-1 font-medium text-red-500">
+          <span className="mt-0.5 flex items-center gap-x-1 font-medium text-red-500" role="alert">
             <AlertTriangleIcon className="size-3.5" strokeWidth={2.6} />
             {errors.message.message}
           </span>
