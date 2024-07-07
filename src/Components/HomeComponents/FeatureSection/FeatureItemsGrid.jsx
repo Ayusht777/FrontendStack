@@ -11,7 +11,7 @@ const FeatureTechStack = ({ tag, heading, description, keyPoints, feature,index 
         </p>
         <ul className="mt-10 list-disc space-y-4 pl-4 text-white ">
           {keyPoints?.map((points) => (
-            <li>{points}</li>
+            <li key={points}>{points}</li>
           ))}
         </ul>
       </div>
