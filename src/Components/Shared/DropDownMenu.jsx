@@ -111,7 +111,7 @@ const DropdownMenu = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
- 
+  
   return (
     <div
       className={`w-full  ${form ? "mb-1.5" : "absolute right-0  z-50 max-w-48 bg-Bg md:max-w-56"} `}
@@ -139,7 +139,7 @@ const DropdownMenu = ({
               {dropdownState.selectedOption || options[0]}
             </div>
           ) : (
-            dropdownState.selectedOption || "Select Option"
+            dropdownState.selectedOption || <span>Select Subject</span>
           )}
         </span>
 
@@ -156,6 +156,7 @@ const DropdownMenu = ({
       >
         <div className="w-full space-y-1">
           {options.map((option, index) => (
+            
             <div
               key={index}
               className={`m rounded-md px-2 py-0.5 ${form ? "" : "flex items-center gap-x-1"}  ${
@@ -175,6 +176,7 @@ const DropdownMenu = ({
                 );
               }}
             >
+              
               {!form ? (
                 <>
                   <img
@@ -182,10 +184,11 @@ const DropdownMenu = ({
                     alt={dropdownOptions[index]?.id}
                     className=" size-5 rounded-full"
                   />
+                 
                   {option?.author}
                 </>
               ) : (
-                <span>{option}</span>
+                 <span>{option}</span>
               )}
             </div>
           ))}

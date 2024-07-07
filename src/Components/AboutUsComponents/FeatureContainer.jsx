@@ -5,6 +5,7 @@ import Heading from "@/Components/Shared/Heading";
 const FeatureContainer = () => {
   const featuresData = [
     {
+      tag:"#Journey",
       heading: "From Code Newbies to Building FrontendSatck",
       description: `Fresh out of college and hungry to code,
                   we were four friends on a mission. A 30-day coding marathon ignited a spark, leading us to conquer a 100-day challenge. We tackled C++, data structures, and frontend development (React JS especially!). It wasn't smooth sailing, but through setbacks and self-doubt, we persevered for over 300 days.
@@ -26,6 +27,7 @@ const FeatureContainer = () => {
         <FeatureGrid
           key={item.tag}
           index={index}
+          tag={item.tag}
           heading={item.heading}
           description={item.description}
           keyPoints={item.keyPoints}

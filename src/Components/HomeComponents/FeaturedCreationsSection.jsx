@@ -17,15 +17,16 @@ const FeaturedCreationsSection = () => {
  }, []);
 
   return (
-    <section className="w-full max-w-[1200px]  md:pb-24 md:pt-0">
-      <Heading title={"Top Creations"} />
-      <GalleryGrids Data={RecentCreation} />
-      <div className="my-8 flex justify-center">
+    <section className="w-full max-w-[1200px]  md:pb-24 md:pt-0" aria-label="Featured Creations Section">
+      <Heading title={"Top Creations"} aria-label="Top Creations" />
+      <GalleryGrids Data={RecentCreation} aria-label="Gallery Grids" />
+      <div className="my-8 flex justify-center" aria-label="View More Button">
         <Button
           title={"View More"}
           background_color="Border"
           text_color="white"
           path={"/gallery"}
+          aria-label="View More"
         />
       </div>
     </section>
