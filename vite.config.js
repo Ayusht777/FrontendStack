@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      input: 'src/main.js' // Update this line with the correct entry file
+      input: "./src/main.jsx"
     },
   resolve: {
     alias: {
