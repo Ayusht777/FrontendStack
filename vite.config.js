@@ -15,10 +15,4 @@ export default defineConfig({
       Types: path.resolve(__dirname, "./src/@types/"),
     },
   },
-  build: {
-    outDir: "build", // Ensure this matches the expected output directory
-    rollupOptions: {
-      input: path.resolve(__dirname, "./src/main.jsx"),
-    },
-  },
 });

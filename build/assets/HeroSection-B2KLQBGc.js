@@ -1,7 +1,0 @@
-import{j as t}from"./main-DecZhBbk.js";import{B as o}from"./Button-WaysXTZm.js";import{G as r}from"./github-B_iXDM0s.js";const n=()=>t.jsx("button",{children:t.jsxs("a",{href:"https://github.com/Ayusht777/FrontendStack",target:"_blank",className:` box-border  flex  min-w-16 items-center  justify-between 
-      rounded-lg bg-Nav px-5 py-1.5 text-center 
-      font-semibold tracking-tight text-white 
-      outline outline-1 outline-Border transition-colors 
-      duration-300 ease-in-out hover:bg-Border focus:outline-white  
-      focus-visible:outline focus-visible:outline-1
-      focus-visible:outline-offset-2`,children:[t.jsx(r,{className:"mr-1.5 size-4 rounded-full "})," Github"]})}),m=({heading:i,subheading:e=!1,callToAction:s=!1,path:l="/"})=>t.jsxs("section",{className:" my-4 flex h-[320px] w-full flex-col items-center justify-center md:h-[420px] lg:h-[480px]",children:[t.jsx("span",{className:"max-w-5xl   bg-gradient-to-r from-white to-white/70 bg-clip-text text-center text-3xl font-semibold capitalize tracking-tighter text-transparent md:py-1.5 md:text-5xl lg:text-7xl",children:i}),e&&t.jsx("p",{className:"my-4  max-w-4xl text-center text-lg font-light tracking-tight text-white/90   md:text-2xl",children:e}),s&&t.jsxs("div",{className:"mt-4 flex w-full items-center justify-center space-x-4",children:[t.jsx(o,{title:"Explore Now",path:l}),t.jsx(n,{})]})]});export{m as H};
