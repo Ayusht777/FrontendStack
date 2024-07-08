@@ -1,0 +1,1 @@
+:root{--text-color: #e1e4e8;--logo: #d7f400;--Nav: #1a1c1d}section{scrollbar-width:none}.line-numbers{counter-reset:line}.line-numbers>[data-line]:before{counter-increment:line;content:counter(line);display:inline-block;width:1rem;margin-right:.5rem;text-align:right;color:var(--text-color)}

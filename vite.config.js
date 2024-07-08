@@ -6,18 +6,19 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src/"), // Alias for src directory
-      Components: path.resolve(__dirname, "./src/Components/"), // Alias for Components
-      Public: path.resolve(__dirname, "./public/"), // Alias for public directory
-      Pages: path.resolve(__dirname, "./src/Pages/"), // Alias for Pages
-      Assets: path.resolve(__dirname, "./src/Assets/"), // Alias for Assets
-      Hooks: path.resolve(__dirname, "./src/Hooks/"), // Alias for Hooks
-      Types: path.resolve(__dirname, "./src/@types/"), // Alias for @types
+      "@": path.resolve(__dirname, "./src/"),
+      Components: path.resolve(__dirname, "./src/Components/"),
+      Public: path.resolve(__dirname, "./public/"),
+      Pages: path.resolve(__dirname, "./src/Pages/"),
+      Assets: path.resolve(__dirname, "./src/Assets/"),
+      Hooks: path.resolve(__dirname, "./src/Hooks/"),
+      Types: path.resolve(__dirname, "./src/@types/"),
     },
   },
   build: {
+    outDir: "build", // Ensure this matches the expected output directory
     rollupOptions: {
-      input: path.resolve(__dirname, "./src/main.jsx"), // Ensure the input path is correct
+      input: path.resolve(__dirname, "./src/main.jsx"),
     },
   },
 });
