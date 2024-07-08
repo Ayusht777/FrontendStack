@@ -1,0 +1,1 @@
+import{j as t}from"./main-DecZhBbk.js";const n=({title:e})=>t.jsx("section",{className:" my-4  flex  w-full justify-center",children:t.jsx("span",{className:" my-4 max-w-5xl  bg-gradient-to-r from-white to-white/70 bg-clip-text text-center text-[1.625rem] font-bold tracking-tighter text-transparent md:my-6 md:text-5xl",children:e})});export{n as H};

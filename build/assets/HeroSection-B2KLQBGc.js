@@ -1,4 +1,4 @@
-import{j as t}from"./main-BQQxUM-D.js";import{B as o}from"./Button-DL_uHNVM.js";import{G as r}from"./github-Ow1XG6Eq.js";const n=()=>t.jsx("button",{children:t.jsxs("a",{href:"https://github.com/Ayusht777/FrontendStack",target:"_blank",className:` box-border  flex  min-w-16 items-center  justify-between 
+import{j as t}from"./main-DecZhBbk.js";import{B as o}from"./Button-WaysXTZm.js";import{G as r}from"./github-B_iXDM0s.js";const n=()=>t.jsx("button",{children:t.jsxs("a",{href:"https://github.com/Ayusht777/FrontendStack",target:"_blank",className:` box-border  flex  min-w-16 items-center  justify-between 
       rounded-lg bg-Nav px-5 py-1.5 text-center 
       font-semibold tracking-tight text-white 
       outline outline-1 outline-Border transition-colors 

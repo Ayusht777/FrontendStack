@@ -1,12 +1,12 @@
 import AppRoutes from "@/Routes/AppRoutes";
 import { Helmet } from 'react-helmet';
-import useDocumentTitle from "./Hooks/useDocumentTitle";
+// import useDocumentTitle from "./Hooks/useDocumentTitle";
 function App() {
-  const title = useDocumentTitle();
+  // const title = useDocumentTitle();
   return (
     <>
       <Helmet>
-        <title>{title}</title>
+        <title>{"FrontendStack"}</title>
         <link rel="icon" type="image/svg+xml" href="/BrandLogo.svg" />
       </Helmet>
       <AppRoutes></AppRoutes>
