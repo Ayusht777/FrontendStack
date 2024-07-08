@@ -11,7 +11,7 @@ export default defineConfig({
       Public: path.resolve(__dirname, "./public/"), // Alias for public directory
       Pages: path.resolve(__dirname, "./src/Pages/"), // Alias for Pages
       Assets: path.resolve(__dirname, "./src/Assets/"), // Alias for Assets
-      Hooks: path.resolve(__dirname, "./src/Hooks/"), // Alias for Hooks
+      // Hooks: path.resolve(__dirname, "./src/Hooks/"), // Alias for Hooks
       Types: path.resolve(__dirname, "./src/@types/"), // Alias for @types
     },
   },

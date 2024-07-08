@@ -1,6 +1,6 @@
 import AppRoutes from "@/Routes/AppRoutes";
 import { Helmet } from 'react-helmet';
-import  useDocumentTitle  from '@/Hooks/useDocumentTitle'
+import useDocumentTitle from "@/utils/useDocumentTitle";
 function App() {
   const title = useDocumentTitle();
   return (
