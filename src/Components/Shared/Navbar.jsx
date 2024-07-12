@@ -25,35 +25,19 @@ const routeItems = [
 ];
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
-  // const [scrollPosition, setScrollPosition] = useState(0);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrollPosition(window.scrollY);
-  //   };
-  //   window.addEventListener("scroll", handleScroll, { passive: true });
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
   return (
     <header
       className="relative mt-8 flex w-full max-w-[1200px] items-center justify-center rounded-lg border-2 border-Border bg-Nav md:px-8"
       aria-label="Main Navigation"
     >
-      {/* $
-      {scrollPosition > 85
-        ? "bg-Nav/60 shadow-[0_8px_30px_rgb(215,244,0,0.15)] backdrop-blur-sm"
-        : ""}
-      transition-all duration-300 ease-in-out */}
+
       <nav className="flex h-10 w-full items-center justify-between gap-x-2 px-4">
-        <img
+        <NavLink to={"/"}><img
           src={BrandLogo}
           alt="FrontendStackLogo"
           className="size-7 cursor-pointer"
           aria-label="Brand Logo"
-        />
+        /></NavLink>
         <ul
           className="hidden w-full justify-end gap-x-12 overflow-hidden sm:flex"
           aria-label="Navigation Links"
@@ -80,14 +64,12 @@ const Navbar = () => {
           aria-expanded={isActive}
         >
           <span
-            className={`block h-0.5 w-6 rounded-md transition-transform duration-300 ease-in-out ${
-              isActive ? "absolute rotate-45 bg-gray-500 " : "bg-Logo"
-            }`}
+            className={`block h-0.5 w-6 rounded-md transition-transform duration-300 ease-in-out ${isActive ? "absolute rotate-45 bg-gray-500 " : "bg-Logo"
+              }`}
           ></span>
           <span
-            className={`block h-0.5 w-6 rounded-md transition-transform duration-300 ease-in-out ${
-              isActive ? "absolute -rotate-45 bg-gray-500 " : "bg-Logo"
-            }`}
+            className={`block h-0.5 w-6 rounded-md transition-transform duration-300 ease-in-out ${isActive ? "absolute -rotate-45 bg-gray-500 " : "bg-Logo"
+              }`}
           ></span>
         </button>
       </nav>
