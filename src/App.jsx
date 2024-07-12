@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Helmet>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="color-scheme" content="dark" />
         <title>FrontendStack</title>
@@ -17,6 +17,8 @@ function App() {
           as="style"
           onLoad="this.onload=null;this.rel='stylesheet'"
         />
+        <script type="module" src="/assets/index-modern.js"></script>
+        <script noModule src="/assets/index-legacy.js"></script>
       </Helmet>
       <AppRoutes />
     </>
