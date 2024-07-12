@@ -17,8 +17,6 @@ function App() {
           as="style"
           onLoad="this.onload=null;this.rel='stylesheet'"
         />
-        <script type="module" src="/assets/index-modern.js"></script>
-        <script noModule src="/assets/index-legacy.js"></script>
       </Helmet>
       <AppRoutes />
     </>
