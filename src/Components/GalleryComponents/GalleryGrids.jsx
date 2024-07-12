@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Code } from "lucide-react";
 import { useState } from 'react';
 const SkeletonLoader = () => (
-  <div className=" aspect-square rounded-xl bg-border animate-pulse absolute size-full"></div>
+  <div className=" aspect-square rounded-xl bg-border animate-pulse absolute size-full bg-Border"></div>
 );
 
 const GalleryGrids = ({ Data }) => {
