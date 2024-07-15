@@ -35,7 +35,7 @@ const GridItem = ({ item }) => {
 };
 const GalleryGrids = ({ Data }) => {
   return (
-    <section className="mt-6 mb-64 grid w-full max-w-[1200px] grid-cols-1 place-content-center gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <section className="mt-6  grid w-full max-w-[1200px] grid-cols-1 place-content-center gap-6 md:grid-cols-2 lg:grid-cols-3">
       {Data?.map((item) => (
         <GridItem key={item.id} item={item} />
       ))}
