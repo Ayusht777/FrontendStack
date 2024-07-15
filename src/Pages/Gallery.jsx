@@ -29,7 +29,9 @@ const Gallery = () => {
             onActiveTabIndexChange={setActiveTabIndex}
           ></AnimatedTabs>
         </section>
-        <GalleryGrids Data={filterData} />
+        <section className="mb-64">
+          <GalleryGrids Data={filterData} />
+        </section>
       </div>
 
     </GridBackgroundV2>
