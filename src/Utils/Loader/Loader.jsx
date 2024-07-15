@@ -2,7 +2,7 @@ import "./style.css";
 
 const Loader = () => {
   return (
-    <div className="w-full h-dvh bg-Bg flex justify-center items-center ">
+    <div className="w-full h-dvh bg-Bg flex justify-center items-center relative z-50">
       <div className="loading md:size-32  size-24 flex justify-center items-center">
         <svg viewBox="0 0 313.3 321.4" >
           <path
