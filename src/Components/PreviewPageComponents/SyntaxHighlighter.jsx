@@ -4,6 +4,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import rehypePrettyCode from "rehype-pretty-code";
+import DOMPurify from 'dompurify'
 
 const CodeBlockSkeleton = ({ skeletonHeight = 0 }) => {
   const calculateItemLength = Math.round(skeletonHeight / 24 / 10);
@@ -72,7 +73,7 @@ const SyntaxHighlighter = ({ CodeSnippets, Language, LineNumbers = true }) => {
           }
         }
 
-        
+
       }
     };
 
@@ -82,8 +83,10 @@ const SyntaxHighlighter = ({ CodeSnippets, Language, LineNumbers = true }) => {
   return isLoading ? (
     <CodeBlockSkeleton skeletonHeight={codeDivHeight} />
   ) : (
-    <div  ref={codeDivRef} dangerouslySetInnerHTML={{ __html: processedCode }} />
-  );
+    <div
+      ref={codeDivRef}
+      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(processedCode) }}
+    />);
 };
 
 export default SyntaxHighlighter;
