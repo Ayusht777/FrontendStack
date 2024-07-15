@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { Suspense, lazy } from "react";
 import Loader from "@/Utils/Loader/Loader";
 const Home = lazy(() => import("@/Pages/Home"));
@@ -8,71 +8,40 @@ const Faq = lazy(() => import("@/Pages/Faq"));
 const PreviewPage = lazy(() => import("@/Pages/PreviewPage"));
 const NotFound404 = lazy(() => import("@/Pages/NotFound404"));
 const ComponentNotFound404 = lazy(() => import("@/Pages/ComponentNotFound404"));
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-const AppRoutes = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Home />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <Suspense fallback={<Loader />}>
-              <About />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/gallery"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Gallery />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/gallery/PreviewPage/:ComponentName"
-          element={
-            <Suspense fallback={<Loader />}>
-              <PreviewPage />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/faq"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Faq />
-            </Suspense>
-          }
-        />
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Suspense fallback={<Loader />} ><Home /></Suspense>
+  },
+  {
+    path: "/gallery",
+    element: <Suspense fallback={<Loader />} ><Gallery /></Suspense>
+  },
+  {
+    path: "/gallery/PreviewPage/:ComponentName",
+    element: <Suspense fallback={<Loader />} ><PreviewPage /></Suspense>
+  },
+  {
+    path: "/about",
+    element: <Suspense fallback={<Loader />} ><About /></Suspense>
+  },
+  {
+    path: "/faq",
+    element: <Suspense fallback={<Loader />} ><Faq /></Suspense>
+  },
+  {
+    path: "*",
+    element: <Suspense fallback={<Loader />} ><NotFound404 /></Suspense>
+  },
+  {
+    path: "/ComponentNotFound404",
+    element: < Suspense fallback={< Loader />} ><ComponentNotFound404 /></Suspense >,
 
-        <Route
-          path="*"
-          element={
-            <Suspense fallback={<Loader />}>
-              <NotFound404 />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/ComponentNotFound404"
-          element={
-            <Suspense fallback={<Loader />}>
-              <ComponentNotFound404 />
-            </Suspense>
-          }
-        />
-      </Routes>
-    </Router>
-  );
-};
+  }
+
+])
+const AppRoutes = () => <RouterProvider router={routes} />
 
 export default AppRoutes;
