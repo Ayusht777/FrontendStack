@@ -12,7 +12,7 @@ const TeamMemberCard = ({ member, isOverlayOpen, toggleOverlay }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
-    <div className="aspect-square rounded-xl bg-Nav pb-2">
+    <div className="aspect-square rounded-xl bg-Nav pb-2 mb-64">
       <div className="mx-4 mt-4 aspect-square rounded-xl bg-Bg transition-all duration-500 ease-in-out relative">
         {!isImageLoaded && <SkeletonLoader />}
         <img

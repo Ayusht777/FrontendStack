@@ -14,7 +14,7 @@ const TableRow = ({ attribute, type, description, defaultValue }) => (
 );
 const AttributeSection = ({ attributes }) => {
   return (
-    <section className="my-16 w-full max-w-[1200px]">
+    <section className="mt-16 mb-64 w-full max-w-[1200px]">
       <Heading title={"Attributes For This Component"} />
       <div className="w-full md:overflow-hidden rounded-xl overflow-x-scroll">
         <table className="w-full rounded-t-lg bg-gradient-to-tr from-Nav to-Nav/10 text-left">

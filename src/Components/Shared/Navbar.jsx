@@ -1,6 +1,6 @@
 import BrandLogo from "@/Assets/BrandLogo.svg";
-import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 const routeItems = [
   {
     routeId: 0,
@@ -25,13 +25,17 @@ const routeItems = [
 ];
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+    setIsActive(false);
+  }, [location]);
   return (
     <header
-      className="relative mt-8 flex w-full max-w-[1200px] items-center justify-center rounded-lg border-2 border-Border bg-Nav md:px-8"
+      className=" absolute z-30 top-8  flex w-[calc(100%-2rem)] md:w-[calc(100%-3rem)] xl:w-full  max-w-[1200px] items-center justify-center rounded-lg border-2 border-Border bg-Nav md:px-8"
       aria-label="Main Navigation"
     >
 
-      <nav className="flex h-10 w-full items-center justify-between gap-x-2 px-4">
+      <nav className="flex h-10 w-full items-center justify-between gap-x-2 px-4 ">
         <NavLink to={"/"}><img
           src={BrandLogo}
           alt="FrontendStackLogo"

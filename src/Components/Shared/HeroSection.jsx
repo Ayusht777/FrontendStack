@@ -1,8 +1,8 @@
 import Button from "@/Components/Shared/Button";
 import ButtonV2 from "@/Components/Shared/ButtonV2";
-const HeroSection = ({ heading, subheading = false, callToAction = false ,path="/"}) => {
+const HeroSection = ({ heading, subheading = false, callToAction = false, path = "/" }) => {
   return (
-    <section className=" my-4 flex h-[320px] w-full flex-col items-center justify-center md:h-[420px] lg:h-[480px]">
+    <section className=" mt-16 mb-4 flex h-[320px] w-full flex-col items-center justify-center md:h-[420px] lg:h-[480px]">
       <span className="max-w-5xl   bg-gradient-to-r from-white to-white/70 bg-clip-text text-center text-3xl font-semibold capitalize tracking-tighter text-transparent md:py-1.5 md:text-5xl lg:text-7xl">
         {heading}
       </span>

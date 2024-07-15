@@ -22,17 +22,16 @@ const PreviewPage = () => {
       ?.variations.find(
         (variation) => variation.author === selectedAuthorName
       ) || false;
- console.log(filteredVariation);
+  console.log(filteredVariation);
   if (!filteredVariation) {
     return <Navigate to={"/404_NOT_FOUND"} replace={true} />;
   }
- console.log(selectedAuthorName)
+  console.log(selectedAuthorName)
   return (
     <GridBackgroundV2
       TwClass={`[mask-image:radial-gradient(ellipse_60%_22rem_at_50%_0%,#000_70%,transparent_100%)] md:[mask-image:radial-gradient(ellipse_60%_42rem_at_50%_0%,#000_70%,transparent_100%)]`}
     >
       <div className=" relative z-20 flex h-full w-full flex-col items-center justify-center px-4 md:px-6 xl:px-0">
-        <Navbar />
         <HeroSection
           heading={"Explore the Live Preview and Visualize the Code"}
         />

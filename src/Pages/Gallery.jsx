@@ -1,5 +1,3 @@
-import Navbar from "@/Components/Shared/Navbar";
-import Footer from "@/Components/Shared/Footer";
 import HeroSection from "@/Components/Shared/HeroSection";
 import AnimatedTabs from "@/Components/Shared/AnimatedTabs";
 import Data from "@/Data/GalleryData";
@@ -17,7 +15,6 @@ const Gallery = () => {
   return (
     <GridBackgroundV2 TwClass="[mask-image:radial-gradient(ellipse_60%_40rem_at_50%_0%,#000_70%,transparent_100%)] md:[mask-image:radial-gradient(ellipse_60%_48rem_at_50%_0%,#000_70%,transparent_100%)]">
       <div className=" relative z-20 flex h-full w-full flex-col items-center justify-start px-4 xl:px-0 ">
-        <Navbar></Navbar>
         <HeroSection
           heading={"Explore our gallery of finely crafted components!"}
         />
@@ -33,10 +30,9 @@ const Gallery = () => {
           ></AnimatedTabs>
         </section>
         <GalleryGrids Data={filterData} />
-        <Footer />
       </div>
 
-   </GridBackgroundV2>
+    </GridBackgroundV2>
   );
 };
 
