@@ -17,7 +17,6 @@ function App() {
         <meta name="twitter:title" content="FrontendStack" />
         <meta name="twitter:description" content="A UI Challenge Project For Dev" />
         <meta name="twitter:image" content="https://i.postimg.cc/qB5YjHz9/previewimage.webp" />
-
         <title>FrontendStack</title>
         <link rel="icon" type="image/svg+xml" href="/BrandLogo.svg" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
