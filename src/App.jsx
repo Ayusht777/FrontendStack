@@ -13,7 +13,7 @@ function App() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="FrontendStack" />
         <meta property="og:description" content="A UI Challenge Project" />
-        <meta property="og:image" content="https://i.postimg.cc/qB5YjHz9/previewimage.webp" />
+        <meta property="og:image" content="https://iili.io/dBtVcej.md.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         
@@ -22,7 +22,7 @@ function App() {
         <meta property="twitter:url" content="https://frontendstack.vercel.app/" />
         <meta name="twitter:title" content="FrontendStack" />
         <meta name="twitter:description" content="A UI Challenge Project" />
-        <meta name="twitter:image" content="https://i.postimg.cc/qB5YjHz9/previewimage.webp" />
+        <meta name="twitter:image" content="https://iili.io/dBtVcej.md.png" />
         <title>FrontendStack</title>
         <link rel="icon" type="image/svg+xml" href="/BrandLogo.svg" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
