@@ -11,7 +11,7 @@ const About = () => {
           </span>
         </section>
         <FeatureContainer />
-        <section className="mb-64 w-full ">
+        <section className="mb-64 w-full max-w-[1200px] ">
           <TeamContainer />
         </section>
       </div>
