@@ -1,6 +1,6 @@
 import Heading from "@/Components/Shared/Heading";
 import { ExternalLink, Linkedin, Github } from "lucide-react";
-import { useEffect ,useState} from "react";
+import { useEffect, useState } from "react";
 
 
 const SkeletonLoader = () => (
@@ -62,14 +62,14 @@ const TeamContainer = () => {
   const teamMembers = [
     {
       id: 1, name: "Ayush Talesara",
-      imageUrl: "https://i.postimg.cc/Xvm43XVn/Avatar-2.png",
+      imageUrl: "https://i.postimg.cc/bNndphvQ/Avatar-2.webp",
       linkedin: "https://www.linkedin.com/in/ayush-talesara777/",
       github: "https://github.com/Ayusht777"
     },
     {
       id: 2,
       name: "Divyanshu Sahu",
-      imageUrl: "https://i.postimg.cc/Xv6FFgYD/Whats-App-Image-2024-07-05-at-20-46-35-67753e17.jpg",
+      imageUrl: "https://i.postimg.cc/Gp2MTzVx/Whats-App-Image-2024-07-16-at-22-44-22-3a4beff5.webp",
       linkedin: "https://www.linkedin.com/in/divyanshu-sahu-820467245/",
       github: "https://github.com/sahu-divyanshu"
     },
