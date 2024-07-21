@@ -5,20 +5,29 @@ import Heading from "@/Components/Shared/Heading";
 const FeatureContainer = () => {
   const featuresData = [
     {
-      tag:"#Journey",
-      heading: "From Code Newbies to Building FrontendSatck",
-      description: `Fresh out of college and hungry to code,
-                  we were four friends on a mission. A 30-day coding marathon ignited a spark, leading us to conquer a 100-day challenge. We tackled C++, data structures, and frontend development (React JS especially!). It wasn't smooth sailing, but through setbacks and self-doubt, we persevered for over 300 days.
-                  Reusable UI components became our new frontier. We craved a unique coding challenge to track our progress, but another 100-day felt uninspired. Then it hit us! Why not build a platform dedicated to creating reusable UI components? FrontendSatck was born - a website where you can learn by doing, building components from basic to advanced, all with live previews. This site is a testament to our journey and a launchpad for yours. Join us as we explore the exciting world of UI component creation, together! `,
+      tag: "#OurJourney",
+      heading: "From Campus to Code: The Birth of FrontendStack",
+      description: `Four college graduates united by a passion for coding embarked on an extraordinary journey. 
+    It began with a 30-day coding sprint that evolved into a 100-day challenge, mastering C++, data structures, 
+    and diving deep into frontend development, particularly React JS. Despite obstacles and moments of doubt, 
+    our determination carried us through more than 300 days of continuous learning and growth.
+
+    Our focus shifted to reusable UI components, sparking a desire for a unique coding challenge. 
+    Dissatisfied with the idea of another 100-day challenge, we conceived something greater: FrontendStack. 
+    This platform is our brainchild - a space dedicated to creating and learning about reusable UI components. 
+    Here, you can build your skills progressively, from basic to advanced components, all with live previews. 
+    FrontendStack stands as a testament to our journey and a springboard for yours. Join us in exploring the 
+    dynamic world of UI component creation and elevate your frontend development skills!`,
       keyPoints: [
-        "Witness live previews of UI components as you code",
-        "Enhanced code comprehension with modern theme & syntax highlighting",
-        "Effortless code copying with just a few clicks",
-        "Accelerate prototyping and testing with code snippets",
+        "Experience hands-on learning with live component previews",
+        "Master modern UI development practices",
+        "Accelerate your coding workflow with easy-to-use snippets",
+        "Progress from beginner to advanced component creation",
       ],
       feature: <Graph />,
     },
   ];
+
 
   return (
     <section className="w-full max-w-[1200px] space-y-16">

@@ -6,48 +6,48 @@ import Heading from '@/Components/Shared/Heading'
 const FeatureContainer = () => {
   const featuresData = [
     {
-      tag: "#Feature 1",
-      heading: "Live Preview and Code Snippets",
+      tag: "#Interactive Showcase",
+      heading: "Dynamic Component Previews",
       description:
-        "Experience the revolutionary Live Preview and Code Snippets feature that brings your UI components to life in real-time. With a modern theme and syntax highlighting, you can effortlessly follow along with the provided code snippets. Plus, the copy-to-clipboard functionality lets you quickly incorporate the code into your own projects. This feature is ideal for developers of all levels, from beginners eager to learn by example to seasoned developers seeking rapid prototyping and testing of new ideas.",
+        "Immerse yourself in our Dynamic Component Previews, where UI elements come to life before your eyes. Our modern, syntax-highlighted code snippets make learning a breeze, while one-click copying streamlines your workflow. Whether you're a coding novice or a seasoned pro, this feature accelerates your development process, enabling rapid prototyping and effortless integration of cutting-edge UI components into your projects.",
       keyPoints: [
-        "Witness live previews of UI components as you code",
-        "Enhanced code comprehension with modern theme & syntax highlighting",
-        "Effortless code copying with just a few clicks",
-        "Accelerate prototyping and testing with code snippets",
+        "Real-time UI component visualization",
+        "Sleek, syntax-highlighted code snippets",
+        "One-click code copying for seamless integration",
+        "Ideal for both learning and rapid prototyping",
       ],
       feature: <FeatureSyntaxHighlighter />,
     },
     {
-      tag: "#Feature 2",
-      heading: "Popular and Stable Tech Stack",
+      tag: "#Cutting-Edge Stack",
+      heading: "Industry-Leading Technologies",
       description:
-        "Our projects and UI components are meticulously crafted using a popular and stable tech stack, ensuring a robust and maintainable codebase. We leverage Figma for UI design and prototyping, React, Lucide, and React JS for frontend development, and Tailwind CSS for styling and layout. We also draw inspiration from Dribble and Next UI to guarantee that our components are consistently up-to-date and on-trend. This translates to seamless integration with your existing tech stack, minimizing the risk of breakage or obsolescence.",
+        "Our UI components are built on a foundation of industry-leading technologies, ensuring longevity and compatibility. We harness the power of Figma for design, React and Lucide for dynamic interfaces, and Tailwind CSS for flexible styling. Drawing inspiration from Shadcn UI and Next UI, we keep our components fresh and trendy. This carefully curated tech stack guarantees smooth integration with your projects and minimizes future compatibility issues.",
       keyPoints: [
-        "Seamless integration with your existing tech stack",
-        "Components built with popular and stable technologies",
-        "Robust and maintainable codebase",
-        "Inspiration from leading design and development resources",
-        "Alignment with the latest trends and technologies",
+        "Effortless integration with modern tech stacks",
+        "Built with widely-adopted, stable technologies",
+        "Future-proof, maintainable codebase",
+        "Inspired by top-tier design resources",
+        "Consistently aligned with industry trends",
       ],
       feature: <FeatureTechStack />,
     },
-
     {
-      tag: "#Feature 3",
-      heading: "Run UI Component Code Locally",
+      tag: "#Local Development",
+      heading: "Seamless Local Setup",
       description:
-        "Our Step-by-Step Guide to Running UI Component Code Locally empowers you to swiftly transform your UI component concepts into reality. We provide comprehensive code snippets for each step, along with clear explanations of the packages utilized in component creation, props types, and sources of UI design inspiration. This straightforward approach allows you to effortlessly follow along and witness your UI components come to life in your own local environment.",
+        "Our Seamless Local Setup guide empowers you to bring UI components to life in your own development environment. We provide detailed code snippets and explanations for each step, including package information, prop types, and design inspirations. This user-friendly approach allows you to effortlessly replicate and customize components, fostering a deeper understanding of modern UI development practices.",
       keyPoints: [
-        "Rapidly transform UI component concepts into reality",
-        "Comprehensive code snippets and descriptions for each step",
-        "Witness UI components come to life in your local environment",
-        "Gain insights into component creation packages and their usage",
-        "Gather inspiration for your own UI design and development endeavors",
+        "Streamlined process for local component development",
+        "Comprehensive code snippets with clear explanations",
+        "Hands-on experience in your preferred environment",
+        "In-depth insights into component architecture",
+        "Spark creativity for your UI design projects",
       ],
       feature: <FeatureCodeSnippets />,
     },
   ];
+
 
   return (
     <section className="w-full max-w-[1200px] space-y-16">
