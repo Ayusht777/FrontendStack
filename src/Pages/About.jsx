@@ -11,7 +11,9 @@ const About = () => {
           </span>
         </section>
         <FeatureContainer />
-        <TeamContainer />
+        <section className="mb-64 w-full ">
+          <TeamContainer />
+        </section>
       </div>
     </GridBackgroundV2>
   );
