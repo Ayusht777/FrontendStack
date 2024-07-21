@@ -1,53 +1,41 @@
 export const faqData = [
   {
-    question: "What is the purpose of this challenge?",
-    answer: `This challenge is designed to help us enhance our frontend development abilities by building reusable UI components using React.js and Tailwind CSS. 
-      It's similar to challenges like 100 Days of Code, but specifically focused on component creation. 
-      The website will showcase our components with live previews and code snippets, allowing you to see the implementation in action. 
-      While there are no external prizes, the primary benefit is the significant improvement in our React.js and frontend development skills through practical experience with UI components.`,
+    question: "What's the core objective of this challenge?",
+    answer: `Our challenge is crafted to elevate frontend development skills through the creation of reusable UI components using React.js and Tailwind CSS. It's a focused version of the popular 100 Days of Code challenge, specifically tailored for component development. Our platform showcases these components with interactive previews and detailed code snippets, offering a hands-on learning experience. While there are no tangible rewards, the real prize is the substantial growth in React.js proficiency and overall frontend expertise through practical, component-focused development.`,
     open: true,
   },
   {
-    question: "Where will you be sharing the components you built?",
-    answer: `We will share the components on this website, on GitHub, and in a post on LinkedIn.`,
+    question: "Where can I find the components you've developed?",
+    answer: `We're proud to showcase our components across multiple platforms: right here on our website, in our GitHub repository, and through engaging LinkedIn posts.`,
   },
   {
-    question: "How will the components be displayed on the website?",
-    answer: `Each component will be showcased on the website with a live preview demonstrating its functionality.
-       Additionally, we'll include the corresponding code snippet for each component, allowing users to see the implementation behind the scenes. 
-       This provides a clear understanding of how the components work and how to use them in their own projects.`,
-  },
-  {
-    question:
-      "Are there any specific design guidelines or best practices we are following for building the components?",
-    answer: `Yes, we have specific design principles and accessibility guidelines. 
-      You can refer to these resources for inspiration: [shadcn/ui], NextUI, GreatFrontEnd.`,
-  },
-  {
-    question: "What are the long-term plans for this project?",
-    answer: `We plan to enhance this project in several ways:
-            adding TypeScript Support, implementing Component Animations, and more. Stay tuned! You can follow our progress and see future plans for the project on GitHub.`,
+    question: "How are components presented on the website?",
+    answer: `Each component is prominently featured with an interactive live preview, demonstrating its functionality in real-time. Accompanying this is a comprehensive code snippet, providing insight into the component's implementation. This dual approach ensures a thorough understanding of both the component's usage and its underlying structure, facilitating easy integration into personal projects.`,
   },
   {
     question:
-      "Is there a plan to document the learnings and outcomes of the challenge after it's completed?",
-    answer: `Yes, we absolutely plan to document the learnings and outcomes of the challenge! 
-    We believe it's valuable to share our experiences and insights to benefit ourselves and others.`,
+      "Are there specific design principles guiding component creation?",
+    answer: `Absolutely. We adhere to a set of robust design principles and accessibility guidelines. For inspiration and best practices, we recommend exploring resources like [shadcn/ui], NextUI, and GreatFrontEnd.`,
   },
   {
-    question: "How can we participate in the challenge?",
-    answer: `As of now, this is a private project where we showcase our creations. 
-      However, we plan to open participation to more users in the future. Stay tuned!`,
+    question: "What's on the horizon for this project?",
+    answer: `We have exciting plans for expansion, including the integration of TypeScript support, implementation of sophisticated component animations, and much more. Stay connected! You can track our progress and explore future developments on our GitHub repository.`,
   },
   {
-    question: "Are there any prizes for completing the challenge?",
-    answer: `No, there are no external prizes for completing the challenge. 
-      However, the primary benefit is the significant improvement in our frontend development skills through practical experience building reusable components.
-       This can make us more competitive in job interviews and enhance our ability to tackle real-world frontend development projects.`,
+    question:
+      "Will there be a comprehensive record of learnings post-challenge?",
+    answer: `Definitely! We're committed to thoroughly documenting our journey, including key learnings and outcomes. We believe in the power of shared knowledge and aim to create a valuable resource for both participants and the wider development community.`,
   },
   {
-    question: "What is the timeframe for completing the challenge?",
-    answer: `There's no specific target duration. We encourage a flexible approach, depending on our individual goals. 
-      Whether you aim to build a few components quickly or take a more in-depth exploration, the challenge is designed to fit our individual learning pace.`,
+    question: "How can interested developers join the challenge?",
+    answer: `Currently, this is an internal project showcasing our team's creations. However, we're excited about the prospect of opening it up to a broader audience in the future. Keep an eye out for announcements!`,
+  },
+  {
+    question: "Are there any incentives for completing the challenge?",
+    answer: `While there are no external rewards, the true value lies in the significant enhancement of frontend development skills through hands-on experience with reusable components. This practical knowledge not only boosts competitiveness in job interviews but also strengthens your ability to tackle complex, real-world frontend projects.`,
+  },
+  {
+    question: "Is there a set timeline for the challenge?",
+    answer: `We've designed this challenge with flexibility in mind. There's no rigid timeline - it's adaptable to individual goals and learning paces. Whether you're aiming for rapid component creation or a more in-depth exploration, the challenge accommodates various learning styles and time commitments.`,
   },
 ];
