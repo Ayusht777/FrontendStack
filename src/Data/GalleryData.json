@@ -1,178 +1,156 @@
 [
-    {
-      "id": 1,
-      "imageUrl": "https://i.postimg.cc/fLYKNfwv/Button.webp",
-      "ComponentName": "Button",
-      "type": "basic",
-      "isUploaded": true
-    },
-    {
-      "id": 2,
-      "imageUrl": "https://i.postimg.cc/RZ8QJDhR/Input.webp",
-      "ComponentName": "Input",
-      "type": "basic",
-      "isUploaded": false
-    },
-    {
-      "id": 3,
-      "imageUrl": "https://i.postimg.cc/hth1jBDv/Dialog.webp",
-      "ComponentName": "Dialog",
-      "type": "basic",
-      "isUploaded": false
-    },
-    {
-      "id": 4,
-      "imageUrl": "https://i.postimg.cc/cCZc4tCG/Cards.webp",
-      "ComponentName": "Card",
-      "type": "basic",
-      "isUploaded": false
-    },
-    {
-      "id": 5,
-      "imageUrl": "https://i.postimg.cc/pLMRsq3V/Toogle-Group.webp",
-      "ComponentName": "Toggle Group",
-      "type": "basic",
-      "isUploaded": false
-    },
-    {
-      "id": 6,
-      "imageUrl": "https://i.postimg.cc/dVRvpGK2/Accordion.webp",
-      "ComponentName": "Accordion",
-      "type": "basic",
-      "isUploaded": false
-    },
-    {
-      "id": 7,
-      "imageUrl": "https://i.postimg.cc/rsQ5Vh75/Tabs.webp",
-      "ComponentName": "Tabs",
-      "type": "basic",
-      "isUploaded": false
-    },
-    {
-      "id": 8,
-      "imageUrl": "https://i.postimg.cc/qBLsxRgg/TextArea.webp",
-      "ComponentName": "Text Area",
-      "type": "basic",
-      "isUploaded": false
-    },
-    {
-      "id": 9,
-      "imageUrl": "https://i.postimg.cc/kGnxdrYn/Table-nextui.webp",
-      "ComponentName": "Table",
-      "type": "basic",
-      "isUploaded": false
-    },
-    {
-      "id": 10,
-      "imageUrl": "https://i.postimg.cc/yYvLcWHg/Pagination.png",
-      "ComponentName": "Pagination",
-      "type": "basic",
-      "isUploaded": false
-    },
-    {
-      "id": 11,
-      "imageUrl": "https://i.postimg.cc/QtgpPNb4/Sats.webp",
-      "ComponentName": "Stats",
-      "type": "basic",
-      "isUploaded": false
-    },
-    {
-      "id": 12,
-      "imageUrl": "https://i.postimg.cc/cCp3xXWJ/Sidenavbar.webp",
-      "ComponentName": "Side Navbar",
-      "type": "medium",
-      "isUploaded": false
-    },
-    {
-      "id": 13,
-      "imageUrl": "https://i.postimg.cc/rsJNdyR0/Carousel.webp",
-      "ComponentName": "Carousel",
-      "type": "medium",
-      "isUploaded": false
-    },
-    {
-      "id": 14,
-      "imageUrl": "https://i.postimg.cc/QMTgQJWr/MenuBar.webp",
-      "ComponentName": "Menu Bar",
-      "type": "medium",
-      "isUploaded": false
-    },
-    {
-      "id": 15,
-      "imageUrl": "https://i.postimg.cc/05dfXnXk/Collpasbale.webp",
-      "ComponentName": "Collapsible List",
-      "type": "medium",
-      "isUploaded": false
-    },
-    {
-      "id": 16,
-      "imageUrl": "https://i.postimg.cc/3J8ZsGzg/Combobox.webp",
-      "ComponentName": "Combo Box",
-      "type": "medium",
-      "isUploaded": false
-    },
-    {
-      "id": 17,
-      "imageUrl": "https://i.postimg.cc/8PZbN5Vx/Combobox-1.webp",
-      "ComponentName": "Toaster",
-      "type": "medium",
-      "isUploaded": false
-    },
-    {
-      "id": 18,
-      "imageUrl": "https://i.postimg.cc/sDQj0Pb0/Code-Snipptes.webp",
-      "ComponentName": "Code Snippet",
-      "type": "medium",
-      "isUploaded": false
-    },
-    {
-      "id": 19,
-      "imageUrl": "(link unavailable)",
-      "ComponentName": "Form (Sign Up, Contact Us)",
-      "type": "medium",
-      "isUploaded": false
-    },
-    {
-      "id": 20,
-      "imageUrl": "(link unavailable)",
-      "ComponentName": "Search Bar",
-      "type": "medium",
-      "isUploaded": false
-    },
-    {
-      "id": 21,
-      "imageUrl": "",
-      "ComponentName": "Data Table",
-      "type": "professional",
-      "isUploaded": false
-    },
-    {
-      "id": 22,
-      "imageUrl": "(link unavailable)",
-      "ComponentName": "Multi-Step Form",
-      "type": "professional",
-      "isUploaded": false
-    },
-    {
-      "id": 23,
-      "imageUrl": "https://i.postimg.cc/vZGQkxcq/drag-and-drop-file-upload.webp",
-      "ComponentName": "Drag-and-Drop File Upload",
-      "type": "professional",
-      "isUploaded": false
-    },
-    {
-      "id": 24,
-      "imageUrl": "https://i.postimg.cc/nrLzysRf/command.webp",
-      "ComponentName": "Commands",
-      "type": "professional",
-      "isUploaded": false
-    },
-    {
-      "id": 25,
-      "imageUrl": "https://i.postimg.cc/gJ2mJCvv/context-menu.webp",
-      "ComponentName": "Context Menu",
-      "type": "professional",
-      "isUploaded": false
-    }
-  ]
-  
+  {
+    "id": 1,
+    "imageUrl": "https://i.postimg.cc/fLYKNfwv/Button.webp",
+    "ComponentName": "Button",
+    "type": "basic",
+    "isUploaded": true
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://i.postimg.cc/RZ8QJDhR/Input.webp",
+    "ComponentName": "Input",
+    "type": "basic",
+    "isUploaded": false
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://i.postimg.cc/hth1jBDv/Dialog.webp",
+    "ComponentName": "Dialog",
+    "type": "basic",
+    "isUploaded": false
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://i.postimg.cc/cCZc4tCG/Cards.webp",
+    "ComponentName": "Card",
+    "type": "basic",
+    "isUploaded": false
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://i.postimg.cc/pLMRsq3V/Toogle-Group.webp",
+    "ComponentName": "Toggle Group",
+    "type": "basic",
+    "isUploaded": false
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://i.postimg.cc/dVRvpGK2/Accordion.webp",
+    "ComponentName": "Accordion",
+    "type": "basic",
+    "isUploaded": false
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://i.postimg.cc/rsQ5Vh75/Tabs.webp",
+    "ComponentName": "Tabs",
+    "type": "basic",
+    "isUploaded": false
+  },
+  {
+    "id": 8,
+    "imageUrl": "https://i.postimg.cc/qBLsxRgg/TextArea.webp",
+    "ComponentName": "Text Area",
+    "type": "basic",
+    "isUploaded": false
+  },
+  {
+    "id": 9,
+    "imageUrl": "https://i.postimg.cc/kGnxdrYn/Table-nextui.webp",
+    "ComponentName": "Table",
+    "type": "basic",
+    "isUploaded": false
+  },
+  {
+    "id": 10,
+    "imageUrl": "https://i.postimg.cc/yYvLcWHg/Pagination.png",
+    "ComponentName": "Pagination",
+    "type": "basic",
+    "isUploaded": false
+  },
+  {
+    "id": 11,
+    "imageUrl": "https://i.postimg.cc/QtgpPNb4/Sats.webp",
+    "ComponentName": "Stats",
+    "type": "basic",
+    "isUploaded": false
+  },
+  {
+    "id": 12,
+    "imageUrl": "https://i.postimg.cc/cCp3xXWJ/Sidenavbar.webp",
+    "ComponentName": "Side Navbar",
+    "type": "medium",
+    "isUploaded": false
+  },
+  {
+    "id": 13,
+    "imageUrl": "https://i.postimg.cc/rsJNdyR0/Carousel.webp",
+    "ComponentName": "Carousel",
+    "type": "medium",
+    "isUploaded": false
+  },
+  {
+    "id": 14,
+    "imageUrl": "https://i.postimg.cc/QMTgQJWr/MenuBar.webp",
+    "ComponentName": "Menu Bar",
+    "type": "medium",
+    "isUploaded": false
+  },
+  {
+    "id": 15,
+    "imageUrl": "https://i.postimg.cc/05dfXnXk/Collpasbale.webp",
+    "ComponentName": "Collapsible List",
+    "type": "medium",
+    "isUploaded": false
+  },
+  {
+    "id": 16,
+    "imageUrl": "https://i.postimg.cc/3J8ZsGzg/Combobox.webp",
+    "ComponentName": "Combo Box",
+    "type": "medium",
+    "isUploaded": false
+  },
+  {
+    "id": 17,
+    "imageUrl": "https://i.postimg.cc/8PZbN5Vx/Combobox-1.webp",
+    "ComponentName": "Toaster",
+    "type": "medium",
+    "isUploaded": false
+  },
+  {
+    "id": 18,
+    "imageUrl": "https://i.postimg.cc/sDQj0Pb0/Code-Snipptes.webp",
+    "ComponentName": "Code Snippet",
+    "type": "medium",
+    "isUploaded": false
+  },
+  {
+    "id": 19,
+    "imageUrl": "https://i.postimg.cc/Fz9BfyfY/Data-Table.webp",
+    "ComponentName": "Data Table",
+    "type": "professional",
+    "isUploaded": false
+  },
+  {
+    "id": 20,
+    "imageUrl": "https://i.postimg.cc/vZGQkxcq/drag-and-drop-file-upload.webp",
+    "ComponentName": "Drag-and-Drop File Upload",
+    "type": "professional",
+    "isUploaded": false
+  },
+  {
+    "id": 21,
+    "imageUrl": "https://i.postimg.cc/nrLzysRf/command.webp",
+    "ComponentName": "Commands",
+    "type": "professional",
+    "isUploaded": false
+  },
+  {
+    "id": 22,
+    "imageUrl": "https://i.postimg.cc/gJ2mJCvv/context-menu.webp",
+    "ComponentName": "Context Menu",
+    "type": "professional",
+    "isUploaded": false
+  }
+]
