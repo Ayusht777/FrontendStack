@@ -42,7 +42,7 @@ const QuerySelector = ({ options, selectedOption, onOptionChange }) => {
                         setHighlightedIndex(-1)
                         break
                 }
-            } else if (e.key === "Enter" || e.key === " ") {
+            } else if (e.key === "Enter") {
                 e.preventDefault()
                 setIsOpen(true)
             }
