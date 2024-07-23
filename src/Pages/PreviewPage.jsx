@@ -8,7 +8,7 @@ import StepsSection from "@/Components/PreviewPageComponents/StepsComponent/Step
 import ReferenceSection from "@/Components/PreviewPageComponents/ReferenceSection";
 import AttributeSection from "@/Components/PreviewPageComponents/AttributeSection";
 import GridBackgroundV2 from "@/Components/Shared/GridBackgroundV2";
-import { componentsData, authors } from "@/Data/Data";
+import { componentsData, authors } from "@/Data/ComponentData";
 
 const PreviewPage = () => {
   const componentName = useParams();
