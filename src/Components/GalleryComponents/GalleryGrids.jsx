@@ -29,7 +29,7 @@ const GridItem = ({ item }) => {
           onLoad={() => setIsImageLoaded(true)}
           onError={() => setIsImageLoaded(false)}
           loading="lazy"
-          fetchPriority="high"
+      
         />
       </div>
       <div className="mx-4 mt-2 flex items-center justify-between">

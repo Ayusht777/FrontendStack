@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Heading from "@/Components/Shared/Heading";
 import { AlertTriangleIcon } from "lucide-react";
 import QuerySelector from '@/Components/HomeComponents/QueryForm/QuerySelector';
+import emailjs from "@emailjs/browser"
 
 const SubmitButton = () => (
   <button
@@ -71,8 +72,36 @@ const QueryForm = () => {
 
   const [selectedOption, setSelectedOption] = useState("Select a Subject");
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [subject, setSubject] = useState('Select a Subject');
+
+  const onSubmit = (event) => {
+
+    event.preventDefault()
+    const serviceId = 'service_9bbro5m'
+    const templateId = 'template_moajops'
+    const publicKey = 'gaEsvcauCycZarN0X'
+
+    const templateParams = {
+      from_name:fullName,
+      from_email:email,
+      to_name: 'Divyanshu and Ayush',
+      from_subject:subject,
+      message: message,
+    }
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      setName('');
+      setEmail('');
+      setMessage('');
+      setSubject('Select a Subject')
+    })
+    .catch((err) => {
+      console.log('FAILED...', err);
+    })
   };
 
   return (
@@ -83,7 +112,7 @@ const QueryForm = () => {
       </p>
       <form
         className="mx-auto flex flex-col items-start px-4"
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={onSubmit}
         aria-label="Contact form"
       >
         <FormField
@@ -92,6 +121,8 @@ const QueryForm = () => {
           error={errors.fullName}
           type="text"
           placeholder="Ayush Talesara"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
         />
         <FormField
           label="Email"
@@ -99,6 +130,8 @@ const QueryForm = () => {
           error={errors.email}
           type="email"
           placeholder="ayush@mail.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <label className="my-2">Subject</label>
         <Controller
@@ -108,9 +141,11 @@ const QueryForm = () => {
             <QuerySelector
               options={options}
               selectedOption={field.value}
+              value={subject}
               onOptionChange={(value) => {
                 field.onChange(value);
                 setSelectedOption(value);
+                setSubject(value);
               }}
             />
           )}
@@ -129,6 +164,8 @@ const QueryForm = () => {
           spellCheck={true}
           aria-invalid={errors.message ? "true" : "false"}
           aria-describedby={errors.message ? "message-error" : undefined}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           className="mb-1.5 box-border w-full rounded-md bg-Bg px-3 py-1 outline outline-1 outline-Border focus:bg-Nav focus:outline-Logo"
         ></textarea>
         {errors.message && (
