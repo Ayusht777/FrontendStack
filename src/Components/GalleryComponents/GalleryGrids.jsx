@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Code } from "lucide-react";
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion'
 
 const SkeletonLoader = () => (
   <div className="aspect-square rounded-xl bg-Border animate-pulse absolute inset-0"></div>
@@ -11,7 +12,14 @@ const GridItem = ({ item }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
-    <div className="aspect-square rounded-xl bg-Nav pb-2">
+    <motion.div
+      layout
+      layoutId={item.id}
+      initial={{ opacity: 0.5, }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, }}
+      transition={{ duration: 0.4 }}
+      className="aspect-square rounded-xl bg-Nav pb-2">
       <div className="mx-4 mt-4 aspect-square rounded-xl bg-Bg transition-all duration-500 ease-in-out relative">
         {!isImageLoaded && <SkeletonLoader />}
         <img
@@ -30,16 +38,22 @@ const GridItem = ({ item }) => {
           </Link>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 const GalleryGrids = ({ Data }) => {
   return (
-    <section className="mt-6  grid w-full max-w-[1200px] grid-cols-1 place-content-center gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {Data?.map((item) => (
-        <GridItem key={item.id} item={item} />
-      ))}
-    </section>
+    <motion.div
+
+      className="mt-6 grid w-full max-w-[1200px] grid-cols-1 place-content-center gap-6 md:grid-cols-2 lg:grid-cols-3" layout>
+
+      <AnimatePresence>
+        {Data?.map((item) => (
+          <GridItem key={item.id} item={item} />
+        ))}
+      </AnimatePresence>
+
+    </motion.div>
   );
 };
 
