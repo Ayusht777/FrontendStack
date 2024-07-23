@@ -1,8 +1,8 @@
 import { Plus } from "lucide-react";
 const Footer = () => {
   return (
-    <footer className="absolute z-30 -bottom-4 max-w-[1200px] w-[calc(100%-2rem)] md:w-[calc(100%-3rem)] xl:w-full h-[150px]">
-      <div className=" flex flex-col items-center justify-center gap-y-2 rounded-t-lg py-4 border-2 border-Border">
+    <footer className="absolute z-30 -bottom-0 max-w-[1200px] w-[calc(100%-2rem)] md:w-[calc(100%-3rem)] xl:w-full h-auto">
+      <div className=" flex flex-col items-center justify-center gap-y-2 rounded-t-lg  py-4 border-t-2 border-l-2 border-r-2 border-Border">
         <h1 className="text-2xl font-semibold text-Logo md:text-3xl lg:text-4xl">
           StackFrontend
         </h1>
